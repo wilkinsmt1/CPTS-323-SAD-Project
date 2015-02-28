@@ -8,6 +8,7 @@ using SAD.Core.IO;
 
 namespace SADCL
 {
+    //Factory that creates Missile Launchers
     public sealed class MLFactory
     {
         /// <summary>
@@ -31,9 +32,14 @@ namespace SADCL
         }
     }
 
+    //Factory that creates File readers
     public sealed class FRFactory
     {
-        public static FileReader CreateReader(FRType type)
+        /* This hasn't been tested with the INIReader code and
+         * JSON and XML support hasn't been added.
+         * So obviously it needs work.
+         */
+        public static FileReader CreateReader(FRType type, string path)
         {
             FileReader reader = null;
             switch (type)
@@ -42,17 +48,19 @@ namespace SADCL
                     reader = new INIReader(path);
                     break;
                 case FRType.JSONReader:
-                    reader = new JSONReader();
+                    Console.WriteLine("Not Implemented yet, sorry.");
+                    //reader = new JSONReader();
                     break;
                 case FRType.XMLReader:
-                    reader = new XMLReader();
+                    Console.WriteLine("Not Implemented yet, sorry.");
+                    //reader = new XMLReader();
                     break;
             }
             return reader;
 
         }
 
-        private static string path = "";
+        //private static string path = "";
         
     }
 
