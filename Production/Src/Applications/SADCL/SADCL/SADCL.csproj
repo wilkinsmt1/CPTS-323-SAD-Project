@@ -71,6 +71,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Library\SAD.Core\SAD.Core.csproj">
+      <Project>{0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd}</Project>
+      <Name>SAD.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

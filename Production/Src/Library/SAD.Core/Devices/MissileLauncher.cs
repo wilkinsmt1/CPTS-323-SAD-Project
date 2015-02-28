@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SAD.Core.Devices
 {
 
-    interface IMissileLauncher
+    public interface IMissileLauncher
     {
         void MoveBy(double phi, double theta);
         void MoveTo(double phi, double theta);
@@ -16,7 +16,13 @@ namespace SAD.Core.Devices
         void PrintStatus();
 
     }
-    public class MissileLauncher : IMissileLauncher
+
+    public enum MLType
+    {
+        DreamCheeky,
+        Mock
+    }
+    public class DreamCheeky : IMissileLauncher
     {
         public void MoveBy(double phi, double theta)
         {
@@ -44,14 +50,16 @@ namespace SAD.Core.Devices
 
         public int MissileCount { get; set; }
         public string LauncherName { get; set; }
+        private static int TotalMissiles = 4;
     }
 
-    public class MissileLauncherAdapter : IMissileLauncher
+    public class Mock : IMissileLauncher
     {
         public void MoveBy(double phi, double theta)
         {
             Console.WriteLine("Moving.");
         }
+
         public void MoveTo(double phi, double theta)
         {
             Console.WriteLine("Moving.");
@@ -69,8 +77,35 @@ namespace SAD.Core.Devices
 
         public void PrintStatus()
         {
-            Console.WriteLine("No status yet.");
+            Console.WriteLine("Name: Mock Launcher\n Status: Married with children.");
         }
     }
+
+    //public class MissileLauncherAdapter : IMissileLauncher
+    //{
+    //    public void MoveBy(double phi, double theta)
+    //    {
+    //        Console.WriteLine("Moving.");
+    //    }
+    //    public void MoveTo(double phi, double theta)
+    //    {
+    //        Console.WriteLine("Moving.");
+    //    }
+
+    //    public void Fire()
+    //    {
+    //        Console.WriteLine("Firing.");
+    //    }
+
+    //    public void Reload()
+    //    {
+    //        Console.WriteLine("Reloading.");
+    //    }
+
+    //    public void PrintStatus()
+    //    {
+    //        Console.WriteLine("No status yet.");
+    //    }
+    //}
 
 }

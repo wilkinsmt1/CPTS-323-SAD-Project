@@ -26,6 +26,13 @@ namespace SAD.Core.IO
         public abstract void printSort();
     }
 
+    public enum FRType
+    {
+        INIReader,
+        JSONReader,
+        XMLReader
+    }
+
     //derived INIReader class
     public class INIReader : FileReader
     {
@@ -307,4 +314,5 @@ namespace SAD.Core.IO
 
         }
     }
+
 }

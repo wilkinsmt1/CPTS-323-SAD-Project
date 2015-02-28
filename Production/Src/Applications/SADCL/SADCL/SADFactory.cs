@@ -8,27 +8,53 @@ using SAD.Core.IO;
 
 namespace SADCL
 {
-    public class MLFactory
+    public sealed class MLFactory
     {
-        public MissileLauncher CreateMissileLauncher()
+        /// <summary>
+        /// Creates a new missile launcher based on what is passed in
+        /// </summary>
+        /// <param name="type">The type of missile launcher to be created.</param>
+        /// <returns>Returns the newly created missile launcher.</returns>
+        public static IMissileLauncher CreateMissileLauncher(MLType type)
         {
-            MissileLauncher ML = new MissileLauncher();
+            IMissileLauncher ML = null;
+            switch (type)
+            {
+                case MLType.DreamCheeky:
+                    ML = new DreamCheeky();
+                    break;
+                case MLType.Mock:
+                    ML = new Mock();
+                    break;
+            }
             return ML;
         }
+    }
 
-        public FileReader CreateReader()
+    public sealed class FRFactory
+    {
+        public static FileReader CreateReader(FRType type)
         {
             FileReader reader = null;
-            reader = new INIReader(path);
+            switch (type)
+            {
+                case FRType.INIReader:
+                    reader = new INIReader(path);
+                    break;
+                case FRType.JSONReader:
+                    reader = new JSONReader();
+                    break;
+                case FRType.XMLReader:
+                    reader = new XMLReader();
+                    break;
+            }
             return reader;
 
         }
 
-        public FileReader CreateIniReader(string path)
-        {
-            return new INIReader(path);
-        }
-
-        private string path = "";
+        private static string path = "";
+        
     }
+
+    
 }
