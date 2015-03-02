@@ -29,35 +29,54 @@ namespace SAD.Core.Devices
     //DreamCheeky type missile launcher
     public class DreamCheeky : IMissileLauncher
     {
+        public DreamCheeky()
+        {
+            LauncherName = "Target Eradicator";
+            TotalMissiles = 4;
+            MissileCount = TotalMissiles;
+            controller = new Controller();
+            controller.Launcher = new MissileLauncherAdapter();
+        }
         public void MoveBy(double phi, double theta)
         {
-            Console.WriteLine("Moving.");
+            controller.MoveBy(phi, theta);
         }
         public void MoveTo(double phi, double theta)
         {
-            Console.WriteLine("Moving.");
+            controller.MoveTo(phi, theta);
         }
 
         public void Fire()
         {
-            Console.WriteLine("Firing.");
+            if (MissileCount < 1)
+            {
+                Console.WriteLine("I just can’t do it cap’tin, we just don’t have tha power!!");
+            }
+            else
+            {
+                Console.WriteLine("I'll give 'er all we got cap'tin!!");
+                controller.Fire();
+                MissileCount--;
+
+            }  
         }
 
         public void Reload()
         {
-            Console.WriteLine("Reloading.");
-            MissileCount = 4;
+            Console.WriteLine("Yaaarrrggghhh!!! I be realodin' the missiles right away cap'tin!");
+            MissileCount = TotalMissiles;
         }
 
         public void PrintStatus()
         {
-            Console.WriteLine("Launcher Name: Target Eradicator");
-            Console.WriteLine("Missiles: {0} of 4 remain.", MissileCount);
+            Console.WriteLine("Launcher Name: {0}", LauncherName);
+            Console.WriteLine("Missiles: {0} of 4 remain, cap'tin! Arrrrggghhhh!", MissileCount);
         }
 
         public int MissileCount { get; set; }
         public string LauncherName { get; set; }
-        private static int TotalMissiles = 4;
+        private static int TotalMissiles;
+        private Controller controller;
     }
 
     //Mock type missile launcher
