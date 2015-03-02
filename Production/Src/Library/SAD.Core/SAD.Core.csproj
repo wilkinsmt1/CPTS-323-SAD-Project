@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Data\TargetListSingleton.cs" />
     <Compile Include="Data\TargetPositioning.cs" />
     <Compile Include="Data\Targets.cs" />
     <Compile Include="Devices\MissileLauncher.cs" />
