@@ -14,16 +14,22 @@ namespace SAD.Core.IO
         // This is the file reader class, it has abstract print, printTarget, convert, isFriend, 
         // and printSort methods. Specific file readers will inherit from this class.
         //
-        public FileReader()
-        {
-            Console.WriteLine("Creating filereader object.\n");
-        }
 
         public abstract void print();
         public abstract void printTarget(string inputName);
         public abstract void convert(string fileName);
         public abstract void isFriend(string inputName);
         public abstract void printSort();
+        public abstract void Scoundrels();
+
+        public abstract void Friends();
+    }
+
+    public enum FRType
+    {
+        INIReader,
+        JSONReader,
+        XMLReader
     }
 
     //derived INIReader class
@@ -43,9 +49,8 @@ namespace SAD.Core.IO
 
         public INIReader(string filePath) // Start of constructor
         {
+            filePath = filePath.ToLower();
             filePassedIn = filePath;
-            Console.WriteLine("Creating INIReader object.");
-            Console.WriteLine("Reading and extracting file data.");
 
             //put all lines of the file into a string[]
             string[] lines = System.IO.File.ReadAllLines(filePath);
@@ -306,5 +311,50 @@ namespace SAD.Core.IO
             }
 
         }
+
+        public override void Scoundrels()
+        {
+            foreach (var targets in targetList) //iterate through the list
+            {
+                if (!targets.IsFriend)
+                {
+                    string nVal = targets.TargetName;
+                    double xVal = targets.X;
+                    double yVal = targets.Y;
+                    double zVal = targets.Z;
+                    int pVal = targets.Points;
+                    Console.WriteLine("Target: {0}", nVal);
+                    Console.WriteLine("Friend: Argh! No He be a dirty scoundrel with a clever disguise!");
+                    Console.WriteLine("Position: x={0}, y={1}, z={2}", xVal, yVal, zVal);
+                    Console.WriteLine("Points: {0}", pVal);
+                    //This should have a variable that keeps track if the kill command was used on it
+                    //the value would be from the singleton method that keeps track of targets
+                    Console.WriteLine("Status: At Large\n");
+                }
+            }
+        }
+
+        public override void Friends()
+        {
+            foreach (var targets in targetList) //iterate through the list
+            {
+                if (targets.IsFriend)
+                {
+                    string nVal = targets.TargetName;
+                    double xVal = targets.X;
+                    double yVal = targets.Y;
+                    double zVal = targets.Z;
+                    int pVal = targets.Points;
+                    Console.WriteLine("Target: {0}", nVal);
+                    Console.WriteLine("Friend: Argh! He be one o' the good guys!");
+                    Console.WriteLine("Position: x={0}, y={1}, z={2}", xVal, yVal, zVal);
+                    Console.WriteLine("Points: {0}", pVal);
+                    //This should have a variable that keeps track if the kill command was used on it
+                    //the value would be from the singleton method that keeps track of targets
+                    Console.WriteLine("Status: At Large\n");
+                }
+            }
+        }
     }
+
 }

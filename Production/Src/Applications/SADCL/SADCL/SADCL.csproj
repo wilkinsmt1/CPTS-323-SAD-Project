@@ -73,9 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Library\SAD.Core\SAD.Core.csproj">
-      <Project>{65ba5340-6d68-49c3-b5d0-f5e521f9af0a}</Project>
+      <Project>{0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd}</Project>
       <Name>SAD.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
