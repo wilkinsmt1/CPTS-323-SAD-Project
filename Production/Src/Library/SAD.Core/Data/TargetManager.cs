@@ -14,19 +14,22 @@ using System.Threading.Tasks;
 
 namespace SAD.Core.Data
 {
-    public class TargetListSingleton
+    public class TargetManager
     {
-        private static TargetListSingleton targetListSingletonInstance = null;
+        private static TargetManager targetListInstance; //Private constant instance
 
-        private TargetListSingleton(){}
-
-        public static TargetListSingleton GetInstance()
+        private TargetManager() //Private constructor
         {
-            if (null == TargetListSingleton)   //error says is a type, but is used like a variable..
+            
+        }
+
+        public static TargetManager GetInstance() //Public method getInstance
+        {
+            if (targetListInstance == null)
             {
-                TargetListSingleton = new TargetListSingleton();
+                targetListInstance = new TargetManager();
             }
-            return TargetListSingleton;
+            return targetListInstance;
 
         //if TargetListSingleton ?? (TargetListSingleton = new TargetListSingleton());
         //return TargetListSingleton;  //new instance assigned, and returned
