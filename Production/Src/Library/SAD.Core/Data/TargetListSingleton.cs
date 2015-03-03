@@ -9,32 +9,25 @@ using System.Threading.Tasks;
  * To get an instance of this class, use this:  TargetListSingleton targetListSingletonInstance = TargetListSingleton.GetInstance();  
  * Singleton Info: p127 text; A singleton is used to allow only one instance of the class, and contain a global access point. 
  * There should only be one list of targets; this will prevent multiple lists.
- * This class may need modification; will be working on that. Let me know if there are any suggestions. -Anna
+ * 
  */
-
 namespace SAD.Core.Data
 {
-    public class TargetListSingleton
-    {
-        private static TargetListSingleton targetListSingletonInstance = null;
 
-        private TargetListSingleton(){}
+    public class TargetListSingleton //: Targets   //class
+    {
+        public static TargetListSingleton targetListInstance; // = null
+
+        private TargetListSingleton() { }
 
         public static TargetListSingleton GetInstance()
         {
-            if (null == TargetListSingleton)   //error says is a type, but is used like a variable..
+            if (targetListInstance == null)
             {
-                TargetListSingleton = new TargetListSingleton();
+                List<Targets> targetList = new List<Targets>();
+                //targetListInstance = new TargetListSingleton(); //if no instance, then create an instance
             }
-            return TargetListSingleton;
-
-        //if TargetListSingleton ?? (TargetListSingleton = new TargetListSingleton());
-        //return TargetListSingleton;  //new instance assigned, and returned
+            return targetListInstance;
         }
-        public void WriteToConsole(string list)
-        {
-            Console.WriteLine(list);
-        } 
-      
     };
 }
