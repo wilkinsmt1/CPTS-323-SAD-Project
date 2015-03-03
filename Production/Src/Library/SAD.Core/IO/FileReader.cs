@@ -336,6 +336,7 @@ namespace SAD.Core.IO
                     //This should have a variable that keeps track if the kill command was used on it
                     //the value would be from the singleton method that keeps track of targets
                     Console.WriteLine("Status: {0}", status);
+                    Console.Write("\n");
                 }
             }
         }
@@ -359,6 +360,7 @@ namespace SAD.Core.IO
                     //This should have a variable that keeps track if the kill command was used on it
                     //the value would be from the singleton method that keeps track of targets
                     Console.WriteLine("Status: {0}", status);
+                    Console.Write("\n");
                 }
             }
         }

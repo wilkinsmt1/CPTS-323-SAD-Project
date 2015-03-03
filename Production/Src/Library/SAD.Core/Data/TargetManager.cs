@@ -18,7 +18,7 @@ namespace SAD.Core.Data
     {
         private static TargetManager targetListInstance; //Private constant instance
         public List<Targets> TargetList { get; set; }
-        private string TargetStatus;
+        //private string TargetStatus;
 
         private TargetManager() //Private constructor
         {
@@ -41,6 +41,20 @@ namespace SAD.Core.Data
         {
             Targets result = TargetList.Find(i => i.TargetName.ToUpper() == targetName);
             result.Status = "He's dead jim.";
+        }
+
+        public double[] getCoordinates(string targetName)
+        {
+            Targets result = TargetList.Find(i => i.TargetName.ToUpper() == targetName);
+            double x, y, z, theta, phi;
+            
+            x = result.X;
+            y = result.Y;
+            z = result.Z;
+            theta = TargetPositioning.calculateTheta(x , y, z);
+            phi = TargetPositioning.calculatePhi(x, y);
+            double[] ptArray = new double[2]{phi,theta};
+            return ptArray;
         }
     }
 }

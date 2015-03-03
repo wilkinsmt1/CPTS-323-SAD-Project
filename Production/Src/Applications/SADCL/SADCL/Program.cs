@@ -54,7 +54,7 @@ namespace SADCL
                     }
                     phi = Convert.ToDouble(values[1]);
                     theta = Convert.ToDouble(values[2]);
-                    DCLauncher.MoveTo(phi,theta);
+                    DCLauncher.MoveTo((phi*22.2), (theta*22.2));
                 }
                 else if (command.StartsWith("MOVEBY"))
                 {
@@ -76,7 +76,7 @@ namespace SADCL
 
                     phi = Convert.ToDouble(values[1]);
                     theta = Convert.ToDouble(values[2]);
-                    DCLauncher.MoveBy(phi, theta);
+                    DCLauncher.MoveBy((phi*22.2), (theta*22.2));
                 }
                 else if (command.StartsWith("RELOAD"))
                 {
@@ -117,9 +117,14 @@ namespace SADCL
                     }
                     else
                     {
-                        DCLauncher.MoveTo(200, 600);
-                        DCLauncher.Fire();
                         TargetManager targetManager = TargetManager.GetInstance();
+                        double[] phitheta = targetManager.getCoordinates(targetName);
+                        phi = phitheta[0];
+                        theta = phitheta[1];
+                        DCLauncher.MoveTo((phi*22.2), (theta*22.2));
+                        //Console.ReadLine();
+                        DCLauncher.Fire();
+                        
                         targetManager.changeStatus(targetName);
                     }
                     /* This command should check if the target specified is a friend
