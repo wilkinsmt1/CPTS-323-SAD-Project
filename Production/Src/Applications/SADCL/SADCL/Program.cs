@@ -85,7 +85,19 @@ namespace SADCL
                 else if (command.StartsWith("LOAD"))
                 {
                     var values = command.Split(delimiterChar);
-                    
+                    try
+                    {
+                        if (values.Length < 2)
+                        {
+                            throw new Exception("Errorargh! Ye din't specify a file!");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                        Console.WriteLine(ex.Message);
+                        return;
+                    }
                     filePath = values[1];
                     var fileExists = System.IO.File.Exists(filePath);
                     if (!fileExists)
@@ -100,41 +112,71 @@ namespace SADCL
                 }
                 else if (command.StartsWith("SCOUNDRELS"))
                 {
-                    iniReader.Scoundrels();
-                }
-                else if (command.StartsWith("FRIEND"))
-                {
-                    iniReader.Friends();
-                }
-                else if (command.StartsWith("KILL"))
-                {
-                    var values = command.Split(delimiterChar);
-                    targetName = values[1];
-                    bool friend = iniReader.isFriend(targetName);
-                    if (friend)
+                    if (iniReader == null)
                     {
-                        Console.WriteLine("Sorry Captain, we don’t permit friendly fire, yar");
+                        Console.WriteLine("Arrrggh! Ye din't load a file yet, you scallywag!");
                     }
                     else
                     {
-                        TargetManager targetManager = TargetManager.GetInstance();
-                        double[] phitheta = targetManager.getCoordinates(targetName);
-                        phi = phitheta[0];
-                        theta = phitheta[1];
-                        DCLauncher.MoveTo((phi*22.2), (theta*22.2));
-                        //Console.ReadLine();
-                        DCLauncher.Fire();
-                        
-                        targetManager.changeStatus(targetName);
+                        iniReader.Scoundrels();
                     }
-                    /* This command should check if the target specified is a friend
-                     * if it is a friend:
-                     * 1. it should move the turret relative to the coordinates
-                     * 2. it should then fire a missile.
-                     * 3. it should then remove the target from the target tracker
-                     * if it is a friend:
-                     * print: “Sorry Cap'tin, we don’t permit friendly fire, yargh!”
-                     */
+                }
+                else if (command.StartsWith("FRIEND"))
+                {
+                    if (iniReader == null)
+                    {
+                        Console.WriteLine("Arrrggh! Ye din't load a file yet, you scallywag!");
+                    }
+                    else
+                    {
+                        iniReader.Scoundrels();
+                    }
+                }
+                else if (command.StartsWith("KILL"))
+                {
+
+                    if (iniReader == null)
+                    {
+                        Console.WriteLine("Arrrggh! Ye din't load a file yet, you scallywag!");
+                    }
+                    else
+                    {
+
+                        var values = command.Split(delimiterChar);
+                        try
+                        {
+                            if (values.Length < 2)
+                            {
+                                throw new Exception("Errorargh! Ye din't specify a file!");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+
+                            Console.WriteLine(ex.Message);
+                            return;
+                        }
+                        targetName = values[1];
+                        bool friend = iniReader.isFriend(targetName);
+                        if (friend)
+                        {
+                            Console.WriteLine("Sorry Captain, we don’t permit friendly fire, yar");
+                        }
+                        else
+                        {
+                            TargetManager targetManager = TargetManager.GetInstance();
+                            double[] phitheta = targetManager.getCoordinates(targetName);
+                            phi = phitheta[0];
+                            theta = phitheta[1];
+                            DCLauncher.MoveTo((phi * 22.2), (theta * 22.2));
+                            //Console.ReadLine();
+                            DCLauncher.Fire();
+
+                            targetManager.changeStatus(targetName);
+                        }
+                    }
+                    
+
                 }
                 else if (command.StartsWith("STATUS"))
                 {
