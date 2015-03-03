@@ -18,5 +18,7 @@ namespace SAD.Core.Data
         public int FlashRate { get; set; }
         public int SpawnRate { get; set; }
         public bool CanSwapSidesWhenHit { get; set; }
+        public string Status { get; set; }
+
     }
 }

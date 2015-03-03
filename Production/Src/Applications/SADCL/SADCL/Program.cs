@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SAD.Core.Data;
 using SAD.Core.Devices;
 using SAD.Core.IO;
 
@@ -12,12 +13,13 @@ namespace SADCL
 {
     class Program
     {
-        static void Main(int argc, string[] args) //added argc, for number of arguments in cmd line
+        static void Main(string[] args) //added argc, for number of arguments in cmd line
         {
             string filePath = "";
             string command = "";
             double phi = 0.0;
             double theta = 0.0;
+            string targetName = "";
             char[] delimiterChar = { ' ' };
             var DCLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
             FileReader iniReader = null;
@@ -106,6 +108,20 @@ namespace SADCL
                 }
                 else if (command.StartsWith("KILL"))
                 {
+                    var values = command.Split(delimiterChar);
+                    targetName = values[1];
+                    bool friend = iniReader.isFriend(targetName);
+                    if (friend)
+                    {
+                        Console.WriteLine("Sorry Captain, we don’t permit friendly fire, yar");
+                    }
+                    else
+                    {
+                        DCLauncher.MoveTo(200, 600);
+                        DCLauncher.Fire();
+                        TargetManager targetManager = TargetManager.GetInstance();
+                        targetManager.changeStatus(targetName);
+                    }
                     /* This command should check if the target specified is a friend
                      * if it is a friend:
                      * 1. it should move the turret relative to the coordinates

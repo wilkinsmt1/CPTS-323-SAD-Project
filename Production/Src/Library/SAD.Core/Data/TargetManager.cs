@@ -17,6 +17,8 @@ namespace SAD.Core.Data
     public class TargetManager
     {
         private static TargetManager targetListInstance; //Private constant instance
+        public List<Targets> TargetList { get; set; }
+        private string TargetStatus;
 
         private TargetManager() //Private constructor
         {
@@ -34,10 +36,11 @@ namespace SAD.Core.Data
         //if TargetListSingleton ?? (TargetListSingleton = new TargetListSingleton());
         //return TargetListSingleton;  //new instance assigned, and returned
         }
-        public void WriteToConsole(string list)
+
+        public void changeStatus(string targetName)
         {
-            Console.WriteLine(list);
-        } 
-      
-    };
+            Targets result = TargetList.Find(i => i.TargetName.ToUpper() == targetName);
+            result.Status = "He's dead jim.";
+        }
+    }
 }

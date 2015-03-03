@@ -18,7 +18,7 @@ namespace SAD.Core.IO
         public abstract void print();
         public abstract void printTarget(string inputName);
         public abstract void convert(string fileName);
-        public abstract void isFriend(string inputName);
+        public abstract bool isFriend(string inputName);
         public abstract void printSort();
         public abstract void Scoundrels();
 
@@ -35,7 +35,10 @@ namespace SAD.Core.IO
     //derived INIReader class
     public class INIReader : FileReader
     {
-        private List<Targets> targetList = new List<Targets>();   //list to hold target info
+        private TargetManager targetManager = TargetManager.GetInstance();
+        
+
+        //private List<Targets> targetList = new List<Targets>();   //list to hold target info
         private string filePassedIn;
         private string[] names = { "0", "0", "0" };
         private string[] xVal = { "0", "0", "0" };
@@ -49,6 +52,9 @@ namespace SAD.Core.IO
 
         public INIReader(string filePath) // Start of constructor
         {
+            string status = "Still at Large";
+            targetManager.TargetList = new List<Targets>();
+
             filePath = filePath.ToLower();
             filePassedIn = filePath;
 
@@ -163,7 +169,7 @@ namespace SAD.Core.IO
                     }
                     else //when line is a tag, put all the data for the previous target into a Targets object.
                     {
-                        targetList.Add(new Targets() // add all the extracted data to the list
+                        targetManager.TargetList.Add(new Targets() // add all the extracted data to the list
                         {
                             TargetName = names[1],
                             X = double.Parse(xVal[1]), //have to do this all at the same time
@@ -173,13 +179,14 @@ namespace SAD.Core.IO
                             Points = int.Parse(pVal[1]),
                             FlashRate = int.Parse(flashVal[1]),
                             SpawnRate = int.Parse(spawnVal[1]),
-                            CanSwapSidesWhenHit = Convert.ToBoolean(swapVal[1])
+                            CanSwapSidesWhenHit = Convert.ToBoolean(swapVal[1]),
+                            Status = status
                         });
                     }
                 }
             }
             //when done reading file we still have to add the last target
-            targetList.Add(new Targets()
+            targetManager.TargetList.Add(new Targets()
             {
                 TargetName = names[1],
                 X = double.Parse(xVal[1]),
@@ -189,13 +196,14 @@ namespace SAD.Core.IO
                 Points = int.Parse(pVal[1]),
                 FlashRate = int.Parse(flashVal[1]),
                 SpawnRate = int.Parse(spawnVal[1]),
-                CanSwapSidesWhenHit = Convert.ToBoolean(swapVal[1])
+                CanSwapSidesWhenHit = Convert.ToBoolean(swapVal[1]),
+                Status = status
             });
         } //end of constructor
         public override void print()
         {
             Console.WriteLine("Target Names from the file:");
-            foreach (Targets targetname in targetList) //iterate through the list
+            foreach (Targets targetname in targetManager.TargetList) //iterate through the list
             {
                 string name = targetname.TargetName;
                 Console.WriteLine(name);
@@ -206,7 +214,7 @@ namespace SAD.Core.IO
         public override void printTarget(string inputName)
         {
             //target name came from main in upper case, so it has to be converted to upper case
-            Targets result = targetList.Find(i => i.TargetName.ToUpper() == inputName);
+            Targets result = targetManager.TargetList.Find(i => i.TargetName.ToUpper() == inputName);
             if (result == null) // if it did not find a match
             {
                 Console.WriteLine("Target does not exist.");
@@ -233,27 +241,24 @@ namespace SAD.Core.IO
                 Console.WriteLine("CanSwapSidesWhenHit=" + swapVal);
             }
         }
-        public override void isFriend(string inputName)
+        public override bool isFriend(string inputName)
         {
             //target name came from main in upper case, so it has to be converted to upper case
-            Targets result = targetList.Find(i => i.TargetName.ToUpper() == inputName);
-            if (result == null) // if it did not find a match
+            Targets result = targetManager.TargetList.Find(i => i.TargetName.ToUpper() == inputName);
+
+            try
             {
-                Console.WriteLine("Target does not exist.");
-            }
-            else
-            {
-                if (result.IsFriend == true)
+                if (result == null) // if it did not find a match
                 {
-                    Console.WriteLine("Aye Captain!");
-                }
-                else
-                {
-                    Console.WriteLine("Nay, Scallywag!");
+                    throw new Exception("Argh! you didn't enter a valid target!");
                 }
             }
-
-
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Environment.Exit(1);
+            }
+            return result.IsFriend;
         }
         public override void convert(string fileName)
         {   //the fileName came from main in uppercase, you probably would rather it lower case
@@ -303,7 +308,7 @@ namespace SAD.Core.IO
         }
         public override void printSort()
         {   //create an ordered list
-            var orderedList = targetList.OrderBy(targetname => targetname.TargetName).ToList();
+            var orderedList = targetManager.TargetList.OrderBy(targetname => targetname.TargetName).ToList();
             foreach (Targets targetname in orderedList) //iterate through the list
             {
                 string name = targetname.TargetName; //print names
@@ -314,7 +319,7 @@ namespace SAD.Core.IO
 
         public override void Scoundrels()
         {
-            foreach (var targets in targetList) //iterate through the list
+            foreach (var targets in targetManager.TargetList) //iterate through the list
             {
                 if (!targets.IsFriend)
                 {
@@ -323,20 +328,21 @@ namespace SAD.Core.IO
                     double yVal = targets.Y;
                     double zVal = targets.Z;
                     int pVal = targets.Points;
+                    string status = targets.Status;
                     Console.WriteLine("Target: {0}", nVal);
                     Console.WriteLine("Friend: Argh! No He be a dirty scoundrel with a clever disguise!");
                     Console.WriteLine("Position: x={0}, y={1}, z={2}", xVal, yVal, zVal);
                     Console.WriteLine("Points: {0}", pVal);
                     //This should have a variable that keeps track if the kill command was used on it
                     //the value would be from the singleton method that keeps track of targets
-                    Console.WriteLine("Status: At Large\n");
+                    Console.WriteLine("Status: {0}", status);
                 }
             }
         }
 
         public override void Friends()
         {
-            foreach (var targets in targetList) //iterate through the list
+            foreach (var targets in targetManager.TargetList) //iterate through the list
             {
                 if (targets.IsFriend)
                 {
@@ -345,13 +351,14 @@ namespace SAD.Core.IO
                     double yVal = targets.Y;
                     double zVal = targets.Z;
                     int pVal = targets.Points;
+                    string status = targets.Status;
                     Console.WriteLine("Target: {0}", nVal);
                     Console.WriteLine("Friend: Argh! He be one o' the good guys!");
                     Console.WriteLine("Position: x={0}, y={1}, z={2}", xVal, yVal, zVal);
                     Console.WriteLine("Points: {0}", pVal);
                     //This should have a variable that keeps track if the kill command was used on it
                     //the value would be from the singleton method that keeps track of targets
-                    Console.WriteLine("Status: At Large\n");
+                    Console.WriteLine("Status: {0}", status);
                 }
             }
         }
