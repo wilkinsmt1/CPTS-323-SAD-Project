@@ -7,12 +7,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using SAD.Core.Devices;
 using SAD.Core.IO;
+using SAD.Core.Data; //testing
+
+//if running from cmd line, need 3 args (program name, theta, phi). 
+//if running from windows console, need 2 args (phi, theta; then set 3rd value to zero)
+//theta (left/right) must be between 0-3000. 
+//phi   (  up/down ) must be between 0-480
+//it seems to not be accurate over time, and is not linear, but has some curve(s) in the graph
+//also, calibrating more often could help, depending on how far away the targets are. 
+//The ML seems to have errors occasionally, and goes to completely wrong coordinates.
 
 namespace SADCL
 {
     class Program
     {
-        static void Main(int argc, string[] args) //added argc, for number of arguments in cmd line
+        static void Main(string[] args) //added argc, for number of arguments in cmd line
         {
             string filePath = "";
             string command = "";
@@ -20,9 +29,20 @@ namespace SADCL
             double theta = 0.0;
             char[] delimiterChar = { ' ' };
             var DCLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //Targets tgt;
+            //bool friendly = tgt.GetType();
+
+            TargetPositioning tp = new TargetPositioning();
+            Console.WriteLine(tp.GetNewTheta(1, 2, 3));
+            Console.WriteLine(tp.GetNewTheta(1, 2, 3)); 
+
             FileReader iniReader = null;
             Console.WriteLine("The system has loaded.");
             Console.WriteLine("Argh! Ready ta fire Captain! Argh! Argghh! Arggggghhhhh!");
+            Console.WriteLine("Your Options are FIRE, MOVE <0-480> <0-3000> <0>, MOVEBY, EXIT, Arrggh! \n");
+            Console.WriteLine("RELOAD, SCOUNDRELS, FRIEND, KILL, STATUS, \n");
+            Console.WriteLine("OR would YE rather WALK the PLANK? Argghhh!");
+            
 
             while (command.ToUpper() != "EXIT")
             {
@@ -38,7 +58,7 @@ namespace SADCL
                     var values = command.Split(delimiterChar);
                     try
                     {
-                        if (values.Length < 3)
+                        if (values.Length < 3) 
                         {
                             throw new Exception("Errorargggghh!! Ye di'not enter a valid phi or theta");
                         }
@@ -50,7 +70,7 @@ namespace SADCL
                         Console.WriteLine(ex);
                         return;
                     }
-                    phi = Convert.ToDouble(values[1]);
+                    phi = Convert.ToDouble(values[1]); 
                     theta = Convert.ToDouble(values[2]);
                     DCLauncher.MoveTo(phi,theta);
                 }
