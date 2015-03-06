@@ -50,7 +50,7 @@ namespace SADCL
                     {
 
                         Console.WriteLine(ex);
-                        return;
+                        
                     }
                     phi = Convert.ToDouble(values[1]);
                     theta = Convert.ToDouble(values[2]);
@@ -71,7 +71,7 @@ namespace SADCL
                     {
 
                         Console.WriteLine(ex);
-                        return;
+                        
                     }
 
                     phi = Convert.ToDouble(values[1]);
@@ -96,7 +96,7 @@ namespace SADCL
                     {
                         
                         Console.WriteLine(ex.Message);
-                        return;
+                        
                     }
                     filePath = values[1];
                     var fileExists = System.IO.File.Exists(filePath);
@@ -129,7 +129,7 @@ namespace SADCL
                     }
                     else
                     {
-                        iniReader.Scoundrels();
+                        iniReader.Friends();
                     }
                 }
                 else if (command.StartsWith("KILL"))
@@ -154,7 +154,7 @@ namespace SADCL
                         {
 
                             Console.WriteLine(ex.Message);
-                            return;
+                            
                         }
                         targetName = values[1];
                         bool friend = iniReader.isFriend(targetName);

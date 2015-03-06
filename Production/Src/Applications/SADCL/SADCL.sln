@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{992A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAD.Core", "..\..\Library\SAD.Core\SAD.Core.csproj", "{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "SAD.Models", "..\..\Model\SAD.Models\SAD.Models.modelproj", "{65F55DAB-A3D4-4117-9776-817B443F7399}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,18 @@ Global
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x64.ActiveCfg = Release|x64
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x64.Build.0 = Release|x64
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x86.ActiveCfg = Release|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|x64.ActiveCfg = Release|Any CPU
+		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
