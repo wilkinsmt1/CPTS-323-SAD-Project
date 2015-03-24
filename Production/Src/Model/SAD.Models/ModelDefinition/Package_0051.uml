@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="dd6a0e4f-7317-425d-9a8b-87ff82fb0591"
+  name="SADCL"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="45460ed6-0d9f-42c9-9d78-fde8f9a9d88b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSADCL"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="a4901ce9-644a-4dab-b689-2ddc8a84aedf"
+        name="Program"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="2f8795dc-7869-42b3-88cb-85d92216e9e7"
+            handle="viewcode://./CodeSchema_Class?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMike Wilkins%2FDocuments%2Fcbc%2Fwsu%2Fsemester3%2FCPTS-323-SAD-Project%2FProduction%2FSrc%2FApplications%2FSADCL%2FSADCL%2Fbin%2Fx86%2FDebug%2FSADCL.exe&quot; Namespace%3DSADCL Type%3DProgram"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ea5239f5-3de0-45a3-9f0f-f44b1a1aae4a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b31a60f-19ef-48ef-b964-7367b8fa16e8">
+                <propertyInstance
+                  Id="5bba1884-f28c-4252-a229-96ba55bad25b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e0adf96-a46f-495f-9002-b7571fbfdd54">
+                <propertyInstance
+                  Id="d983911f-7f84-4100-93bd-c0e8c372ce41"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c972ccef-748d-48ea-a29a-97eb6c43f577">
+                <propertyInstance
+                  Id="0ecb0302-03d9-4495-bace-2616b55a122e"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f11d5222-5a3a-40ed-a263-b5a473377a2e">
+                <propertyInstance
+                  Id="948ba3b0-9a81-4bbb-b39a-bab0e50cfc9a"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e57f4fd0-8727-4621-a80c-1cf5f7bc1b84">
+                <propertyInstance
+                  Id="d57ac8c9-b9b4-426c-a268-ca6dd1dfc109"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="0736dcdc-aa64-4e35-91f9-05a5bc2293b9"
+            isDerived="false"
+            sourceEndRoleName="Program"
+            targetEndRoleName="IMissileLauncher"
+            isLeaf="false"
+            isAbstract="false">
+            <interfaceMoniker
+              Id="d81e7a3e-03ae-4296-8594-3f3e1987c9fd"
+              LastKnownName="IMissileLauncher"
+              LastKnownLocation="Package2_1754.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d3fa9afa-5540-4407-87b4-b427bfbee2ea"
+                  name="Program"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f01f0e8a-d97f-462f-a296-be0986de3d20"
+                  name="IMissileLauncher"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="1c965cad-b051-4f07-8c83-53389d52b522"
+            name="Main"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="c9e09ef4-1790-45e4-a2cf-d4bb58467125"
+                handle="viewcode://./CodeSchema_Method?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMike Wilkins%2FDocuments%2Fcbc%2Fwsu%2Fsemester3%2FCPTS-323-SAD-Project%2FProduction%2FSrc%2FApplications%2FSADCL%2FSADCL%2Fbin%2Fx86%2FDebug%2FSADCL.exe&quot; Namespace%3DSADCL Type%3DProgram Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="cbacbb8d-3ec7-4367-8cf7-b8cf6b64f9c9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70ebe025-79f6-4a9d-8801-6caef4ad29f4">
+                    <propertyInstance
+                      Id="a7aa55ea-8fca-42e1-8d54-c2dee4026329"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8431dcc4-8412-40e8-b4fc-d4fdf8c17450">
+                    <propertyInstance
+                      Id="c1d27dc6-08b8-4fd3-b773-d6b3699bbc5b"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3af264c4-8313-4498-8bb5-f47b6bb67993">
+                    <propertyInstance
+                      Id="021c2e33-06e5-4026-8437-81cc223829a9"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03c25b1e-92c5-468e-818c-e57ae3260f50">
+                    <propertyInstance
+                      Id="f3d30a51-4876-4c95-9544-abc8e2e2b6c6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="16c92b58-d637-4e74-b238-9b6afa6b5e6f">
+                    <propertyInstance
+                      Id="f0d5f4f5-e184-4f91-9942-9153512e11e8"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fdf08dd4-e93c-44b4-a2bf-3486da92013a">
+                    <propertyInstance
+                      Id="a192a14b-9888-4006-a0d3-7750e4011341"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3b219e4a-e6e2-47ea-8ac5-c0b96e031d07"
+                  name="args"
+                  direction="In"
+                  isOrdered="true">
+                  <referencesInternal>
+                    <reference
+                      Id="a9a9af46-4e26-4125-962a-a3fe2841e87b"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMike Wilkins%2FDocuments%2Fcbc%2Fwsu%2Fsemester3%2FCPTS-323-SAD-Project%2FProduction%2FSrc%2FApplications%2FSADCL%2FSADCL%2Fbin%2Fx86%2FDebug%2FSADCL.exe&quot; Namespace%3DSADCL Type%3DProgram Member%3D(Name%3DMain OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.5%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3D(Name%3DString ArrayRank%3D1 ParentType%3DString))]) ParameterIdentifier%3Dargs"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <lowerValueInternal>
+                    <literalString
+                      Id="cb7db300-aff6-4c9b-9f50-e62779bdcbad"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="3c7cfebb-ad83-45e6-9170-a9ca1714ef8a"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="SAD.Models.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -78,11 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Data\TargetManager.cs" />
     <Compile Include="Data\TargetPositioning.cs" />
     <Compile Include="Data\Targets.cs" />
     <Compile Include="Devices\MissileLauncher.cs" />
+    <Compile Include="Devices\SADFactory.cs" />
     <Compile Include="Devices\SADMissileLaunchers.cs" />
     <Compile Include="IO\FileReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

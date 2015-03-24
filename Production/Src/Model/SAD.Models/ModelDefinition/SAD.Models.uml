@@ -16,6 +16,12 @@
         Id="532ea607-fb19-44b8-8502-3351b05452be"
         name="StandardProfileL3" />
     </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="5faa3c99-fedb-478b-9fda-c21ef6249fdd">
+      <profileInstance
+        Id="a73e1c4a-72b4-4111-85af-91c25feb6179"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
@@ -32,6 +38,36 @@
         name="Interface1"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="39b785ec-a51e-4d93-89e9-551e8d7df5d0"
+        LastKnownName="SAD"
+        LastKnownLocation="Package_1754.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="cd7741b6-df87-4db7-9ac4-52a4cdebafae"
+        LastKnownName="System"
+        LastKnownLocation="Package3_1754.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2229f620-4efd-49d9-ba27-405509d99b73"
+        LastKnownName="BuildDefender"
+        LastKnownLocation="Package_1755.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e003342f-8dc7-435a-b19b-2d4f0155c378"
+        LastKnownName="UsbLibrary"
+        LastKnownLocation="Package_1756.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="dd6a0e4f-7317-425d-9a8b-87ff82fb0591"
+        LastKnownName="SADCL"
+        LastKnownLocation="Package_0051.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SAD.Core.Devices;
 using SAD.Core.IO;
 
-namespace SADCL
+namespace SAD.Core.Devices
 {
     //Factory that creates Missile Launchers
     public sealed class MLFactory
