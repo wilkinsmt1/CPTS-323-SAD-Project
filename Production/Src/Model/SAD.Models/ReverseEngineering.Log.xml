@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-03-24T01:07:09" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD' -  (Package)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core' -  (Package)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data' -  (Package)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Medium" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets' -  (Class)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::CanSwapSidesWhenHit' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::FlashRate' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::IsFriend' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::Points' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::SpawnRate' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::Status' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::TargetName' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::Targets' -  (Operation)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::X' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::Y' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::SAD::Core::Data::Targets::Z' -  (Property)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::System' -  (Package)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SAD.Models::System::Double' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SAD.Models::SAD::Core::Data::Targets to SAD.Models::System::Double (Association)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SAD.Models::SAD::Core::Data::Targets to SAD.Models::System::Double (Association)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SAD.Models::SAD::Core::Data::Targets to SAD.Models::System::Double (Association)" />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="High" Text="(1) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-03-24T01:07:10" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>
