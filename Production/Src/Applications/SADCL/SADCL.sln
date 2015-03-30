@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAD.Core", "..\..\Library\S
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "SAD.Models", "..\..\Model\SAD.Models\SAD.Models.modelproj", "{65F55DAB-A3D4-4117-9776-817B443F7399}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SADGUI", "..\SADGUI\SADGUI.csproj", "{EB6571F7-20BE-4E60-A3A7-0C44967D7995}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,18 @@ Global
 		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|x64.ActiveCfg = Release|Any CPU
 		{65F55DAB-A3D4-4117-9776-817B443F7399}.Release|x86.ActiveCfg = Release|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Release|x64.ActiveCfg = Release|Any CPU
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,5 +95,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{66A02E25-B64C-4F96-88F6-E2742230035E} = {1C2DB9DA-927D-41DA-B1AF-058A1EFDE639}
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD} = {1EFCDA2D-2718-411C-83A2-47E3FC4E69FC}
+		{EB6571F7-20BE-4E60-A3A7-0C44967D7995} = {1C2DB9DA-927D-41DA-B1AF-058A1EFDE639}
 	EndGlobalSection
 EndGlobal
