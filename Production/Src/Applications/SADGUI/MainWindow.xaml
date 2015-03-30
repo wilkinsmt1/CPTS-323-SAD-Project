@@ -81,7 +81,7 @@
             <Button Content="Live Video"
                     Margin="10,5,310,7" 
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Center" Height="22" Width="80"
+                    VerticalAlignment="Center" Height="22" Width="80" Click="Button_Click"
                     />
             <!-- Position Text -->
             <TextBlock Grid.Column="0"
@@ -90,10 +90,9 @@
             <!-- Position Coordinate Box -->
             <TextBox Margin="217,5,20,6"/>
             <!-- Video Screen -->
-            <ListBox
+            <Image
+                Name="PictureBox"
                 Margin="71,5,75,5"
-                BorderThickness="2"
-                BorderBrush="Black"
                 Grid.Row="1" />
             <!-- Positioning Buttons -->
             <Button Content="Right" 
