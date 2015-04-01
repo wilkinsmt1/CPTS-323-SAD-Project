@@ -12,12 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using Emgu.CV;
-using Emgu.CV.Structure;
-
 
 namespace SADGUI
 {
@@ -29,8 +23,6 @@ namespace SADGUI
         public MainWindow()
         {
             InitializeComponent();
-            
         }
-
     }
 }

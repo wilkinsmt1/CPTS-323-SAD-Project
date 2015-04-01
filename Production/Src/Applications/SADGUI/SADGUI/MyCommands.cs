@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace SADGUI
 {
-    class MyCommands :ICommand
+    class MyCommands : ICommand
     {
         private Action m_action;
 

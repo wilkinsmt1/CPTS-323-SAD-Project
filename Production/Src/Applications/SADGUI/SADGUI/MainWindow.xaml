@@ -86,7 +86,8 @@
                     Command="{Binding GetImageCommand}"
                     Margin="10,5,310,7" 
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Center" Height="22" Width="80"/>
+                    VerticalAlignment="Center" Height="22" Width="80" 
+                    />
             <!-- Position Text -->
             <TextBlock Grid.Column="0"
                        Text="Position:"
@@ -96,7 +97,7 @@
             <!-- Video Screen -->
             <Image
                 Name="PictureBox"
-                Source="{Binding SourceImage}"
+                Source="{Binding CameraImage}"
                 Margin="71,5,75,5"
                 Grid.Row="1" />
             <!-- Positioning Buttons -->
