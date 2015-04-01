@@ -10,6 +10,8 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Emgu.CV;
+using SAD.Core.Devices;
+using SAD.Core.IO;
 
 namespace SADGUI
 {
@@ -21,6 +23,7 @@ namespace SADGUI
         public MainViewModel()
         {
             GetImageCommand = new MyCommands(GetImage);
+            LoadTargetsFromFileCommand = new MyCommands(LoadTargetsFromFile);
         }
 
         private void GetImage()
@@ -75,7 +78,19 @@ namespace SADGUI
                 OnPropertyChanged();
             }
         }
+        public ICommand LoadTargetsFromFileCommand { get; set; }
         public ICommand GetImageCommand{ get; set; }
+
+        private void LoadTargetsFromFile()
+        {
+            var openFileDialog = new Ookii.Dialogs.Wpf.VistaOpenFileDialog();
+            var worked = openFileDialog.ShowDialog();
+            if (worked == true)
+            {
+                MessageBox.Show("We loaded: " + openFileDialog.FileName);
+                var iniReader = FRFactory.CreateReader(FRType.INIReader, openFileDialog.FileName);
+            }
+        }
     }
 
     public abstract class ViewModelBase : INotifyPropertyChanged
