@@ -10,6 +10,10 @@
     <Window.DataContext>
         <sadgui:MainViewModel/>
     </Window.DataContext>
+    <!--Added background color but we can change it-->
+    <Window.Background>
+        <SolidColorBrush>LightSkyBlue</SolidColorBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
@@ -33,11 +37,10 @@
                        Margin="3"
                        VerticalAlignment="Center"/>
             <!-- Launcher Select -->
-            <ComboBox Text="Launcher"
-
+            <ComboBox x:Name="Launcher"
                 Margin="236,5,10,5" >
                 <ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
-                <ComboBoxItem>Dream Cheeky</ComboBoxItem>
+                <ComboBoxItem >Dream Cheeky</ComboBoxItem>
                 <ComboBoxItem>Mock</ComboBoxItem>
             </ComboBox>
             <!-- Missile Box -->
