@@ -161,7 +161,8 @@ namespace SAD.Core.IO
                             FlashRate = int.Parse(flashValue[1]),
                             SpawnRate = int.Parse(spawnValue[1]),
                             CanSwapSidesWhenHit = Convert.ToBoolean(swapValue[1]),
-                            Status = "Still At Large"
+                            Status = "Still At Large",
+                            IsAlive = true
                         });
                     }
                 }
@@ -178,7 +179,8 @@ namespace SAD.Core.IO
                 FlashRate = int.Parse(flashValue[1]),
                 SpawnRate = int.Parse(spawnValue[1]),
                 CanSwapSidesWhenHit = Convert.ToBoolean(swapValue[1]),
-                Status = "Still At Large"
+                Status = "Still At Large",
+                IsAlive = true
             });
 
         }

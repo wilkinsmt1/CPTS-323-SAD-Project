@@ -19,6 +19,7 @@ namespace SAD.Core.Data
         public int SpawnRate { get; set; }
         public bool CanSwapSidesWhenHit { get; set; }
         public string Status { get; set; }
+        public bool IsAlive { get; set; }
 
     }
 }
