@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace SAD.Core.IO
         }
         public override void ExtractTargetData()
         {
-            targetManager.TargetList = new List<Targets>();
+            targetManager.TargetList = new ObservableCollection<Targets>();
             string[] lines = System.IO.File.ReadAllLines(filePath);
             char[] delimiterChar = { '=', '#' };
             foreach (string line in lines)
