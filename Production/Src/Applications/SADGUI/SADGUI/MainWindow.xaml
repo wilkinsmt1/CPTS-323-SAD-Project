@@ -42,6 +42,7 @@
             </ComboBox>
             <!-- Missile Box -->
             <TextBox Margin="108,5,241,5"
+                      Text="{Binding MissileCount}"
                      Grid.Column="1"/>
             <!-- Target List -->
             <ListBox

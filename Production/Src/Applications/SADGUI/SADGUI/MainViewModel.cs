@@ -21,6 +21,7 @@ namespace SADGUI
         private Capture m_capture;
         private IMissileLauncher m_missileLauncher;
         private int move;
+        private string m_missileCount;
 
         public MainViewModel()
         {
@@ -85,6 +86,26 @@ namespace SADGUI
                 m_cameraImage = value;
                 OnPropertyChanged();
             }
+        }
+        public string MissileCount
+        {
+            get { return m_missileCount; }
+            set
+            {
+                m_missileCount = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private void GetCount()
+        {
+            string propertyName = "MissileCount";
+            Object MC;
+            string SMC;
+
+            MC = m_missileLauncher.GetType().GetProperty(propertyName).GetValue(m_missileLauncher, null);
+            SMC = MC.ToString();
+            MissileCount = SMC;
         }
         public ICommand LoadTargetsFromFileCommand { get; set; }
         public ICommand GetImageCommand{ get; set; }
@@ -157,6 +178,7 @@ namespace SADGUI
             //if it is a DreamCheeky, or the above statement executed Fire a missile
             //m_missileLauncher.MoveTo(0,0);
             m_missileLauncher.Fire();
+            GetCount();
 
         }
     }
