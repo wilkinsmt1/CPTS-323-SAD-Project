@@ -107,19 +107,24 @@
                 Grid.Row="1" />
             <!-- Positioning Buttons -->
             <Button Content="Right" 
-                    Margin="270,10,75,10" 
+                    Margin="270,10,75,10"
+                    Command="{Binding MoveRightCommand}"
                     Grid.Row="3" RenderTransformOrigin="0.255,0.5" />
             <Button Content="Left" 
                     Margin="71,10,274,10" 
+                    Command="{Binding MoveLeftCommand}"
                     Grid.Row="3" />
             <Button Content="Up" 
+                    Command="{Binding MoveUpCommand}" 
                     Margin="170,10,175,10" 
                     Grid.Row="2" />
             <Button Content="Down" 
+                    Command="{Binding MoveDownCommand}"
                     Margin="170,10,175,10" 
                     Grid.Row="4" />
             <!-- Fire and Kill -->
             <Button Content="Fire" 
+                    Command="{Binding FireCommand}"
                     Margin="201,10,144,10" 
                     Grid.Row="3" />
             <Button Content="Kill" 
