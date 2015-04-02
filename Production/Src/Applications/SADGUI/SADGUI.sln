@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{4C5E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAD.Core", "..\..\Library\SAD.Core\SAD.Core.csproj", "{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAD.Core.Test", "..\..\..\..\..\..\..\Desktop\cpts323\323sadProj1\CPTS-323-SAD-Project\Production\Src\Applications\SADCL\SAD.Core.Test\SAD.Core.Test.csproj", "{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,14 @@ Global
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x64.Build.0 = Release|x64
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x86.ActiveCfg = Release|x86
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x86.Build.0 = Release|x86
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Release|x64.ActiveCfg = Release|Any CPU
+		{AA5BAEEC-D911-4B04-A1F0-E01416BD5F07}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
