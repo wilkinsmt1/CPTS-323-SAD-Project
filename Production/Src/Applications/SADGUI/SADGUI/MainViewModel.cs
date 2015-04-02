@@ -30,6 +30,7 @@ namespace SADGUI
         {
             if (m_capture == null)
             {
+                //capture video/image: need try catch here
                 m_capture = new Capture(0);
             }
             var image = m_capture.QueryFrame();

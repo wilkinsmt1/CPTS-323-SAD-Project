@@ -4,7 +4,7 @@
         xmlns:sadgui="clr-namespace:SADGUI"
         Title="Scorched Earth Destroyers" 
         Height="380" 
-        Width="800.312" 
+        Width="985.859" 
         HorizontalAlignment="Right" 
         VerticalAlignment="Bottom">
     <Window.DataContext>
@@ -46,7 +46,7 @@
                 BorderThickness="2"
                 BorderBrush="Black"
                 Grid.Row="1"
-                HorizontalContentAlignment="Stretch" Grid.RowSpan="2"
+                HorizontalContentAlignment="Stretch" Grid.RowSpan="2" SelectionChanged="ListBox_SelectionChanged"
                 >
 
             </ListBox>
@@ -66,14 +66,13 @@
                 <Button Grid.Column="1"
                         Content="Load Targets"
                         Command="{Binding LoadTargetsFromFileCommand}"
-                        Margin="5"/>
-                <Button Grid.Column="3" Content="Remove Target" Margin="5" Command="{Binding RemoveTargetCommand}"/>
+                        Margin="5,5,5,0" Height="45" VerticalAlignment="Top"/>
+                <Button Grid.Column="3" Content="Remove Target" Margin="5" Command="{Binding RemoveTargetCommand}" Click="Button_Click"/>
                 <Button Grid.Column="4" Content="Clear Targets" Margin="5" Command="{Binding ClearTargetsCommand}"/>
             </Grid>
         </Grid>
         <Grid x:Name="Video"
-                Grid.Column="1"
-                Grid.Row="1">
+                Grid.Column="1" Margin="0,0,110,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" MinHeight="34"/>
                 <RowDefinition Height="13*"/>
@@ -120,6 +119,9 @@
             <Button Content="Kill" 
                     Margin="141,10,204,10" 
                     Grid.Row="3" />
+            <Button Content="Target Display" HorizontalAlignment="Left" Margin="291,12,0,0" Grid.Row="4" VerticalAlignment="Top" Width="93" Click="Button_Click_1" RenderTransformOrigin="0.636,0.512"/>
+            <TextBox Name="TextBox1" Height="332" Margin="397,7,-113,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" RenderTransformOrigin="3.207,-3.484" Grid.RowSpan="5" TextChanged="TextBox1_TextChanged"/>
+
         </Grid>
     </Grid>
 </Window>
