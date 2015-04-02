@@ -33,8 +33,13 @@
                        Margin="3"
                        VerticalAlignment="Center"/>
             <!-- Launcher Select -->
-            <ComboBox Text="Launcher" 
-                      Margin="236,5,10,5" />
+            <ComboBox Text="Launcher"
+
+                Margin="236,5,10,5" >
+                <ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
+                <ComboBoxItem>Dream Cheeky</ComboBoxItem>
+                <ComboBoxItem>Mock</ComboBoxItem>
+            </ComboBox>
             <!-- Missile Box -->
             <TextBox Margin="108,5,241,5"
                      Grid.Column="1"/>
