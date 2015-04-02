@@ -69,11 +69,11 @@
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0"
-                        Content="Add Target"
+                        Content="Load Server"
                         Command="{Binding AddTargetCommand}"
                         Margin="5"/>
                 <Button Grid.Column="1"
-                        Content="Load Targets"
+                        Content="Load File"
                         Command="{Binding LoadTargetsFromFileCommand}"
                         Margin="5"/>
                 <Button Grid.Column="3" Content="Remove Target" Margin="5" Command="{Binding RemoveTargetCommand}"/>
@@ -131,6 +131,8 @@
                     Command="{Binding FireCommand}"
                     Margin="201,10,144,10" 
                     Grid.Row="3" />
+            <!--After clicking this button, the ML will aim at the target and shoot, 
+            we might want to put it in the target listbox-->
             <Button Content="Kill" 
                     Margin="141,10,204,10" 
                     Grid.Row="3" />
