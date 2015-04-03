@@ -17,6 +17,7 @@ namespace SAD.Core.Data
 {
     public class TargetManager
     {
+        //int a;
         private static TargetManager targetListInstance; //Private constant instance
         public ObservableCollection<Targets> TargetList { get;  set; }
         //private string TargetStatus;
