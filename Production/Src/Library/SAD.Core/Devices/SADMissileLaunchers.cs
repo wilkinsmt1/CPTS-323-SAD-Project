@@ -104,7 +104,7 @@ namespace SAD.Core.Devices
 
         public void Reload()
         {
-            Console.WriteLine("Yaaarrrggghhh!!! I be realodin' the missiles right away cap'tin!");
+            //Console.WriteLine("Yaaarrrggghhh!!! I be realodin' the missiles right away cap'tin!");
             MissileCount = TotalMissiles;
         }
 

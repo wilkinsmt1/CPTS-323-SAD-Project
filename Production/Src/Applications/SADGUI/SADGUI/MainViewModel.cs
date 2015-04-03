@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Emgu.CV;
+using Emgu.CV.Features2D;
 using SAD.Core.Devices;
 using SAD.Core.IO;
 
@@ -32,6 +33,9 @@ namespace SADGUI
             MoveUpCommand = new MyCommands(MoveUp);
             MoveDownCommand = new MyCommands(MoveDown);
             FireCommand = new MyCommands(Fire);
+            ReloadMissilesCommand = new MyCommands(ReloadMissiles);
+            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            GetCount();
             move = 5;
         }
 
@@ -114,6 +118,9 @@ namespace SADGUI
         public ICommand MoveUpCommand { get; set; }
         public ICommand MoveDownCommand { get; set; }
         public ICommand FireCommand { get; set; }
+        public ICommand ReloadMissilesCommand { get; set; }
+
+        void Foo(){}
         private void LoadTargetsFromFile()
         {
             var openFileDialog = new Ookii.Dialogs.Wpf.VistaOpenFileDialog();
@@ -125,60 +132,101 @@ namespace SADGUI
             }
         }
 
+        private void ReloadMissiles()
+        {
+            m_missileLauncher.Reload();
+            GetCount();
+        }
         private void MoveRight()
         {
-            if (!(m_missileLauncher is DreamCheeky)) //if m_missilelauncher is not a DreamCheeky
-            {                                        //set it to a new DreamCheeky
-                m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.MoveBy((0), (move * 22.2));
             }
-            //if it is a DreamCheeky, or the above statement executed move 5 degrees to the right
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Moving Mock launcher to the right by " + move + " degrees.");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
             //m_missileLauncher.MoveTo(0,0);
-            m_missileLauncher.MoveBy((0), (move * 22.2));
-                
         }
         private void MoveLeft()
         {
-            if (!(m_missileLauncher is DreamCheeky)) //if m_missilelauncher is not a DreamCheeky
-            {                                        //set it to a new DreamCheeky
-                m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.MoveBy((0), ((move * -1) * 22.2));
             }
-            //if it is a DreamCheeky, or the above statement executed move 5 degrees to the Left
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Moving Mock launcher to the left by " + move + " degrees.");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
             //m_missileLauncher.MoveTo(0,0);
-            m_missileLauncher.MoveBy((0), ((move*-1) * 22.2));
+            
 
         }
         private void MoveUp()
         {
-            if (!(m_missileLauncher is DreamCheeky)) //if m_missilelauncher is not a DreamCheeky
-            {                                        //set it to a new DreamCheeky
-                m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.MoveBy((move * 22.2), (0));
             }
-            //if it is a DreamCheeky, or the above statement executed move 5 degrees to the up
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Moving Mock launcher to the up by " + move + " degrees.");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
             //m_missileLauncher.MoveTo(0,0);
-            m_missileLauncher.MoveBy((move * 22.2), (0));
+            
 
         }
         private void MoveDown()
         {
-            if (!(m_missileLauncher is DreamCheeky)) //if m_missilelauncher is not a DreamCheeky
-            {                                        //set it to a new DreamCheeky
-                m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.MoveBy(((move * -1) * 22.2), (0));
             }
-            //if it is a DreamCheeky, or the above statement executed move 5 degrees to the down
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Moving Mock launcher to the down by " + move + " degrees.");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
             //m_missileLauncher.MoveTo(0,0);
-            m_missileLauncher.MoveBy(((move*-1) * 22.2), (0));
 
         }
         private void Fire()
         {
-            if (!(m_missileLauncher is DreamCheeky)) //if m_missilelauncher is not a DreamCheeky
-            {                                        //set it to a new DreamCheeky
-                m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //m_missileLauncher is already type DreamCheeky, call the Fire method
+            // and then get the missile count.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.Fire();
+                GetCount();
             }
-            //if it is a DreamCheeky, or the above statement executed Fire a missile
-            //m_missileLauncher.MoveTo(0,0);
-            m_missileLauncher.Fire();
-            GetCount();
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Firing ze missiles!");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
 
         }
     }
