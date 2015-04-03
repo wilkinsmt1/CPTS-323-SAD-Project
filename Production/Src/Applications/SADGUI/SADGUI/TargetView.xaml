@@ -7,15 +7,15 @@
              d:DesignHeight="200" d:DesignWidth="200">
     <Grid>
         <Border BorderThickness="2" BorderBrush="DarkRed" Margin="2">
-            <StackPanel>
+            <StackPanel >
                 <TextBlock Text="{Binding Target.TargetName, 
-                  StringFormat='Name = {0}'}" FontSize="12" />
+                  StringFormat='Name = {0} '}" FontSize="12"/>
                 <TextBlock Text="{Binding Target.IsFriend,
                     StringFormat='Friend = {0}'}" FontSize="12"/>
                 <TextBlock Text="{Binding Target.X,
                     StringFormat='X = {0}'}" FontSize="12"/>
                 <TextBlock Text="{Binding Target.Y,
-                    StringFormat='Y = {0}'}" FontSize="12"/>
+                    StringFormat='Y = {0}'}"  FontSize="12"/>
                 <TextBlock Text="{Binding Target.Z,
                     StringFormat='Z = {0}'}" FontSize="12"/>
                 <TextBlock Text="{Binding Target.Points,

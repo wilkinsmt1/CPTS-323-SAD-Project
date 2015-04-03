@@ -37,6 +37,7 @@ namespace SADGUI
             MoveUpCommand = new MyCommands(MoveUp);
             MoveDownCommand = new MyCommands(MoveDown);
             FireCommand = new MyCommands(Fire);
+            ClearTargetsCommand = new MyCommands(ClearTargets);
             ReloadMissilesCommand = new MyCommands(ReloadMissiles);
             TargetsCollection = new ObservableCollection<TargetViewModel>();
             m_targetManager  = TargetManager.GetInstance();
@@ -138,7 +139,12 @@ namespace SADGUI
         public ICommand ReloadMissilesCommand { get; set; }
         public ObservableCollection<TargetViewModel> TargetsCollection { get; private set; }
         public ObservableCollection<Targets> TargetsList { get; set; }
+        public ICommand ClearTargetsCommand { get; set; }
 
+        public void ClearTargets()
+        {
+            TargetsCollection.Clear();
+        }
         private void LoadTargetsFromFile()
         {
             var openFileDialog = new Ookii.Dialogs.Wpf.VistaOpenFileDialog();
@@ -168,8 +174,16 @@ namespace SADGUI
 
         private void ReloadMissiles()
         {
-            m_missileLauncher.Reload();
-            GetCount();
+            if (!(m_missileLauncher is DreamCheeky))
+            {
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
+            else
+            {
+                m_missileLauncher.Reload();
+                GetCount();
+            }
+
         }
         private void MoveRight()
         {

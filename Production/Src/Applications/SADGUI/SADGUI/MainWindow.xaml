@@ -74,6 +74,7 @@
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0"
+                        IsEnabled="False"
                         Content="Load Server"
                         Command="{Binding AddTargetCommand}"
                         Margin="5"/>
