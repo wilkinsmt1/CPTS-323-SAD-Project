@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="SADGUI.TargetView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200">
+    <Grid>
+        <Border BorderThickness="2" BorderBrush="DarkRed" Margin="2">
+            <StackPanel>
+                <TextBlock Text="{Binding Target.TargetName, 
+                  StringFormat='Name = {0}'}" FontSize="12" />
+                <TextBlock Text="{Binding Target.IsFriend,
+                    StringFormat='Friend = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.X,
+                    StringFormat='X = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.Y,
+                    StringFormat='Y = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.Z,
+                    StringFormat='Z = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.Points,
+                    StringFormat='Points = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.FlashRate,
+                    StringFormat='Flash Rate = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.SpawnRate,
+                    StringFormat='Spawn Rate = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.CanSwapSidesWhenHit,
+                    StringFormat='Can Swap Sides = {0}'}" FontSize="12"/>
+                <TextBlock Text="{Binding Target.IsAlive,
+                    StringFormat='Alive = {0}'}" FontSize="12"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

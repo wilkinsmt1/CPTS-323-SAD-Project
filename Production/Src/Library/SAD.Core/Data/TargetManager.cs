@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 /*
  * TargetListSingleton class:
  * To get an instance of this class, use this:  TargetListSingleton targetListSingletonInstance = TargetListSingleton.GetInstance();  
@@ -24,6 +23,11 @@ namespace SAD.Core.Data
 
         private TargetManager() //Private constructor
         {
+        }
+
+        public ObservableCollection<Targets> GetTargetList()
+        {
+            return TargetList;
         }
 
         public static TargetManager GetInstance() //Public method getInstance

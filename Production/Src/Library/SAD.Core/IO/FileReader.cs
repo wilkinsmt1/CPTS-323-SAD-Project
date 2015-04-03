@@ -184,6 +184,11 @@ namespace SAD.Core.IO
             });
 
         }
+
+        public ObservableCollection<Targets> GetTargetList()
+        {
+            return targetManager.TargetList;
+        }
         public void Print()
         {
             foreach (var targets in targetManager.TargetList) //iterate through the list

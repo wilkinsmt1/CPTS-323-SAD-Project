@@ -49,15 +49,20 @@
                      Grid.Column="1"/>
             <!-- Target List -->
             <ListBox
-                ItemsSource="{Binding Targets}"
+                ItemsSource="{Binding TargetsCollection}"
                 SelectedItem="{Binding SelectedTarget}"
                 Margin="5,5,5,10"
                 BorderThickness="2"
                 BorderBrush="Black"
                 Grid.Row="1"
                 HorizontalContentAlignment="Stretch" Grid.RowSpan="2"
+                
                 >
-
+                <ListBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type sadgui:TargetView}">
+                        <sadgui:TargetView/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
             <!-- Buttons for Editing Targets -->
             <Grid Grid.Row="3" IsSharedSizeScope="True" Margin="0,0,0,5">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Emgu.CV;
 using Emgu.CV.Features2D;
+using SAD.Core.Data;
 using SAD.Core.Devices;
 using SAD.Core.IO;
 
@@ -23,6 +25,8 @@ namespace SADGUI
         private IMissileLauncher m_missileLauncher;
         private int move;
         private string m_missileCount;
+        private TargetViewModel m_selectedTarget;
+        private TargetManager m_targetManager;
 
         public MainViewModel()
         {
@@ -34,8 +38,10 @@ namespace SADGUI
             MoveDownCommand = new MyCommands(MoveDown);
             FireCommand = new MyCommands(Fire);
             ReloadMissilesCommand = new MyCommands(ReloadMissiles);
-            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
-            GetCount();
+            TargetsCollection = new ObservableCollection<TargetViewModel>();
+            m_targetManager  = TargetManager.GetInstance();
+            //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //GetCount();
             move = 5;
         }
 
@@ -100,7 +106,18 @@ namespace SADGUI
                 OnPropertyChanged();
             }
         }
-
+        public TargetViewModel SelectedTarget
+        {
+            get
+            {
+                return m_selectedTarget;
+            }
+            set
+            {
+                m_selectedTarget = value;
+                OnPropertyChanged();
+            }
+        }
         private void GetCount()
         {
             string propertyName = "MissileCount";
@@ -119,8 +136,9 @@ namespace SADGUI
         public ICommand MoveDownCommand { get; set; }
         public ICommand FireCommand { get; set; }
         public ICommand ReloadMissilesCommand { get; set; }
+        public ObservableCollection<TargetViewModel> TargetsCollection { get; private set; }
+        public ObservableCollection<Targets> TargetsList { get; set; }
 
-        void Foo(){}
         private void LoadTargetsFromFile()
         {
             var openFileDialog = new Ookii.Dialogs.Wpf.VistaOpenFileDialog();
@@ -129,6 +147,22 @@ namespace SADGUI
             {
                 MessageBox.Show("We loaded: " + openFileDialog.FileName);
                 var iniReader = FRFactory.CreateReader(FRType.INIReader, openFileDialog.FileName);
+                TargetsList = m_targetManager.GetTargetList();
+                AddTarget();
+            }
+        }
+        private void AddTarget()
+        {
+            foreach (var target in TargetsList)
+            {
+                var newTargetViewModel = new TargetViewModel(target);
+                //var newTarget = new Target("newTarget", 0, 0, 0, true);
+                //// But we need to wrap this target with a view model so that 
+                //// the button (kill) will work 
+                //var newTargetViewModel = new TargetViewModel(newTarget);
+
+                TargetsCollection.Add(newTargetViewModel);
+                SelectedTarget = newTargetViewModel;
             }
         }
 
