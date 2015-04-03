@@ -24,7 +24,6 @@ namespace SAD.Core.Data
 
         private TargetManager() //Private constructor
         {
-            
         }
 
         public static TargetManager GetInstance() //Public method getInstance

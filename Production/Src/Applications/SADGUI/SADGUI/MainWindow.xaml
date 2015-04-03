@@ -4,12 +4,16 @@
         xmlns:sadgui="clr-namespace:SADGUI"
         Title="Scorched Earth Destroyers" 
         Height="380" 
-        Width="1037.812" 
+        Width="800.312" 
         HorizontalAlignment="Right" 
         VerticalAlignment="Bottom">
     <Window.DataContext>
         <sadgui:MainViewModel/>
     </Window.DataContext>
+    <!--Added background color but we can change it-->
+    <Window.Background>
+        <SolidColorBrush>LightSkyBlue</SolidColorBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="24*"/>
@@ -18,12 +22,7 @@
         <!-- Targets -->
         <Grid x:Name="Targets"
                 Grid.Column="0"
-                Grid.Row="0" HorizontalAlignment="Left" Width="424">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="290*"/>
-                <ColumnDefinition Width="139*"/>
-                <ColumnDefinition Width="50*"/>
-            </Grid.ColumnDefinitions>
+                Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="50*"/>
@@ -35,27 +34,33 @@
                        Text="Missiles Left:"
                        FontSize="18"
                        TextAlignment="Left"
-                       Margin="3,4"
-                       VerticalAlignment="Center" Grid.ColumnSpan="3" Height="24"/>
+                       Margin="3"
+                       VerticalAlignment="Center"/>
             <!-- Launcher Select -->
-            <ComboBox Text="Launcher" 
-                      Margin="236,5,3,5" Grid.ColumnSpan="2" />
+            <ComboBox x:Name="Launcher"
+                Margin="236,5,10,5" >
+                <ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
+                <ComboBoxItem >Dream Cheeky</ComboBoxItem>
+                <ComboBoxItem>Mock</ComboBoxItem>
+            </ComboBox>
             <!-- Missile Box -->
-            <TextBox Margin="108,5,52,5"/>
+            <TextBox Margin="108,5,241,5"
+                      Text="{Binding MissileCount}"
+                     Grid.Column="1"/>
             <!-- Target List -->
             <ListBox
                 ItemsSource="{Binding Targets}"
                 SelectedItem="{Binding SelectedTarget}"
-                Margin="5,5,10,10"
+                Margin="5,5,5,10"
                 BorderThickness="2"
                 BorderBrush="Black"
                 Grid.Row="1"
-                HorizontalContentAlignment="Stretch" Grid.RowSpan="2" SelectionChanged="ListBox_SelectionChanged" Grid.ColumnSpan="3"
+                HorizontalContentAlignment="Stretch" Grid.RowSpan="2"
                 >
 
             </ListBox>
             <!-- Buttons for Editing Targets -->
-            <Grid Grid.Row="3" IsSharedSizeScope="True" Margin="0,0,0,5" Grid.ColumnSpan="3">
+            <Grid Grid.Row="3" IsSharedSizeScope="True" Margin="0,0,0,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
@@ -64,18 +69,20 @@
                     <ColumnDefinition Width="Auto" SharedSizeGroup="A"/>
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="0"
-                        Content="Add Target"
+                        Content="Load Server"
                         Command="{Binding AddTargetCommand}"
                         Margin="5"/>
                 <Button Grid.Column="1"
-                        Content="Load Targets"
+                        Content="Load File"
                         Command="{Binding LoadTargetsFromFileCommand}"
-                        Margin="5,5,5,0" Height="45" VerticalAlignment="Top"/>
-                <Button Grid.Column="3" Content="Remove Target" Margin="5" Command="{Binding RemoveTargetCommand}" Click="Button_Click"/>
+                        Margin="5"/>
+                <Button Grid.Column="3" Content="Remove Target" Margin="5" Command="{Binding RemoveTargetCommand}"/>
                 <Button Grid.Column="4" Content="Clear Targets" Margin="5" Command="{Binding ClearTargetsCommand}"/>
             </Grid>
         </Grid>
-        <Grid x:Name="Video" Margin="429,0,0,0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="406">
+        <Grid x:Name="Video"
+                Grid.Column="1"
+                Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" MinHeight="34"/>
                 <RowDefinition Height="13*"/>
@@ -100,31 +107,35 @@
             <Image
                 Name="PictureBox"
                 Source="{Binding CameraImage}"
-                Margin="30,5,0,5"
-                Grid.Row="1" HorizontalAlignment="Left" Width="294" />
+                Margin="71,5,75,5"
+                Grid.Row="1" />
             <!-- Positioning Buttons -->
             <Button Content="Right" 
-                    Margin="270,10,75,10" 
+                    Margin="270,10,75,10"
+                    Command="{Binding MoveRightCommand}"
                     Grid.Row="3" RenderTransformOrigin="0.255,0.5" />
             <Button Content="Left" 
                     Margin="71,10,274,10" 
+                    Command="{Binding MoveLeftCommand}"
                     Grid.Row="3" />
             <Button Content="Up" 
+                    Command="{Binding MoveUpCommand}" 
                     Margin="170,10,175,10" 
                     Grid.Row="2" />
             <Button Content="Down" 
+                    Command="{Binding MoveDownCommand}"
                     Margin="170,10,175,10" 
                     Grid.Row="4" />
             <!-- Fire and Kill -->
             <Button Content="Fire" 
+                    Command="{Binding FireCommand}"
                     Margin="201,10,144,10" 
                     Grid.Row="3" />
+            <!--After clicking this button, the ML will aim at the target and shoot, 
+            we might want to put it in the target listbox-->
             <Button Content="Kill" 
                     Margin="141,10,204,10" 
                     Grid.Row="3" />
-            <Button Content="Target Display" HorizontalAlignment="Left" Margin="291,12,0,0" Grid.Row="4" VerticalAlignment="Top" Width="93" Click="Button_Click_1" RenderTransformOrigin="0.636,0.512"/>
-            <TextBox Name="TextBox1" Height="332" Margin="419,7,-211,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" RenderTransformOrigin="3.207,-3.484" Grid.RowSpan="5" TextChanged="TextBox1_TextChanged"/>
-
         </Grid>
     </Grid>
 </Window>
