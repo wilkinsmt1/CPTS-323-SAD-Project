@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="9b4aeb73-c0ba-4ea6-a05d-4db0760e3034"
+  name="Devices"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="0a76a7ce-c395-4b75-bd59-6e76acd22ac9"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DSAD.Core.Devices"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="9c24e683-e872-4594-b19c-0b35b09bca45"
+        name="IMissileLauncher"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="bce9c00d-9984-42e6-ba97-bd642b17d334"
+            handle="viewcode://./CodeSchema_Interface?Assembly%3D&quot;file:%2F%2F%2FC:%2FUsers%2FMike Wilkins%2FDocuments%2Fcbc%2Fwsu%2Fsemester3%2FCPTS-323-SAD-Project%2FProduction%2FSrc%2FLibrary%2FSAD.Core%2Fbin%2FDebug%2FSAD.Core.dll&quot; Namespace%3DSAD.Core.Devices Type%3DIMissileLauncher"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="43ebe32c-c2eb-4f4b-b876-d9a24a050bb6"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b46b7511-23bf-4ef6-9523-094b78f83716">
+                <propertyInstance
+                  Id="bacd16c8-d96e-4301-ae5e-cfe7e0b09604"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="7b90d8a4-759f-4ccb-b75d-a292976a71ad">
+                <propertyInstance
+                  Id="b846d6a2-199b-4f64-b5fd-453b182cf7be"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b5f3e457-2954-4f00-aa6d-e55e99088fb9">
+                <propertyInstance
+                  Id="da5fce22-5e3f-4691-a88a-cfd7f81a1caa"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f7fb21d4-78c5-4e96-83c0-033d22a89121">
+                <propertyInstance
+                  Id="78985a15-18e1-4e07-a60d-a1c10b5113ef"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </Interface>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

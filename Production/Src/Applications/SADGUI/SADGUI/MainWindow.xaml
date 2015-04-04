@@ -40,7 +40,7 @@
             <ComboBox x:Name="Launcher"
                 Margin="236,5,10,5" >
                 <ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
-                <ComboBoxItem >Dream Cheeky</ComboBoxItem>
+                <ComboBoxItem  >Dream Cheeky</ComboBoxItem>
                 <ComboBoxItem>Mock</ComboBoxItem>
             </ComboBox>
             <!-- Missile Box -->
@@ -114,7 +114,8 @@
                        Text="Position:"
                        FontSize="18" Margin="141,3,188,7" />
             <!-- Position Coordinate Box -->
-            <TextBox Margin="217,5,20,6"/>
+            <TextBox Margin="217,5,20,6"
+                     Text="{Binding LauncherPosition}"/>
             <!-- Video Screen -->
             <Image
                 Name="PictureBox"

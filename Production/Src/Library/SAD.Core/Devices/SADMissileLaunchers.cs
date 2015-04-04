@@ -35,12 +35,16 @@ namespace SAD.Core.Devices
             TotalMissiles = 4;
             MissileCount = TotalMissiles;
             m_launcher = new MissileLauncher();
+            m_thetaPosition = 0.0;
+            m_phiPosition = 0.0;
             //Launcher = new MissileLauncherAdapter();
         }
         public void MoveBy(double phi, double theta)
         {
             //Launcher.MoveBy(phi, theta);
             //doubles are passed in, but the ML methods takes ints
+            phiPosition += (phi/22.2);
+            thetaPosition += (theta/22.2);
             int degrees = Convert.ToInt32(theta);
             int zdegrees = Convert.ToInt32(phi);
 
@@ -82,6 +86,8 @@ namespace SAD.Core.Devices
             //Launcher.MoveTo(phi, theta);
             //reset the launcher
             m_launcher.command_reset();
+            phiPosition = 0.0;
+            thetaPosition = 0.0;
             //call moveby
             MoveBy(phi, theta);
         }
@@ -116,7 +122,11 @@ namespace SAD.Core.Devices
 
         public int MissileCount { get; set; }
         public string LauncherName { get; set; }
+        public double phiPosition { get; set; }
+        public double thetaPosition { get; set; }
         private static int TotalMissiles;
+        private static double m_phiPosition;
+        private static double m_thetaPosition;
        // private Controller controller;
         //public IMissileLauncher Launcher { get; set; }
         private MissileLauncher m_launcher; //This is an object from the code in MissileLauncher.cs

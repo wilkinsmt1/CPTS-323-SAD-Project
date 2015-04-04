@@ -27,6 +27,7 @@ namespace SADGUI
         private string m_missileCount;
         private TargetViewModel m_selectedTarget;
         private TargetManager m_targetManager;
+        private string m_LauncherPosition;
 
         public MainViewModel()
         {
@@ -42,8 +43,9 @@ namespace SADGUI
             ReloadMissilesCommand = new MyCommands(ReloadMissiles);
             TargetsCollection = new ObservableCollection<TargetViewModel>();
             m_targetManager  = TargetManager.GetInstance();
-            //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
-            //GetCount();
+            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            GetCount();
+            GetPosition();
             move = 5;
         }
 
@@ -108,6 +110,15 @@ namespace SADGUI
                 OnPropertyChanged();
             }
         }
+        public string LauncherPosition
+        {
+            get { return m_LauncherPosition; }
+            set
+            {
+                m_LauncherPosition = value;
+                OnPropertyChanged();
+            }
+        }
         public TargetViewModel SelectedTarget
         {
             get
@@ -129,6 +140,21 @@ namespace SADGUI
             MC = m_missileLauncher.GetType().GetProperty(propertyName).GetValue(m_missileLauncher, null);
             SMC = MC.ToString();
             MissileCount = SMC;
+        }
+        private void GetPosition()
+        {
+            string propertyName = "phiPosition";
+            string propertyName2 = "thetaPosition";
+            Object LP;
+            Object LP2;
+            string SLP = "Phi: "; 
+
+            LP = m_missileLauncher.GetType().GetProperty(propertyName).GetValue(m_missileLauncher, null);
+            SLP += LP.ToString();
+            LP2 = m_missileLauncher.GetType().GetProperty(propertyName2).GetValue(m_missileLauncher, null);
+            SLP += " Theta: ";     //"Phi: (phiPostion value) Theta: "
+            SLP += LP2.ToString();//"Phi: (phiPostion value) Theta: (thetaPosition value)"
+            LauncherPosition = SLP;  //will display Phi: (phiPostion value) Theta: (thetaPosition value)
         }
         public ICommand LoadTargetsFromFileCommand { get; set; }
         public ICommand GetImageCommand{ get; set; }
@@ -171,6 +197,7 @@ namespace SADGUI
                         phi = TargetPositioning.CalculatePhi(x, y);
                         //m_missileLauncher.MoveTo(0,0);
                         m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
+                        GetPosition();
                         Fire();
                         SelectedTarget.Target.IsAlive = false;
                     }
@@ -229,6 +256,7 @@ namespace SADGUI
             if (m_missileLauncher is DreamCheeky)
             {
                 m_missileLauncher.MoveBy((0), (move * 22.2));
+                GetPosition();
             }
             else if (m_missileLauncher is Mock)
             { //if m_missileLauncher is type Mock just show a message
@@ -246,6 +274,7 @@ namespace SADGUI
             if (m_missileLauncher is DreamCheeky)
             {
                 m_missileLauncher.MoveBy((0), ((move * -1) * 22.2));
+                GetPosition();
             }
             else if (m_missileLauncher is Mock)
             { //if m_missileLauncher is type Mock just show a message
@@ -265,6 +294,7 @@ namespace SADGUI
             if (m_missileLauncher is DreamCheeky)
             {
                 m_missileLauncher.MoveBy((move * 22.2), (0));
+                GetPosition();
             }
             else if (m_missileLauncher is Mock)
             { //if m_missileLauncher is type Mock just show a message
@@ -284,6 +314,7 @@ namespace SADGUI
             if (m_missileLauncher is DreamCheeky)
             {
                 m_missileLauncher.MoveBy(((move * -1) * 22.2), (0));
+                GetPosition();
             }
             else if (m_missileLauncher is Mock)
             { //if m_missileLauncher is type Mock just show a message

@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{4C5E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAD.Core", "..\..\Library\SAD.Core\SAD.Core.csproj", "{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "SADGUIModelingProject", "..\..\Model\SADGUIModelingProject\SADGUIModelingProject.modelproj", "{9BA0C66E-594B-4558-9427-21E59FCD0AE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,14 @@ Global
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x64.Build.0 = Release|x64
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x86.ActiveCfg = Release|x86
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD}.Release|x86.Build.0 = Release|x86
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Release|x64.ActiveCfg = Release|Any CPU
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +72,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{860B2F14-BEAC-4C55-B151-8E27B4BB4F5F} = {5C124EEC-7A44-4D30-BDEC-559C218371C9}
 		{0433A9C9-E5A8-49F8-82AA-D9A6A54CEFCD} = {BA1853E8-47A7-4F0E-BE4B-1E82EB0CE09F}
+		{9BA0C66E-594B-4558-9427-21E59FCD0AE8} = {8A043F7C-43C4-4A08-BFF4-C9861C7366A0}
 	EndGlobalSection
 EndGlobal
