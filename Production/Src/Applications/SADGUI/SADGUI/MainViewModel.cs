@@ -38,11 +38,12 @@ namespace SADGUI
             MoveDownCommand = new MyCommands(MoveDown);
             FireCommand = new MyCommands(Fire);
             ClearTargetsCommand = new MyCommands(ClearTargets);
+            KillTargetsCommand = new MyCommands(KillTargets);
             ReloadMissilesCommand = new MyCommands(ReloadMissiles);
             TargetsCollection = new ObservableCollection<TargetViewModel>();
             m_targetManager  = TargetManager.GetInstance();
-            //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
-            //GetCount();
+            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            GetCount();
             move = 5;
         }
 
@@ -140,8 +141,36 @@ namespace SADGUI
         public ObservableCollection<TargetViewModel> TargetsCollection { get; private set; }
         public ObservableCollection<Targets> TargetsList { get; set; }
         public ICommand ClearTargetsCommand { get; set; }
+        public ICommand KillTargetsCommand { get; set; }
 
-        public void ClearTargets()
+        private void KillTargets()
+        {
+            if (!(m_missileLauncher is DreamCheeky))
+            {
+                MessageBox.Show("Error! DreamCheeky launcher has not been selected!");
+            }
+            else
+            {
+                if (SelectedTarget.Target.IsFriend)
+                {
+                    MessageBox.Show("Error! Friendly fire is not permited!");
+                }
+                else
+                {
+                    double x, y, z, theta, phi;
+                    x = SelectedTarget.Target.X;
+                    y = SelectedTarget.Target.Y;
+                    z = SelectedTarget.Target.Z;
+                    theta = TargetPositioning.CalculateTheta(x, y, z);
+                    phi = TargetPositioning.CalculatePhi(x, y);
+                    //m_missileLauncher.MoveTo(0,0);
+                    m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
+                    Fire();
+                    SelectedTarget.Target.IsAlive = false;
+                }
+            }
+        }
+        private void ClearTargets()
         {
             TargetsCollection.Clear();
         }
@@ -176,7 +205,7 @@ namespace SADGUI
         {
             if (!(m_missileLauncher is DreamCheeky))
             {
-                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+                MessageBox.Show("Error! DreamCheeky launcher has not been selected!");
             }
             else
             {

@@ -146,6 +146,7 @@
             <!--After clicking this button, the ML will aim at the target and shoot, 
             we might want to put it in the target listbox-->
             <Button Content="Kill" 
+                    Command="{Binding KillTargetsCommand}"
                     Margin="141,10,204,10" 
                     Grid.Row="3" />
         </Grid>

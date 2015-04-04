@@ -6,35 +6,27 @@ using System.Threading.Tasks;
 
 namespace SAD.Core.Data
 {
-    class TargetPositioning
+   public class TargetPositioning
     {
-        public static double convertRadsToDegs(double radAngle) //convert radians to degrees
+        private static double theta;
+        private static double phi;
+        public static double CalculateTheta(double x, double y, double z)
         {
-            double degrees = ((radAngle*180)/Math.PI);
-            return degrees;
-        }
-        public static double calculateRadius(double x, double y, double z) //radius = Sqrt(x^2 + y^2)
-        {
-            double xSqr = Math.Pow(x,2);
-            double ySqr = Math.Pow(y, 2);
-            double radius = Math.Sqrt(xSqr + ySqr);
-            return radius;
-        }
-        public static double calculateTheta(double x, double y, double z)
-        {
-            double radius = calculateRadius(x, y, z);
-            double radians = (Math.Atan2(z, radius));
-            double theta = convertRadsToDegs(radians);
+            //Theta = arc cos(z/sqrt(x^2+y^2+z^2))
+            var denominator = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2) + Math.Pow(z, 2));
+            var num = z/denominator; 
+            theta = Math.Acos(num);
+            //convert from rads to degrees
+            theta = (theta*57.2957795);
             return theta;
         }
-        public static double calculatePhi(double x, double y)
+
+        public static double CalculatePhi(double x, double y)
         {
-            double radians = Math.Atan2(x, y);
-            double phi = convertRadsToDegs(radians);
-            if (phi > 90)
-            {
-                phi = (phi - 90) * -1; 
-            }
+            //Phi = arc tan(y/x)
+            phi = Math.Atan2(y,x);
+            //convert from rads to degrees
+            phi = (phi*57.2957795);
             return phi;
         }
     }
