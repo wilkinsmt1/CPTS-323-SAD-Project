@@ -16,3 +16,6 @@ file reader factory -by michael
 Missile launcher can fire  
 method that calculates phi and theta based on x, y, and z  is done  
 
+Github:
+resolve merge conflicts (website):  https://msdn.microsoft.com/en-us/library/dd286559.aspx
+
