@@ -17,5 +17,6 @@ Missile launcher can fire
 method that calculates phi and theta based on x, y, and z  is done  
 
 Github:
-resolve merge conflicts (website):  https://msdn.microsoft.com/en-us/library/dd286559.aspx
+resolve merge conflicts (website):  https://msdn.microsoft.com/en-us/library/dd286559.aspx  
+publish code (at end of webpage):   http://blogs.msdn.com/b/visualstudioalm/archive/2013/02/06/set-up-connect-and-publish-using-visual-studio-with-git.aspx
 
