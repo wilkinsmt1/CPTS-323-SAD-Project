@@ -23,5 +23,11 @@
         LastKnownName="Devices"
         LastKnownLocation="Package13_2204.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ba8d8433-bd3f-4d0c-b439-d89a5f13c1cc"
+        LastKnownName="IO"
+        LastKnownLocation="Package_2321.uml" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

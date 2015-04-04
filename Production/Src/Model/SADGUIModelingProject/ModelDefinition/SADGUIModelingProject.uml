@@ -48,6 +48,18 @@
         LastKnownName="SAD"
         LastKnownLocation="Package10_2204.uml" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9a6997b8-b7a8-4e8d-82b7-776c616ab7db"
+        LastKnownName="BuildDefender"
+        LastKnownLocation="Package_2317.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="3bf5c6f5-8cc6-47c7-a47f-ae36fa10c3dc"
+        LastKnownName="UsbLibrary"
+        LastKnownLocation="Package_2327.uml" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
