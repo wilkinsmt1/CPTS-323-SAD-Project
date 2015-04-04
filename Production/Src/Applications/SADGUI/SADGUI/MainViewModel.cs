@@ -42,8 +42,8 @@ namespace SADGUI
             ReloadMissilesCommand = new MyCommands(ReloadMissiles);
             TargetsCollection = new ObservableCollection<TargetViewModel>();
             m_targetManager  = TargetManager.GetInstance();
-            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
-            GetCount();
+            //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //GetCount();
             move = 5;
         }
 
@@ -54,7 +54,7 @@ namespace SADGUI
                 m_capture = new Capture(0);
             }
             var image = m_capture.QueryFrame();
-            image.Save(@"c:\testfolder\test.png");
+            //image.Save(@"c:\testfolder\test.png");
             var wpfImage = ConvertImageToBitmap(image);
 
             CameraImage = wpfImage;
@@ -151,23 +151,32 @@ namespace SADGUI
             }
             else
             {
-                if (SelectedTarget.Target.IsFriend)
+                if (SelectedTarget == null)
                 {
-                    MessageBox.Show("Error! Friendly fire is not permited!");
+                    MessageBox.Show("Error! No Targets were selected!");
                 }
                 else
                 {
-                    double x, y, z, theta, phi;
-                    x = SelectedTarget.Target.X;
-                    y = SelectedTarget.Target.Y;
-                    z = SelectedTarget.Target.Z;
-                    theta = TargetPositioning.CalculateTheta(x, y, z);
-                    phi = TargetPositioning.CalculatePhi(x, y);
-                    //m_missileLauncher.MoveTo(0,0);
-                    m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
-                    Fire();
-                    SelectedTarget.Target.IsAlive = false;
+                    if (SelectedTarget.Target.IsFriend)
+                    {
+                        MessageBox.Show("Error! Friendly fire is not permited!");
+                    }
+                    else
+                    {
+                        double x, y, z, theta, phi;
+                        x = SelectedTarget.Target.X;
+                        y = SelectedTarget.Target.Y;
+                        z = SelectedTarget.Target.Z;
+                        theta = TargetPositioning.CalculateTheta(x, y, z);
+                        phi = TargetPositioning.CalculatePhi(x, y);
+                        //m_missileLauncher.MoveTo(0,0);
+                        m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
+                        Fire();
+                        SelectedTarget.Target.IsAlive = false;
+                    }
+                    
                 }
+ 
             }
         }
         private void ClearTargets()
