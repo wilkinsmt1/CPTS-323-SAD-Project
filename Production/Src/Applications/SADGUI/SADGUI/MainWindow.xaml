@@ -37,12 +37,22 @@
                        Margin="3"
                        VerticalAlignment="Center"/>
             <!-- Launcher Select -->
-            <ComboBox x:Name="Launcher"
-                Margin="236,5,10,5" >
-                <ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
+            <Button x:Name="Mock"
+                    Command="{Binding CreateMockCommand}"
+                    Content="Mock"
+                Margin="175,6,121,4" >
+                <!--<ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
                 <ComboBoxItem  >Dream Cheeky</ComboBoxItem>
-                <ComboBoxItem>Mock</ComboBoxItem>
-            </ComboBox>
+                <ComboBoxItem>Mock</ComboBoxItem>-->
+            </Button>
+            <Button x:Name="DC"
+                    Content="DreamCheeky"
+                    Command="{Binding CreateDCCommand}"
+                Margin="285,5,5,5" >
+                <!--<ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
+                <ComboBoxItem  >Dream Cheeky</ComboBoxItem>
+                <ComboBoxItem>Mock</ComboBoxItem>-->
+            </Button>
             <!-- Missile Box -->
             <TextBox Margin="108,5,241,5"
                       Text="{Binding MissileCount}"

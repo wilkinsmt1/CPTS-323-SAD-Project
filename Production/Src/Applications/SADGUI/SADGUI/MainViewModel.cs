@@ -43,9 +43,11 @@ namespace SADGUI
             ReloadMissilesCommand = new MyCommands(ReloadMissiles);
             TargetsCollection = new ObservableCollection<TargetViewModel>();
             m_targetManager  = TargetManager.GetInstance();
-            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
-            GetCount();
-            GetPosition();
+            CreateMockCommand = new MyCommands(CreateMock);
+            CreateDCCommand = new MyCommands(CreateDC);
+            //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            //GetCount();
+            //GetPosition();
             move = 5;
         }
 
@@ -168,6 +170,21 @@ namespace SADGUI
         public ObservableCollection<Targets> TargetsList { get; set; }
         public ICommand ClearTargetsCommand { get; set; }
         public ICommand KillTargetsCommand { get; set; }
+        public ICommand CreateMockCommand { get; set; }
+        public ICommand CreateDCCommand { get; set; }
+
+        private void CreateMock()
+        {
+            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.Mock);
+            //GetCount();
+            //GetPosition();
+        }
+        private void CreateDC()
+        {
+            m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
+            GetCount();
+            GetPosition();
+        }
 
         private void KillTargets()
         {
