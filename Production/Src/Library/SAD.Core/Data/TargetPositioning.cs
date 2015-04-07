@@ -18,6 +18,7 @@ namespace SAD.Core.Data
             theta = Math.Acos(num);
             //convert from rads to degrees
             theta = (theta*57.2957795);
+            theta = Math.Round(theta, 2);
             return theta;
         }
 
@@ -27,6 +28,7 @@ namespace SAD.Core.Data
             phi = Math.Atan2(y,x);
             //convert from rads to degrees
             phi = (phi*57.2957795);
+            phi = Math.Round(phi, 2);
             return phi;
         }
     }

@@ -6,40 +6,40 @@
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="High" Text="Reverse Engineering Started." />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD' -  (Package)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core' -  (Package)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data' -  (Package)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Medium" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets' -  (Class)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::CanSwapSidesWhenHit' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::FlashRate' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::IsAlive' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::IsFriend' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::m_isAlive' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::OnPropertyChanged' -  (Operation)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::OnPropertyChanged::propertyName' -  (Parameter)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Points' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::PropertyChanged' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::SpawnRate' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Status' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::TargetName' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Targets' -  (Operation)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::X' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Y' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Z' -  (Property)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System' -  (Package)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::ComponentModel' -  (Package)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::ComponentModel::INotifyPropertyChanged' -  (Interface)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::ComponentModel::PropertyChangedEventHandler' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::Double' -  (Class)   (partially reverse engineered - definition not updated) " />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::Double (Association)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::Double (Association)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::Double (Association)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::ComponentModel::INotifyPropertyChanged (InterfaceRealization)" />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="High" Text="(1) type(s) fully reverse engineered." />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="High" Text="(3) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
-  <Message Timestamp="2015-04-03T23:29:00" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD' -  (Package)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core' -  (Package)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data' -  (Package)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Medium" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets' -  (Class)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::CanSwapSidesWhenHit' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::FlashRate' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::IsAlive' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::IsFriend' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::m_isAlive' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::OnPropertyChanged' -  (Operation)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::OnPropertyChanged::propertyName' -  (Parameter)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Points' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::PropertyChanged' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::SpawnRate' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Status' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::TargetName' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Targets' -  (Operation)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::X' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Y' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::SAD::Core::Data::Targets::Z' -  (Property)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System' -  (Package)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::ComponentModel' -  (Package)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::ComponentModel::INotifyPropertyChanged' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::ComponentModel::PropertyChangedEventHandler' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'SADGUIModelingProject::System::Double' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::Double (Association)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::Double (Association)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::Double (Association)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: SADGUIModelingProject::SAD::Core::Data::Targets to SADGUIModelingProject::System::ComponentModel::INotifyPropertyChanged (InterfaceRealization)" />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="High" Text="(3) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-04-07T15:21:09" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
 </Log>

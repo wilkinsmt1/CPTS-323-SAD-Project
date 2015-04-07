@@ -1188,46 +1188,7 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="90ec39c1-95c2-4652-b53d-42802b15d62d"
-            isDerived="false"
-            sourceEndRoleName="MainViewModel"
-            targetEndRoleName="DreamCheeky"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="f15a2b46-cd2d-43f8-93dd-2671d4a90ab3"
-              LastKnownName="DreamCheeky"
-              LastKnownLocation="Package13_2204.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="75385895-4b35-4ce7-a9d6-1fec58d50bf1"
-                  name="MainViewModel"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="Composite"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="c1a15d5d-1519-47ff-805c-ca6ba35a013d"
-                  name="DreamCheeky"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="true" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="271c13c5-a4ae-486b-97e1-33a634183c71"
+            Id="53eed823-848f-423b-9131-daf0458f4d82"
             isDerived="false"
             sourceEndRoleName="MainViewModel"
             targetEndRoleName="Mock"
@@ -1240,20 +1201,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="e45646e2-441c-4de0-b2e7-ea46dd17cfca"
+                  Id="cecb787f-6d9d-418e-8168-95a2d3563c2a"
                   name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="74cd1fff-de11-4b4f-a7e8-8f7f26c342c0"
+                  Id="4937b33c-49c4-4099-b32d-e309a43e3cae"
                   name="Mock"
                   isLeaf="false"
                   isStatic="false"
@@ -1261,12 +1222,51 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="9b477022-9383-4089-835b-dc6a59236330"
+            Id="87ca70d9-3cca-4e29-a5b6-b022e757ed8b"
+            isDerived="false"
+            sourceEndRoleName="MainViewModel"
+            targetEndRoleName="DreamCheeky"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f15a2b46-cd2d-43f8-93dd-2671d4a90ab3"
+              LastKnownName="DreamCheeky"
+              LastKnownLocation="Package13_2204.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="539efa9f-beae-499d-b3c3-070ca342eded"
+                  name="MainViewModel"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ef8e0ad2-bbf1-4f2e-b19e-3c4ca207276b"
+                  name="DreamCheeky"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="84bbb9f9-a3af-4178-b976-52df70ce56f2"
             isDerived="false"
             sourceEndRoleName="MainViewModel"
             targetEndRoleName="INIReader"
@@ -1279,20 +1279,20 @@
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="568e844d-ecd3-4a76-bfe3-9e5e5cd5405f"
+                  Id="8d441dc7-8425-4479-bd5a-5886ca4af645"
                   name="MainViewModel"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
                   isDerived="false"
                   isDerivedUnion="false"
-                  aggregation="Composite"
+                  aggregation="Shared"
                   isComposite="false"
                   isNavigableOwned="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="c08616d0-ce5d-46bb-88e1-c55629123d7c"
+                  Id="5f622af6-f187-4bd4-9d0b-4277869770b2"
                   name="INIReader"
                   isLeaf="false"
                   isStatic="false"
@@ -1300,7 +1300,7 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="true" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>

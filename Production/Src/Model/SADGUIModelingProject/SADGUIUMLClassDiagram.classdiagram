@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="30ecb06e-9813-45f6-9388-b0090d060396" name="SADGUIUMLClassDiagram" linkedPackageId="f95760d7-f517-4b1d-bd26-9dd2c5350ac5" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="86865baf-07da-4729-ae0b-b45f2a52dcbe">
-      <profileInstance Id="98caa358-37ef-4bcb-b852-29ba103613ee" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="5ef37b3b-4bb8-4c84-ab6c-dbd5384356cf">
-      <profileInstance Id="f455152c-9cee-4130-ba12-d82da95ab77d" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="eb9dee85-4adf-4f18-a95a-acd40640d45d">
-      <profileInstance Id="ff7a60d7-8d5c-4cda-ba92-5693200dcf09" name="CSharpProfile">
-        <elementDefinition Id="9e985f62-f76c-412d-9225-b6e1b6e3ab29" />
-      </profileInstance>
-      <elementDefinition Id="4a36f097-330b-41df-acaa-3f8a3ac29d8d" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="150f39a8-6000-464e-b851-5315a943420f" name="MainViewModel" visibility="Package" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -136,53 +116,53 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="5b050e5e-1ffd-425b-841c-cdf53bd023d3" />
           </association>
-          <association Id="4b85cc2d-8a58-434a-baa0-1a8371b8290f" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="DreamCheeky" isLeaf="false" isAbstract="false">
-            <classMoniker Id="61e56758-d77b-4ef7-937e-b54ce29f5b0a" LastKnownName="DreamCheeky" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="79dc9ea5-208e-4f56-b21f-364aaf0ac269" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="75385895-4b35-4ce7-a9d6-1fec58d50bf1" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="6ed2fef5-1abe-40c6-896a-13f867ce92ac" name="DreamCheeky" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="c1a15d5d-1519-47ff-805c-ca6ba35a013d" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="90ec39c1-95c2-4652-b53d-42802b15d62d" />
-          </association>
-          <association Id="33388492-2bcc-4fcf-8626-243a902e13e9" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="Mock" isLeaf="false" isAbstract="false">
+          <association Id="e3e617c6-560c-4604-9327-d88b4562d76b" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="Mock" isLeaf="false" isAbstract="false">
             <classMoniker Id="3f03ca05-9943-45d1-a546-e67d4208b892" LastKnownName="Mock" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="17b5444e-9d7d-479d-b9a8-b91c6bad61cf" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="e45646e2-441c-4de0-b2e7-ea46dd17cfca" />
+                <memberEnd Id="60b6491b-5384-40d2-86e6-c162a9dd740f" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cecb787f-6d9d-418e-8168-95a2d3563c2a" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="a4194bb7-90de-4878-a130-20a75eee9b68" name="Mock" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="74cd1fff-de11-4b4f-a7e8-8f7f26c342c0" />
+                <memberEnd Id="e45cdabf-1811-4e19-9879-d18e45c39533" name="Mock" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4937b33c-49c4-4099-b32d-e309a43e3cae" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="271c13c5-a4ae-486b-97e1-33a634183c71" />
+            <elementDefinition Id="53eed823-848f-423b-9131-daf0458f4d82" />
           </association>
-          <association Id="7b1e5975-0139-4c5b-8c1a-6acc5c1d5651" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="INIReader" isLeaf="false" isAbstract="false">
+          <association Id="eea8238a-e2a2-4d6c-bdf4-c2ce34df51b7" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="DreamCheeky" isLeaf="false" isAbstract="false">
+            <classMoniker Id="61e56758-d77b-4ef7-937e-b54ce29f5b0a" LastKnownName="DreamCheeky" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f6c3b513-96d4-4097-ae10-5d98fbd3af35" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="539efa9f-beae-499d-b3c3-070ca342eded" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39c45da7-3d0e-4e73-9dad-a3318b9a5bcf" name="DreamCheeky" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ef8e0ad2-bbf1-4f2e-b19e-3c4ca207276b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="87ca70d9-3cca-4e29-a5b6-b022e757ed8b" />
+          </association>
+          <association Id="53e8b99f-d1de-460d-bdb5-192e6b816405" isDerived="false" sourceEndRoleName="MainViewModel" targetEndRoleName="INIReader" isLeaf="false" isAbstract="false">
             <classMoniker Id="62cdee0c-486a-4b85-bfd6-cfe52d586d0a" LastKnownName="INIReader" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="19bf53bc-0850-41f1-9585-53ecfffd8876" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="568e844d-ecd3-4a76-bfe3-9e5e5cd5405f" />
+                <memberEnd Id="a0276669-e1b1-41ca-ba4c-12b0e015e1f6" name="MainViewModel" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8d441dc7-8425-4479-bd5a-5886ca4af645" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="e67408bc-01a0-4c8d-8591-08687cfe99a9" name="INIReader" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
-                  <elementDefinition Id="c08616d0-ce5d-46bb-88e1-c55629123d7c" />
+                <memberEnd Id="e9b2616c-a691-45c8-8032-147073f2fba9" name="INIReader" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5f622af6-f187-4bd4-9d0b-4277869770b2" />
                 </memberEnd>
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
-            <elementDefinition Id="9b477022-9383-4089-835b-dc6a59236330" />
+            <elementDefinition Id="84bbb9f9-a3af-4178-b976-52df70ce56f2" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
@@ -10444,5 +10424,25 @@
   </packagedElements>
   <package Id="f95760d7-f517-4b1d-bd26-9dd2c5350ac5" name="SADGUIModelingProject">
     <elementDefinition Id="fb7d95d2-65b5-4390-9ca2-aa670da3f55a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="86865baf-07da-4729-ae0b-b45f2a52dcbe">
+        <profileInstance Id="98caa358-37ef-4bcb-b852-29ba103613ee" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="5ef37b3b-4bb8-4c84-ab6c-dbd5384356cf">
+        <profileInstance Id="f455152c-9cee-4130-ba12-d82da95ab77d" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="eb9dee85-4adf-4f18-a95a-acd40640d45d">
+        <profileInstance Id="ff7a60d7-8d5c-4cda-ba92-5693200dcf09" name="CSharpProfile">
+          <elementDefinition Id="9e985f62-f76c-412d-9225-b6e1b6e3ab29" />
+        </profileInstance>
+        <elementDefinition Id="4a36f097-330b-41df-acaa-3f8a3ac29d8d" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
