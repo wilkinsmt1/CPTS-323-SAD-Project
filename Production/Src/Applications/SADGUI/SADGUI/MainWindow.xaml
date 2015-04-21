@@ -40,7 +40,7 @@
             <Button x:Name="Mock"
                     Command="{Binding CreateMockCommand}"
                     Content="Mock"
-                Margin="175,6,121,4" >
+                Margin="175,6,0,4" HorizontalAlignment="Left" Width="88" >
                 <!--<ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
                 <ComboBoxItem  >Dream Cheeky</ComboBoxItem>
                 <ComboBoxItem>Mock</ComboBoxItem>-->
@@ -48,15 +48,14 @@
             <Button x:Name="DC"
                     Content="DreamCheeky"
                     Command="{Binding CreateDCCommand}"
-                Margin="285,5,5,5" >
+                Margin="285,6,0,4" HorizontalAlignment="Left" Width="94" >
                 <!--<ComboBoxItem IsSelected="True" >[Select Launcher]</ComboBoxItem>
                 <ComboBoxItem  >Dream Cheeky</ComboBoxItem>
                 <ComboBoxItem>Mock</ComboBoxItem>-->
             </Button>
             <!-- Missile Box -->
-            <TextBox Margin="108,5,241,5"
-                      Text="{Binding MissileCount}"
-                     Grid.Column="1"/>
+            <TextBox Margin="108,5,0,5"
+                      Text="{Binding MissileCount}" HorizontalAlignment="Left" Width="35"/>
             <!-- Target List -->
             <ListBox
                 ItemsSource="{Binding TargetsCollection}"
@@ -115,8 +114,8 @@
             <!-- Video Toggle -->
             <Button Content="Live Video"
                     Command="{Binding GetImageCommand}"
-                    Margin="10,5,310,7" 
-                    HorizontalAlignment="Center"
+                    Margin="10,5,0,7" 
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Center" Height="22" Width="80" 
                     />
             <!-- Position Text -->
@@ -124,8 +123,8 @@
                        Text="Position:"
                        FontSize="18" Margin="141,3,188,7" />
             <!-- Position Coordinate Box -->
-            <TextBox Margin="217,5,20,6"
-                     Text="{Binding LauncherPosition}"/>
+            <TextBox Margin="217,5,0,6"
+                     Text="{Binding LauncherPosition}" HorizontalAlignment="Left" Width="163"/>
             <!-- Video Screen -->
             <Image
                 Name="PictureBox"
@@ -134,32 +133,32 @@
                 Grid.Row="1" />
             <!-- Positioning Buttons -->
             <Button Content="Right" 
-                    Margin="270,10,75,10"
+                    Margin="270,0,0,10"
                     Command="{Binding MoveRightCommand}"
-                    Grid.Row="3" RenderTransformOrigin="0.255,0.5" />
+                    Grid.Row="3" RenderTransformOrigin="0.255,0.5" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55" />
             <Button Content="Left" 
-                    Margin="71,10,274,10" 
+                    Margin="71,0,0,10" 
                     Command="{Binding MoveLeftCommand}"
-                    Grid.Row="3" />
+                    Grid.Row="3" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55" />
             <Button Content="Up" 
                     Command="{Binding MoveUpCommand}" 
-                    Margin="170,10,175,10" 
-                    Grid.Row="2" />
+                    Margin="170,0,0,10" 
+                    Grid.Row="2" HorizontalAlignment="Left" Width="55" Height="22" VerticalAlignment="Bottom" />
             <Button Content="Down" 
                     Command="{Binding MoveDownCommand}"
-                    Margin="170,10,175,10" 
-                    Grid.Row="4" />
+                    Margin="170,0,0,10" 
+                    Grid.Row="4" HorizontalAlignment="Left" Width="55" Height="22" VerticalAlignment="Bottom" />
             <!-- Fire and Kill -->
             <Button Content="Fire" 
                     Command="{Binding FireCommand}"
-                    Margin="201,10,144,10" 
-                    Grid.Row="3" />
+                    Margin="201,0,0,10" 
+                    Grid.Row="3" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55" />
             <!--After clicking this button, the ML will aim at the target and shoot, 
             we might want to put it in the target listbox-->
             <Button Content="Kill" 
                     Command="{Binding KillTargetsCommand}"
-                    Margin="141,10,204,10" 
-                    Grid.Row="3" />
+                    Margin="141,0,0,10" 
+                    Grid.Row="3" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55" />
         </Grid>
     </Grid>
 </Window>
