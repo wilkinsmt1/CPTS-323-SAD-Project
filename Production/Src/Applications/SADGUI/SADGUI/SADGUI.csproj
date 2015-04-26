@@ -34,20 +34,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Emgu.CV">
-      <HintPath>..\..\..\Library\Emgu.CV.dll</HintPath>
+    <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EmguCV.221.x86.1.0\lib\Emgu.CV.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.GPU">
-      <HintPath>..\..\..\Library\Emgu.CV.GPU.dll</HintPath>
+    <Reference Include="Emgu.CV.GPU, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EmguCV.221.x86.1.0\lib\Emgu.CV.GPU.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.ML">
-      <HintPath>..\..\..\Library\Emgu.CV.ML.dll</HintPath>
+    <Reference Include="Emgu.CV.ML, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EmguCV.221.x86.1.0\lib\Emgu.CV.ML.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.UI">
-      <HintPath>..\..\..\Library\Emgu.CV.UI.dll</HintPath>
+    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EmguCV.221.x86.1.0\lib\Emgu.CV.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.Util">
-      <HintPath>..\..\..\Library\Emgu.Util.dll</HintPath>
+    <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EmguCV.221.x86.1.0\lib\Emgu.Util.dll</HintPath>
     </Reference>
     <Reference Include="Ookii.Dialogs.Wpf">
       <HintPath>..\packages\Ookii.Dialogs.1.0\lib\net35\Ookii.Dialogs.Wpf.dll</HintPath>
@@ -131,6 +136,53 @@
       <Project>{0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd}</Project>
       <Name>SAD.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\cvextern.dll">
+      <Link>cvextern.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_calib3d220.dll">
+      <Link>opencv_calib3d220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_contrib220.dll">
+      <Link>opencv_contrib220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_core220.dll">
+      <Link>opencv_core220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_features2d220.dll">
+      <Link>opencv_features2d220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_ffmpeg220.dll">
+      <Link>opencv_ffmpeg220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_flann220.dll">
+      <Link>opencv_flann220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_gpu220.dll">
+      <Link>opencv_gpu220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_highgui220.dll">
+      <Link>opencv_highgui220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_imgproc220.dll">
+      <Link>opencv_imgproc220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_legacy220.dll">
+      <Link>opencv_legacy220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_ml220.dll">
+      <Link>opencv_ml220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_objdetect220.dll">
+      <Link>opencv_objdetect220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\opencv_video220.dll">
+      <Link>opencv_video220.dll</Link>
+    </Content>
+    <Content Include="..\packages\EmguCV.221.x86.1.0\opencv\ZedGraph.dll">
+      <Link>ZedGraph.dll</Link>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

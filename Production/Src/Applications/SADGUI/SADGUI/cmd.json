@@ -1,0 +1,9 @@
+{
+  "Description":"Launcher Targets",
+  "Targets":
+    [
+      {"Target":"Target","Name":"TargetOne","X":50,"Y":20,"Z":10,"Friend":true,"Points":50,"FlashRate":-1,"SpawnRate":4,"CanSwapSidesWhenHit":false},
+      {"Target":"Target","Name":"TargetTwo","X":50,"Y":60,"Z":10,"Friend":false,"Points":50,"FlashRate":-1,"SpawnRate":4,"CanSwapSidesWhenHit":false},
+			{"Target":"Target","Name":"Enemy","X":50,"Y":20,"Z":0,"Friend":false,"Points":500,"FlashRate":100,"SpawnRate":4,"CanSwapSidesWhenHit":false}
+    ]
+}
