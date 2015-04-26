@@ -112,16 +112,19 @@
                 <RowDefinition Height="42"/>
             </Grid.RowDefinitions>
             <!-- Video Toggle -->
-            <Button Content="Live Video"
+            <Button Content="Video On"
                     Command="{Binding GetImageCommand}"
-                    Margin="10,5,0,7" 
+                    Margin="5,6,0,6" 
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Center" Height="22" Width="80" 
+                    VerticalAlignment="Center" Height="22" Width="63" 
+                    />
+            <Button Content="Video Off"
+                    Command="{Binding}" Margin="71,0,0,6" RenderTransformOrigin="0.477,0.312" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="65"
                     />
             <!-- Position Text -->
             <TextBlock Grid.Column="0"
                        Text="Position:"
-                       FontSize="18" Margin="141,3,188,7" />
+                       FontSize="18" Margin="144,4,186,6" />
             <!-- Position Coordinate Box -->
             <TextBox Margin="217,5,0,6"
                      Text="{Binding LauncherPosition}" HorizontalAlignment="Left" Width="163"/>
