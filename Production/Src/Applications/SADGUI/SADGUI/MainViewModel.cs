@@ -64,6 +64,7 @@ namespace SADGUI
             m_targetManager  = TargetManager.GetInstance();
             CreateMockCommand = new MyCommands(CreateMock);
             CreateDCCommand = new MyCommands(CreateDC);
+            StopCommand = new MyCommands(Stop);
             //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
             //GetCount();
             //GetPosition();
@@ -78,6 +79,11 @@ namespace SADGUI
 
         private void GetImage()
         {
+            cts = new CancellationTokenSource();
+            //in order for the video feed to start after being stopped
+            //the new blocking collections must be created. 
+            imageBlockingCollection = new BlockingCollection<Image<Bgr, byte>>();
+            processBuffer = new BlockingCollection<Image<Bgr, byte>>();
             isRunning = true;
             var producerTask = Task.Run(() => this.ProduceFrame(imageBlockingCollection, cts.Token));
             var consumerTask = Task.Run(() => this.ConsumeFrame(imageBlockingCollection, cts.Token));
@@ -94,6 +100,7 @@ namespace SADGUI
         }
         private void ProduceFrame(BlockingCollection<Image<Bgr, byte>> bc, CancellationToken ct)
         {
+            
             if (m_capture != null)
             {
                 while (!ct.IsCancellationRequested)
@@ -117,6 +124,14 @@ namespace SADGUI
             }
 
             processBuffer.CompleteAdding();
+        }
+
+        private void Stop()
+        {
+            isRunning = false;
+            cts.Cancel();
+
+            
         }
         [DllImport("gdi32")]
         private static extern int DeleteObject(IntPtr ptr);
@@ -226,6 +241,7 @@ namespace SADGUI
         public ICommand KillTargetsCommand { get; set; }
         public ICommand CreateMockCommand { get; set; }
         public ICommand CreateDCCommand { get; set; }
+        public ICommand StopCommand { get; set; }
 
         private void CreateMock()
         {
