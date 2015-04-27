@@ -57,8 +57,9 @@ namespace SAD.Core.IO
                 }
                 catch
                 {
-                    Console.WriteLine("Error! Invalid format tags! Please exit the program and fix the file!");
-                    Environment.Exit(1);
+                    Console.WriteLine("Warning! Invalid format tags! Will skip target!");
+                    //Console.WriteLine("Error! Invalid format tags! Please exit the program and fix the file!");
+                    //Environment.Exit(1);
                 }
                 if (!line.Contains("[Target]")) //When the line does not contain target
                 {                               //they will be read and put into the list
