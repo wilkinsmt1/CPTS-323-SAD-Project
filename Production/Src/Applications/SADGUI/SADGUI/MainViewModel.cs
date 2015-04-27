@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -15,6 +16,9 @@ using Emgu.CV.Features2D;
 using SAD.Core.Data;
 using SAD.Core.Devices;
 using SAD.Core.IO;
+using System.Diagnostics;
+using System.Threading;
+using Emgu.CV.Structure;
 
 namespace SADGUI
 {
@@ -28,9 +32,24 @@ namespace SADGUI
         private TargetViewModel m_selectedTarget;
         private TargetManager m_targetManager;
         private string m_LauncherPosition;
+        private bool IsMLRunning;
+        private CancellationTokenSource cts;
+        private bool isRunning;
+
+        private BlockingCollection<Image<Bgr, byte>> imageBlockingCollection;
+
+        private BlockingCollection<Image<Bgr, byte>> processBuffer;
 
         public MainViewModel()
         {
+            try
+            {
+                m_capture = new Capture();
+            }
+            catch (Exception)
+            {
+
+            }
             GetImageCommand = new MyCommands(GetImage);
             LoadTargetsFromFileCommand = new MyCommands(LoadTargetsFromFile);
             MoveRightCommand = new MyCommands(MoveRight);
@@ -49,20 +68,55 @@ namespace SADGUI
             //GetCount();
             //GetPosition();
             move = 5;
+
+            cts = new CancellationTokenSource();
+            IsMLRunning = false;
+            imageBlockingCollection = new BlockingCollection<Image<Bgr, byte>>();
+            processBuffer = new BlockingCollection<Image<Bgr, byte>>();
+            isRunning = false;
         }
 
         private void GetImage()
         {
-            if (m_capture == null)
+            isRunning = true;
+            var producerTask = Task.Run(() => this.ProduceFrame(imageBlockingCollection, cts.Token));
+            var consumerTask = Task.Run(() => this.ConsumeFrame(imageBlockingCollection, cts.Token));
+            //if (m_capture == null)
+            //{
+            //    m_capture = new Capture(0);
+            //}
+            //var image = m_capture.QueryFrame();
+            ////image.Save(@"c:\testfolder\test.png");
+            //var wpfImage = ConvertImageToBitmap(image);
+
+            //CameraImage = wpfImage;
+
+        }
+        private void ProduceFrame(BlockingCollection<Image<Bgr, byte>> bc, CancellationToken ct)
+        {
+            if (m_capture != null)
             {
-                m_capture = new Capture(0);
+                while (!ct.IsCancellationRequested)
+                {
+                    var image = m_capture.QueryFrame();
+                    bc.Add(image);
+                }
+
+                bc.CompleteAdding();
             }
-            var image = m_capture.QueryFrame();
-            //image.Save(@"c:\testfolder\test.png");
-            var wpfImage = ConvertImageToBitmap(image);
+        }
+        private void ConsumeFrame(BlockingCollection<Image<Bgr, byte>> bc, CancellationToken ct)
+        {
+            while (!bc.IsCompleted)
+            {
+                var imageToDisplay = bc.Take();
+                App.Current.Dispatcher.Invoke(
+                    () => this.CameraImage = BitmapConverter.ToBitmapSource(image: imageToDisplay));
+                processBuffer.Add(imageToDisplay);
+                // property implements IPropertyNotify. Will update fairly quickly. Use dependency properties to make this even faster.
+            }
 
-            CameraImage = wpfImage;
-
+            processBuffer.CompleteAdding();
         }
         [DllImport("gdi32")]
         private static extern int DeleteObject(IntPtr ptr);
@@ -188,12 +242,16 @@ namespace SADGUI
 
         private void KillTargets()
         {
+            
+
             if (!(m_missileLauncher is DreamCheeky))
             {
                 MessageBox.Show("Error! DreamCheeky launcher has not been selected!");
             }
             else
             {
+                
+
                 if (SelectedTarget == null)
                 {
                     MessageBox.Show("Error! No Targets were selected!");
@@ -206,22 +264,28 @@ namespace SADGUI
                     }
                     else
                     {
-                        double x, y, z, theta, phi;
-                        x = SelectedTarget.Target.X;
-                        y = SelectedTarget.Target.Y;
-                        z = SelectedTarget.Target.Z;
-                        theta = TargetPositioning.CalculateTheta(x, y, z);
-                        phi = TargetPositioning.CalculatePhi(x, y);
-                        //m_missileLauncher.MoveTo(0,0);
-                        m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
-                        GetPosition();
-                        Fire();
-                        SelectedTarget.Target.IsAlive = false;
+                        IsMLRunning = true;
+                        var killTask = Task.Run(() => this.Kill());
                     }
                     
                 }
  
             }
+        }
+
+        private void Kill()
+        {
+            double x, y, z, theta, phi;
+            x = SelectedTarget.Target.X;
+            y = SelectedTarget.Target.Y;
+            z = SelectedTarget.Target.Z;
+            theta = TargetPositioning.CalculateTheta(x, y, z);
+            phi = TargetPositioning.CalculatePhi(x, y);
+            //m_missileLauncher.MoveTo(0,0);
+            m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
+            GetPosition();
+            Fire();
+            SelectedTarget.Target.IsAlive = false;
         }
         private void ClearTargets()
         {
