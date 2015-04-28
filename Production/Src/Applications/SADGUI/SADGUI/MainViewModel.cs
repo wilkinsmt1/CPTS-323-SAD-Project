@@ -236,6 +236,7 @@ namespace SADGUI
             LauncherPosition = SLP;  //will display Phi: (phiPostion value) Theta: (thetaPosition value)
         }
         public ICommand LoadTargetsFromFileCommand { get; set; }
+        public ICommand LoadTargetsFromServerCommand { get; set; }
         public ICommand GetImageCommand{ get; set; }
         public ICommand MoveRightCommand { get; set; }
         public ICommand MoveLeftCommand { get; set; }
@@ -373,6 +374,47 @@ namespace SADGUI
                 var iniReader = FRFactory.CreateReader(FRType.INIReader, openFileDialog.FileName);
                 TargetsList = m_targetManager.GetTargetList();
                 AddTarget();
+            }
+        }
+        private void LoadTargetsFromServer()
+        {
+            string remoteUri;
+            string dir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\.."));
+            string file = dir + @"\webini.txt";
+
+            var openInputDialog = new Ookii.Dialogs.InputDialog();
+            openInputDialog.WindowTitle = "Load Targets";
+            openInputDialog.MainInstruction = "Enter Server URL";
+
+            if (File.Exists(file))
+            {
+                File.Delete(file);
+            }
+
+            using (WebClient webClient = new WebClient())
+            {
+                try
+                {
+                    if (openInputDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        remoteUri = openInputDialog.Input;
+                        MessageBox.Show("We loaded: " + remoteUri);
+                        webClient.DownloadFile(remoteUri, file);
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Target file not found on Server.");
+                }
+                finally
+                {
+                    if (File.Exists(file))
+                    {
+                        var iniReader = FRFactory.CreateReader(FRType.INIReader, file);
+                        TargetsList = m_targetManager.GetTargetList();
+                        AddTarget();
+                    }
+                }
             }
         }
         private void AddTarget()
