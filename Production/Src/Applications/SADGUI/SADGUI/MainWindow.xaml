@@ -151,6 +151,18 @@
                     Command="{Binding MoveDownCommand}"
                     Margin="170,0,0,10" 
                     Grid.Row="4" HorizontalAlignment="Left" Width="55" Height="22" VerticalAlignment="Bottom" />
+            <Button Content="Kill Enemies" 
+                    Command="{Binding KillEnemiesCommand}"
+                    Margin="10,0,0,10" 
+                    Grid.Row="4" HorizontalAlignment="Left" Width="70" Height="22" VerticalAlignment="Bottom" />
+            <Button Content="Kill Friends" 
+                    Command="{Binding KillFriendsCommand}"
+                    Margin="90,0,0,10" 
+                    Grid.Row="4" HorizontalAlignment="Left" Width="70" Height="22" VerticalAlignment="Bottom" />
+            <Button Content="Kill 'Em All" 
+                    Command="{Binding KillAllCommand}"
+                    Margin="240,0,0,10" 
+                    Grid.Row="4" HorizontalAlignment="Left" Width="70" Height="22" VerticalAlignment="Bottom" />
             <!-- Fire and Kill -->
             <Button Content="Fire" 
                     Command="{Binding FireCommand}"

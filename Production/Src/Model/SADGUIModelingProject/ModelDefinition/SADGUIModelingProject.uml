@@ -1,8 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="fb7d95d2-65b5-4390-9ca2-aa670da3f55a"
   name="SADGUIModelingProject" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="da44c30b-435d-4b02-892f-d8a9f8a51b05">
+      <body>Start Application</body>
+    </comment>
+    <comment
+      Id="e284c56f-0490-4d46-b9fc-8b3140ad4092">
+      <body>click</body>
+    </comment>
+    <comment
+      Id="0679a9d2-2203-46f8-990f-52aaadab4bf9">
+      <body>click</body>
+    </comment>
+    <comment
+      Id="e33b3855-4975-489a-8765-0f4ffe13790b">
+      <body>Start Application</body>
+    </comment>
+    <comment
+      Id="4e6f58fc-9043-44b6-8657-cec702fe9951">
+      <body>click</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -59,6 +81,353 @@
         Id="3bf5c6f5-8cc6-47c7-a47f-ae36fa10c3dc"
         LastKnownName="UsbLibrary"
         LastKnownLocation="Package_2327.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="e69a41ca-380a-477d-8bb3-51fbad361f29"
+        name="Activity1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="f97ede5d-406c-41a9-8d9c-0d1aebdc2b93"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f1e751e8-3bae-463f-8bba-75c8d3b287a5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0fe6cdaa-57d6-4d9b-80a3-3da91a7f2f18"
+                  LastKnownName="Video On"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="0fe6cdaa-57d6-4d9b-80a3-3da91a7f2f18"
+            name="Video On"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="db5ba10b-2969-4303-a6a3-a04b4bcd0d42"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="39c2fdc9-1557-4369-ae3a-e8436c1a464e"
+                  LastKnownName="Get Images"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="39c2fdc9-1557-4369-ae3a-e8436c1a464e"
+            name="Get Images"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c0ce37b8-3b5b-4db8-8959-afa0885f746f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="981aa9e6-3255-4274-943d-23f45545d9a8"
+                  LastKnownName="Display Live Video"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="981aa9e6-3255-4274-943d-23f45545d9a8"
+            name="Display Live Video"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8db47691-6e4f-4715-b9d1-050e93ab900e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="39c2fdc9-1557-4369-ae3a-e8436c1a464e"
+                  LastKnownName="Get Images"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="3045aae4-8bb5-4784-aedc-8011a9201932"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c93cfbbe-d4a9-4d6d-852d-5feb8f79f0fe"
+                  LastKnownName="Video Off"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="c93cfbbe-d4a9-4d6d-852d-5feb8f79f0fe"
+            name="Video Off"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1dde36cc-011c-4d73-97d4-cdc7f4da9ff2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="12a13cb5-f898-41c1-9162-4915dffdf82e"
+                  LastKnownName="Task Cancelled"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="12a13cb5-f898-41c1-9162-4915dffdf82e"
+            name="Task Cancelled"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b01cd955-511e-4b74-915e-efa419dd2a66"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="3e4ebf7c-863e-4213-ad41-12d8f56d4103"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="3e4ebf7c-863e-4213-ad41-12d8f56d4103"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <initialNode
+            Id="5ccce39a-eb88-46d0-a9b4-79dea6a345e1"
+            name="Initial2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e2eedbea-3795-4c9f-97c4-5831160c8892"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="78ba2b3a-48c4-4ee2-8ea6-f0f528304c8f"
+                  LastKnownName="Mock"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2d350151-d039-4a33-8c39-a5839cb35333"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e3181673-340a-47c9-b3e4-09fe0ee9a6ec"
+                  LastKnownName="Dream Cheeky"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="78ba2b3a-48c4-4ee2-8ea6-f0f528304c8f"
+            name="Mock"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b264f32a-8e15-4fd8-9414-14ea78bffeba"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="bea4e125-4821-4ccf-aee4-167d713215d9"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e3181673-340a-47c9-b3e4-09fe0ee9a6ec"
+            name="Dream Cheeky"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b9bd79fd-b39a-4f4c-8ecc-20408d3e6fcb"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="bea4e125-4821-4ccf-aee4-167d713215d9"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="59233cec-3d2f-4e8c-a0f6-729c2a531f36"
+            name="Load Targets From Server"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9fd176dc-076c-43b0-a4d6-d92e5589eb2e"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="7b44428e-8096-45f5-a689-835e32380a04"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4409111b-5914-4e41-9913-47ef649fb6ff"
+            name="Load Targets From File"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ebcd38aa-ecb3-4abc-88ce-60671b6b6539"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="7b44428e-8096-45f5-a689-835e32380a04"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="bea4e125-4821-4ccf-aee4-167d713215d9"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d04eba2f-ec65-4e12-9f5a-c1347fa340ea"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="6f6c17fd-4129-4870-96a7-883e9c2617bd"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <decisionNode
+            Id="6f6c17fd-4129-4870-96a7-883e9c2617bd"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c8de89a0-d013-483a-a237-82e9ab0185ad"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="59233cec-3d2f-4e8c-a0f6-729c2a531f36"
+                  LastKnownName="Load Targets From Server"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="36c63640-b0ed-495a-811b-9d5e4b625579"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4409111b-5914-4e41-9913-47ef649fb6ff"
+                  LastKnownName="Load Targets From File"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="eeaf0b59-6a63-49ee-84ee-4590c2cd396d"
+            name="INIReader"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="00c973ce-09fc-485e-b8fe-473ea427d374"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="90b35b46-f629-43fd-be6a-933d86da1f56"
+                  LastKnownName="Targets Displayed"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode
+            Id="7b44428e-8096-45f5-a689-835e32380a04"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="14560fcf-81ef-4db5-b978-1d7f179c21cf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="eeaf0b59-6a63-49ee-84ee-4590c2cd396d"
+                  LastKnownName="INIReader"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="90b35b46-f629-43fd-be6a-933d86da1f56"
+            name="Targets Displayed"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0e7528ff-a7b9-4962-ac77-f62bb0e051c0"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="f3d921e5-6050-4c36-8e97-c06121d6bdb4"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="f3d921e5-6050-4c36-8e97-c06121d6bdb4"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cf8e2b4f-7ba3-4aa4-9e24-daba96f5c551"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7691005b-453a-4d43-945b-e8a5b3456151"
+                  LastKnownName="Kill Targets"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2ac561c3-afe8-4f6f-8fdc-5b8da0ffc381"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="befff7c2-52cb-4868-a14c-3865438042cc"
+                  LastKnownName="Move/Fire Missile Launcher"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="7691005b-453a-4d43-945b-e8a5b3456151"
+            name="Kill Targets"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="10a74817-5326-445c-8c6d-b44efdcea1bd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="befff7c2-52cb-4868-a14c-3865438042cc"
+                  LastKnownName="Move/Fire Missile Launcher"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="befff7c2-52cb-4868-a14c-3865438042cc"
+            name="Move/Fire Missile Launcher"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ff777f0d-9512-4180-a652-e29c93e2d746"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="7691005b-453a-4d43-945b-e8a5b3456151"
+                  LastKnownName="Kill Targets"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="359ce1e0-5c44-4b53-ad35-1d072d5b3655"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="546efbef-b08b-4b2b-ad8b-b0dee6bfff17"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="SADGUIModelingProject.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="546efbef-b08b-4b2b-ad8b-b0dee6bfff17"
+            name="ActivityFinal2"
+            isLeaf="false" />
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

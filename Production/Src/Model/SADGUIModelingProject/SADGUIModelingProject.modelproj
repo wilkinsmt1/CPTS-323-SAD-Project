@@ -89,6 +89,13 @@
       <SubType>Content</SubType>
       <DependentUpon>SADGUIUMLClassDiagram.classdiagram</DependentUpon>
     </Content>
+    <Content Include="UMLActivityDiagram1.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UMLActivityDiagram1.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UMLActivityDiagram1.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="UMLClass.classdiagram">
       <SubType>Content</SubType>
     </Content>

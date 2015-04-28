@@ -65,6 +65,9 @@ namespace SADGUI
             CreateMockCommand = new MyCommands(CreateMock);
             CreateDCCommand = new MyCommands(CreateDC);
             StopCommand = new MyCommands(Stop);
+            KillAllCommand = new MyCommands(KillAll);
+            KillEnemiesCommand = new MyCommands(KillEnemies);
+            KillFriendsCommand = new MyCommands(KillFriends);
             //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
             //GetCount();
             //GetPosition();
@@ -242,6 +245,9 @@ namespace SADGUI
         public ICommand CreateMockCommand { get; set; }
         public ICommand CreateDCCommand { get; set; }
         public ICommand StopCommand { get; set; }
+        public ICommand KillEnemiesCommand { get; set; }
+        public ICommand KillFriendsCommand { get; set; }
+        public ICommand KillAllCommand { get; set; }
 
         private void CreateMock()
         {
@@ -289,6 +295,51 @@ namespace SADGUI
             }
         }
 
+        private void KillAll()
+        {
+
+            foreach (var target in TargetsCollection)
+            {
+                KillTheTargets(target.Target);
+            }
+        }
+
+        private void KillEnemies()
+        {
+            foreach (var target in TargetsCollection)
+            {
+                if (!target.Target.IsFriend)
+                {
+                    KillTheTargets(target.Target);
+                }
+            }
+            
+        }
+
+        private void KillFriends()
+        {
+            foreach (var target in TargetsCollection)
+            {
+                if (target.Target.IsFriend)
+                {
+                    KillTheTargets(target.Target);
+                }
+            }
+        }
+        private void KillTheTargets(Targets target)
+        {
+            double x, y, z, theta, phi;
+            x = target.X;
+            y = target.Y;
+            z = target.Z;
+            theta = TargetPositioning.CalculateTheta(x, y, z);
+            phi = TargetPositioning.CalculatePhi(x, y);
+            //m_missileLauncher.MoveTo(0,0);
+            m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
+            GetPosition();
+            Fire();
+            target.IsAlive = false;
+        }
         private void Kill()
         {
             double x, y, z, theta, phi;
