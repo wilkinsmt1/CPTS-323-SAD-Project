@@ -56,6 +56,7 @@ namespace SADGUI
             }
             GetImageCommand = new MyCommands(GetImage);
             LoadTargetsFromFileCommand = new MyCommands(LoadTargetsFromFile);
+            LoadTargetsFromServerCommand = new MyCommands(LoadTargetsFromServer);
             MoveRightCommand = new MyCommands(MoveRight);
             MoveLeftCommand = new MyCommands(MoveLeft);
             MoveUpCommand = new MyCommands(MoveUp);
