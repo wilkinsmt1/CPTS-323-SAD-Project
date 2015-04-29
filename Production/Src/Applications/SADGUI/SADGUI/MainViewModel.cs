@@ -56,7 +56,7 @@ namespace SADGUI
             }
             GetImageCommand = new MyCommands(GetImage);
             LoadTargetsFromFileCommand = new MyCommands(LoadTargetsFromFile);
-            LoadTargetsFromServerCommand = new MyCommands(LoadTargetsFromServer);
+           // LoadTargetsFromServerCommand = new MyCommands(LoadTargetsFromServer);
             MoveRightCommand = new MyCommands(MoveRight);
             MoveLeftCommand = new MyCommands(MoveLeft);
             MoveUpCommand = new MyCommands(MoveUp);
@@ -376,47 +376,47 @@ namespace SADGUI
                 AddTarget();
             }
         }
-        private void LoadTargetsFromServer()
-        {
-            string remoteUri;
-            string dir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\.."));
-            string file = dir + @"\webini.txt";
+        //private void LoadTargetsFromServer()
+        //{
+        //    string remoteUri;
+        //    string dir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\.."));
+        //    string file = dir + @"\webini.txt";
 
-            var openInputDialog = new Ookii.Dialogs.InputDialog();
-            openInputDialog.WindowTitle = "Load Targets";
-            openInputDialog.MainInstruction = "Enter Server URL";
+        //    var openInputDialog = new Ookii.Dialogs.InputDialog();
+        //    openInputDialog.WindowTitle = "Load Targets";
+        //    openInputDialog.MainInstruction = "Enter Server URL";
 
-            if (File.Exists(file))
-            {
-                File.Delete(file);
-            }
+        //    if (File.Exists(file))
+        //    {
+        //        File.Delete(file);
+        //    }
 
-            using (WebClient webClient = new WebClient())
-            {
-                try
-                {
-                    if (openInputDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        remoteUri = openInputDialog.Input;
-                        MessageBox.Show("We loaded: " + remoteUri);
-                        webClient.DownloadFile(remoteUri, file);
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Target file not found on Server.");
-                }
-                finally
-                {
-                    if (File.Exists(file))
-                    {
-                        var iniReader = FRFactory.CreateReader(FRType.INIReader, file);
-                        TargetsList = m_targetManager.GetTargetList();
-                        AddTarget();
-                    }
-                }
-            }
-        }
+        //    using (WebClient webClient = new WebClient())
+        //    {
+        //        try
+        //        {
+        //            if (openInputDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //            {
+        //                remoteUri = openInputDialog.Input;
+        //                MessageBox.Show("We loaded: " + remoteUri);
+        //                webClient.DownloadFile(remoteUri, file);
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            MessageBox.Show("Target file not found on Server.");
+        //        }
+        //        finally
+        //        {
+        //            if (File.Exists(file))
+        //            {
+        //                var iniReader = FRFactory.CreateReader(FRType.INIReader, file);
+        //                TargetsList = m_targetManager.GetTargetList();
+        //                AddTarget();
+        //            }
+        //        }
+        //    }
+        //}
         private void AddTarget()
         {
             foreach (var target in TargetsList)
