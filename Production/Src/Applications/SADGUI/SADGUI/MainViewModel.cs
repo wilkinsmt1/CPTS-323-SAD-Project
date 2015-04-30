@@ -23,6 +23,7 @@ using SAD.Core.IO;
 using System.Diagnostics;
 using System.Threading;
 using Emgu.CV.Structure;
+using TargetServerCommunicator.Servers;
 
 namespace SADGUI
 {
@@ -39,6 +40,9 @@ namespace SADGUI
         private bool IsMLRunning;
         private CancellationTokenSource cts;
         private bool isRunning;
+        private string m_IP;
+        private int m_Port;
+        private const string m_teamname = "Scorched Earth Destroyers";
 
 
         private BlockingCollection<Image<Bgr, byte>> imageBlockingCollection;
@@ -75,6 +79,7 @@ namespace SADGUI
             KillAllCommand = new MyCommands(KillAll);
             KillEnemiesCommand = new MyCommands(KillEnemies);
             KillFriendsCommand = new MyCommands(KillFriends);
+            LoadServerCommand = new MyCommands(LoadServer);
             m_missileLauncherCommandQueue = new Queue<ICommand>();
 
 
@@ -89,6 +94,27 @@ namespace SADGUI
             processBuffer = new BlockingCollection<Image<Bgr, byte>>();
             isRunning = false;
             this.StartCommandQueue();
+        }
+        /// <summary>
+        /// Loads the server based on the team name, IP, and Port
+        /// Uses code found in SADClient Program.cs
+        /// </summary>
+        private void LoadServer()
+        {
+            MessageBox.Show("Team name is: " + TeamName);
+            MessageBox.Show("IP is: " + IP);
+            MessageBox.Show("Port is: " + Port);
+
+            //This throws an exception because I cannot connect to the server yet,
+            //so I will comment it out for now
+
+            ////Code from SADClient Program.cs
+            //var serverType = GameServerType.Mock;
+            //serverType = GameServerType.WebClient;
+            ////create a game server
+            //var gameServer = GameServerFactory.Create(serverType, TeamName, IP, Port);
+            ////get the game list, Game combobox on the main window is bound to GameList
+            //GameList = gameServer.RetrieveGameList();
         }
 
         private void GetImage()
@@ -143,7 +169,6 @@ namespace SADGUI
 
             processBuffer.CompleteAdding();
         }
-
         private void Stop()
         {
             isRunning = false;
@@ -208,6 +233,7 @@ namespace SADGUI
                 OnPropertyChanged();
             }
         }
+        public string TeamName { get { return m_teamname; }}
         public TargetViewModel SelectedTarget
         {
             get
@@ -245,6 +271,8 @@ namespace SADGUI
             SLP += LP2.ToString();//"Phi: (phiPostion value) Theta: (thetaPosition value)"
             LauncherPosition = SLP;  //will display Phi: (phiPostion value) Theta: (thetaPosition value)
         }
+
+        public IEnumerable<string> GameList { get; set; }
         public ICommand LoadTargetsFromFileCommand { get; set; }
         public ICommand LoadTargetsFromServerCommand { get; set; }
         public ICommand GetImageCommand{ get; set; }
@@ -264,6 +292,19 @@ namespace SADGUI
         public ICommand KillEnemiesCommand { get; set; }
         public ICommand KillFriendsCommand { get; set; }
         public ICommand KillAllCommand { get; set; }
+        public ICommand LoadServerCommand { get; set; }
+
+        public string IP
+        {
+            get { return m_IP; }
+            set { m_IP = value; }
+        }
+
+        public int Port
+        {
+            get { return m_Port; }
+            set { m_Port = value; }
+        }
 
         private void CreateMock()
         {
