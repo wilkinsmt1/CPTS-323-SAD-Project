@@ -326,14 +326,14 @@
               <lifelineMoniker Id="f6bb95e5-0514-4e54-9fdd-8e55ff377800" LastKnownName="MoveRightCommand : MyCommands" />
             </covered>
           </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="43390102-df5c-471e-991a-b191eda66983" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="f6bb95e5-0514-4e54-9fdd-8e55ff377800" LastKnownName="MoveRightCommand : MyCommands" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="062f7f04-7de2-445d-b0a9-ea977d80dd78" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="cbfba9e1-579f-4a08-bdb0-85a2c772c27d" LastKnownName="this : MainViewModel" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="43390102-df5c-471e-991a-b191eda66983" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="f6bb95e5-0514-4e54-9fdd-8e55ff377800" LastKnownName="MoveRightCommand : MyCommands" />
             </covered>
           </messageOccurrenceSpecification>
           <executionOccurrenceSpecification Id="a58de19c-bd3a-4efd-9a0d-ac7bcab1fae6" name="ExecutionOccurrenceSpecification">
@@ -536,14 +536,14 @@
               <lifelineMoniker Id="c859a8e5-2ba7-4c7e-b0bb-46ce956cf531" LastKnownName="FireCommand : MyCommands" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="e830afba-211d-47cf-b8ec-d0a7fbc5af0f" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="cbfba9e1-579f-4a08-bdb0-85a2c772c27d" LastKnownName="this : MainViewModel" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="f8cd44e5-664e-4570-9a2e-823cc762de9b" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="c859a8e5-2ba7-4c7e-b0bb-46ce956cf531" LastKnownName="FireCommand : MyCommands" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="e830afba-211d-47cf-b8ec-d0a7fbc5af0f" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="cbfba9e1-579f-4a08-bdb0-85a2c772c27d" LastKnownName="this : MainViewModel" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="58e9ab2e-ceed-4140-99c0-daf865438485" name="MessageOccurrenceSpecification">
@@ -827,14 +827,14 @@
           </messageOccurrenceSpecification>
           <combinedFragment Id="e2c668a8-f0e0-4905-a688-de606c09c21b" name="CombinedFragment1" interactionOperator="Opt" customInteractionOperator="If">
             <coveredLifelines>
-              <lifelineMoniker Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" LastKnownName="TargetManager" />
               <lifelineMoniker Id="d3066bb7-6af9-463d-ac9b-dc8787406585" LastKnownName="TargetManager.targetListInstance : TargetManager" />
+              <lifelineMoniker Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" LastKnownName="TargetManager" />
             </coveredLifelines>
             <operands>
               <interactionOperand Id="a3a91f27-615f-4ead-a8ee-92410f50e243" name="InteractionOperand1">
                 <coveredLifelines>
-                  <lifelineMoniker Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" LastKnownName="TargetManager" />
                   <lifelineMoniker Id="d3066bb7-6af9-463d-ac9b-dc8787406585" LastKnownName="TargetManager.targetListInstance : TargetManager" />
+                  <lifelineMoniker Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" LastKnownName="TargetManager" />
                 </coveredLifelines>
                 <guard>
                   <interactionConstraint Id="60fee69c-d9a0-4c5d-9f43-de3ab38ac36f" guardText="if (targetListInstance == null)" />
@@ -913,14 +913,14 @@
               <lifelineMoniker Id="d3066bb7-6af9-463d-ac9b-dc8787406585" LastKnownName="TargetManager.targetListInstance : TargetManager" />
             </covered>
           </executionOccurrenceSpecification>
-          <operandOccurrenceSpecification Id="647c3a7d-057a-4356-86ad-18a4b4d9adbc" name="OperandOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" LastKnownName="TargetManager" />
-            </covered>
-          </operandOccurrenceSpecification>
           <operandOccurrenceSpecification Id="6781b6b9-3b3c-4634-9f47-11a0b84ea4bf" name="OperandOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="d3066bb7-6af9-463d-ac9b-dc8787406585" LastKnownName="TargetManager.targetListInstance : TargetManager" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification Id="647c3a7d-057a-4356-86ad-18a4b4d9adbc" name="OperandOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" LastKnownName="TargetManager" />
             </covered>
           </operandOccurrenceSpecification>
           <messageOccurrenceSpecification Id="242451b1-2cef-4224-a63c-bd93bb797314" name="MessageOccurrenceSpecification">
@@ -1520,14 +1520,14 @@
               <lifelineMoniker Id="cbfba9e1-579f-4a08-bdb0-85a2c772c27d" LastKnownName="this : MainViewModel" />
             </covered>
           </executionOccurrenceSpecification>
-          <messageOccurrenceSpecification Id="161664bc-ec9a-4985-a9de-64c5a6aec5bb" name="MessageOccurrenceSpecification">
-            <covered>
-              <lifelineMoniker Id="cbfba9e1-579f-4a08-bdb0-85a2c772c27d" LastKnownName="this : MainViewModel" />
-            </covered>
-          </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="401d27f4-bed0-4dca-b3d5-b06ffdcb3a17" name="MessageOccurrenceSpecification">
             <covered>
               <lifelineMoniker Id="f8d6a15c-7ed3-4546-9d06-be529f501034" LastKnownName="Task" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="161664bc-ec9a-4985-a9de-64c5a6aec5bb" name="MessageOccurrenceSpecification">
+            <covered>
+              <lifelineMoniker Id="cbfba9e1-579f-4a08-bdb0-85a2c772c27d" LastKnownName="this : MainViewModel" />
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification Id="257339c5-85d2-498d-98c7-5e3ea4c9e8c1" name="MessageOccurrenceSpecification">
@@ -1612,134 +1612,74 @@
               <executionOccurrenceSpecificationMoniker Id="3d4ec259-72e5-432a-a2bf-2758285ca960" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="1f161ef6-a4d7-4eca-b6bc-15c63e581312" name="GetImageCommand : MyCommands" isActor="false" lifelineDisplayName="GetImageCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 5&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="3a3f2bb9-a8ec-40d1-b70b-94a840838a22" name="this.imageBlockingCollection : BlockingCollection&lt;Image&lt;Bgr, Byte&gt;&gt;" isActor="false" lifelineDisplayName="this.imageBlockingCollection : BlockingCollection&lt;Image&lt;Bgr, Byte&gt;&gt;" referencedInstance="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.Concurrent Type=(Name=BlockingCollection GenericParameterCount=1 GenericArguments=[(Assembly=$(VsSolutionUri)/packages/EmguCV.221.x86.1.0/lib/Emgu.CV.dll Namespace=Emgu.CV Type=(Name=Image GenericParameterCount=2 GenericArguments=[(Assembly=$(VsSolutionUri)/packages/EmguCV.221.x86.1.0/lib/Emgu.CV.dll Namespace=Emgu.CV.Structure Type=Bgr),(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=Byte)]))]) ObjectInstance=&quot;Object instance 103&quot;)" referencedType="System‎.Collections‎.Concurrent‎.BlockingCollection‎&lt;Image‎&lt;Bgr‎, Byte‎&gt;‎&gt;">
             <referencesInternal>
-              <reference Id="d63908ff-edf9-4afc-b294-c1d05e09103d" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="36b78384-4d23-497e-821f-297af28452da" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="0b17ed19-8281-492d-a6f6-f284c5b28c7f" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=System.Collections.Concurrent)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&amp;quot; Namespace=System.Collections.Concurrent Type=(Name=BlockingCollection GenericParameterCount=1))&quot;)" tag="DGQL" />
+              <reference Id="44895419-e659-439e-ad17-14709b1352e3" handle="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.Concurrent Type=(Name=BlockingCollection GenericParameterCount=1))" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="16f73b56-1d9f-48a2-94a0-d66b80350c2a" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="f0ae281c-03fd-4209-8e99-1064e88d5e78" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="7430f9ec-8077-492e-aab7-57fb0cbe3c47" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="f27b0960-b861-4fe3-be39-735fb5bc3f11" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="523715c2-9c6c-4002-8dce-fa783b80e058" name="LoadTargetsFromFileCommand : MyCommands" isActor="false" lifelineDisplayName="LoadTargetsFromFileCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 10&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="01098022-1e84-4f01-8ade-91d1c0850603" name="KillFriendsCommand : MyCommands" isActor="false" lifelineDisplayName="KillFriendsCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 92&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="8eb52c30-1efb-47a9-bd08-e25b5b6ff598" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="7f923d41-3e18-4bf7-8167-9c3c4918eb05" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="b1e9dca7-1686-4ffb-9304-e41ee9e65dc6" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="3ec417d8-7adf-4ca3-9eed-338627b2cef0" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="5fd806f7-dec2-4386-b093-ce511922b262" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="c18d93a8-435c-45ef-b291-d32d4db3f8c8" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="01423001-8deb-4fc6-9fc2-7dea2adabbc7" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="e78eb7db-4e0e-4137-8fba-2ac1059592d4" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="d91447b6-0f7e-40cb-b9be-72b0cccae2a3" name="LoadTargetsFromServerCommand : MyCommands" isActor="false" lifelineDisplayName="LoadTargetsFromServerCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 15&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="2d8fd9bd-d6ac-462b-8dd2-7bab949eb425" name="KillEnemiesCommand : MyCommands" isActor="false" lifelineDisplayName="KillEnemiesCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 87&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="4fb3fa2a-c178-47fb-aedc-0b8d0b763d4a" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="4dd5218f-642a-46a0-baad-39137be5a711" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="feb6b7ca-9367-493c-b6b9-07362464156c" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="f3f4f3ed-a781-45e5-b06a-92f7da039367" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="960baa25-543c-4e52-9c35-f84a2cd09372" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="f7b83530-69c7-4664-84be-560280f1e23e" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="1b83b35e-0de7-4ff0-9c45-bed941f04f5d" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="71ecf20a-7b9f-4081-ac0e-3abd975980f3" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="f6bb95e5-0514-4e54-9fdd-8e55ff377800" name="MoveRightCommand : MyCommands" isActor="false" lifelineDisplayName="MoveRightCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 20&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="ad667f70-b33d-4a1a-b733-c8f71ede7c8a" name="KillAllCommand : MyCommands" isActor="false" lifelineDisplayName="KillAllCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 82&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="c293a36a-0f63-4d19-8e30-3e8e6a500eca" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="c8922f5c-1f33-4fd0-bbd0-30517be58a65" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="0b445c63-5615-4847-9446-8cc24fef9cbf" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="5e348091-7d38-4f0a-af07-0de1ccf00c4b" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="1d294625-2593-4191-877c-c6fae57576bb" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="a58de19c-bd3a-4efd-9a0d-ac7bcab1fae6" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="8c794cd4-3bf6-4799-84a5-3cd4ed92601c" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="40b12151-a63f-4238-8cf9-507624c22ff7" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="4d2fc81d-37c3-4821-8e22-19a91025408e" name="MoveLeftCommand : MyCommands" isActor="false" lifelineDisplayName="MoveLeftCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 25&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="0caecb37-45a1-457f-b2bd-5813e5374c37" name="StopCommand : MyCommands" isActor="false" lifelineDisplayName="StopCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 77&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="d75651c3-c3fb-46ed-93b4-6c0f80c1e565" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="122cc8f9-d13a-48f2-81fc-d4c1a7219d14" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="84081de0-c345-49d7-9dc5-38b860eff353" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="5efc88dd-a157-4923-95b8-33f41600b96b" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="0009b443-1546-462c-8ad5-af12b1810f4b" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="2663ff01-2f1d-4ba1-95d1-fa80ce19626b" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="d69443a0-2e20-41f5-b8ac-69c44da3ef87" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="a1d500ee-fc98-45ee-bf6d-867adb2e7915" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="2f264ca3-1a28-4b21-9d40-c84c828f9f75" name="MoveUpCommand : MyCommands" isActor="false" lifelineDisplayName="MoveUpCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 30&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="ff15d71f-d511-4fd6-a61c-a1b5ba85cdd5" name="CreateDCCommand : MyCommands" isActor="false" lifelineDisplayName="CreateDCCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 72&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="1cb205d6-5c19-4573-b4b2-80f4bd57e48f" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="5acd87af-c4a9-47ac-ab0d-c09c58715f97" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="395cdb09-a48d-4951-afe7-6fb00812ac1e" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="e42bc9e8-654e-4baa-9471-8b466466ab4d" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="17a66977-edf7-4530-ab50-3f3f6763d872" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="108ae330-543a-47d2-b19a-28e65c6a2490" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="f63e09b2-947a-46f2-b44c-e1585e6abc48" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="57306faf-2e0e-42a5-b1f2-fbddfd18894d" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="7f43ad88-6f4b-4e07-9150-bd493ef9304c" name="MoveDownCommand : MyCommands" isActor="false" lifelineDisplayName="MoveDownCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 35&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="082da0cb-1f7c-4d07-9e32-b301466ece06" name="CreateMockCommand : MyCommands" isActor="false" lifelineDisplayName="CreateMockCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 67&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="8110c071-49c3-4f21-8fb4-b26831ccab68" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="287e161a-ccbe-454d-9253-2f864a5433d9" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="647e68f4-07c6-40bd-a5b0-557c162ef9b8" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="3b684406-339e-4dd7-9e68-d98a4d615958" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="f33e4f58-ad26-49e7-a427-a58aa8cd99e2" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="7e9d03a7-d380-4b78-a5e4-1841ac0a35cc" LastKnownName="ExecutionOccurrenceSpecification" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline Id="c859a8e5-2ba7-4c7e-b0bb-46ce956cf531" name="FireCommand : MyCommands" isActor="false" lifelineDisplayName="FireCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 40&quot;)" referencedType="SADGUI‎.MyCommands">
-            <referencesInternal>
-              <reference Id="32e31fdb-e1bd-4cff-aa50-7d7c7fa7ca52" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="c0511c35-1417-4886-bc6d-c436e8c90dd5" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
-            </referencesInternal>
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="37e053ed-70f1-4c7c-8b92-25107d28cda7" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="298137df-66f0-4670-85e0-5345e8ab40a4" LastKnownName="ExecutionOccurrenceSpecification" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline Id="7fb73f63-dad4-40bf-ab39-6b14b0c5d444" name="ClearTargetsCommand : MyCommands" isActor="false" lifelineDisplayName="ClearTargetsCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 45&quot;)" referencedType="SADGUI‎.MyCommands">
-            <referencesInternal>
-              <reference Id="3755d3f3-d7ea-429e-b3d5-39de28d1fd32" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="d235fa65-bc3c-494a-b482-c8688e594e92" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
-            </referencesInternal>
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="8dce0264-9342-4c8c-a23e-9f4cbd7868be" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="92ebb95b-f472-41e8-ac65-78f07d11c748" LastKnownName="ExecutionOccurrenceSpecification" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline Id="fa035dff-d0e5-44e8-9f59-3af6eacfe687" name="KillTargetsCommand : MyCommands" isActor="false" lifelineDisplayName="KillTargetsCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 50&quot;)" referencedType="SADGUI‎.MyCommands">
-            <referencesInternal>
-              <reference Id="1b4aa27f-45e9-4e8c-8eac-1d3af223676d" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="8d9bb0c7-63b6-4bcd-bff2-c97d7778a019" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
-            </referencesInternal>
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="469c76cc-5df2-41f2-8de3-f299d5605a37" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="12dd31a8-1f79-4200-bf81-d945d039e0e4" LastKnownName="ExecutionOccurrenceSpecification" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline Id="3628bac6-58f2-4bc6-a69b-026669911e0d" name="ReloadMissilesCommand : MyCommands" isActor="false" lifelineDisplayName="ReloadMissilesCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 55&quot;)" referencedType="SADGUI‎.MyCommands">
-            <referencesInternal>
-              <reference Id="9740fe2d-3293-47e6-a16d-99b01bd39710" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="ce9216bd-9cf4-481b-95fc-f4aab592b58e" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
-            </referencesInternal>
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="b2c745ac-0611-4193-a91c-b7c17e685494" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="d2c0d57e-f9ca-4e3f-9b9b-b921a88afd27" LastKnownName="ExecutionOccurrenceSpecification" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline Id="62553c13-82a1-420a-a787-a550a5aba6cf" name="TargetsCollection : ObservableCollection&lt;TargetViewModel&gt;" isActor="false" lifelineDisplayName="TargetsCollection : ObservableCollection&lt;TargetViewModel&gt;" referencedInstance="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.ObjectModel Type=(Name=ObservableCollection GenericParameterCount=1 GenericArguments=[(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=TargetViewModel)]) ObjectInstance=&quot;Object instance 58&quot;)" referencedType="System‎.Collections‎.ObjectModel‎.ObservableCollection‎&lt;TargetViewModel‎&gt;">
-            <referencesInternal>
-              <reference Id="95a01c5f-7be4-4985-8b0a-4844e7deb316" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=System.Collections.ObjectModel)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&amp;quot; Namespace=System.Collections.ObjectModel Type=(Name=ObservableCollection GenericParameterCount=1))&quot;)" tag="DGQL" />
-              <reference Id="7603d195-f3e7-4db8-a6ff-cbde61b64d70" handle="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.ObjectModel Type=(Name=ObservableCollection GenericParameterCount=1))" tag="DGML" />
-            </referencesInternal>
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="bb12e296-0260-4e45-a521-bdc98f877348" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="9b1f972c-008b-41a6-8d5a-578f311725c8" LastKnownName="ExecutionOccurrenceSpecification" />
-            </topLevelOccurrences>
-          </lifeline>
-          <lifeline Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" name="TargetManager" isActor="false" lifelineDisplayName="TargetManager" referencedType="SAD‎.Core‎.Data‎.TargetManager">
-            <referencesInternal>
-              <reference Id="de875081-305a-492e-896b-6de142078e20" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SAD.Core.Data)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd.OutputPathUri)&amp;quot; Namespace=SAD.Core.Data Type=TargetManager)&quot;)" tag="DGQL" />
-              <reference Id="38ec77ed-46a3-4cd5-a436-feb9e4ac9f1e" handle="(Assembly=&quot;$(0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd.OutputPathUri)&quot; Namespace=SAD.Core.Data Type=TargetManager)" tag="DGML" />
-            </referencesInternal>
-            <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="550af834-46e4-436c-b487-e2dd6910b114" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="5a801c67-dfc1-451b-947a-a82291bf1d95" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="412c310d-af43-4ebc-acdf-46bf039dddc2" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="039b2e3e-d976-4231-b377-ff406845002d" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
           <lifeline Id="d3066bb7-6af9-463d-ac9b-dc8787406585" name="TargetManager.targetListInstance : TargetManager" isActor="false" lifelineDisplayName="TargetManager.targetListInstance : TargetManager" referencedInstance="(Assembly=$(0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd.OutputPathUri) Namespace=SAD.Core.Data Type=TargetManager ObjectInstance=&quot;Object instance 62&quot;)" referencedType="SAD‎.Core‎.Data‎.TargetManager">
@@ -1754,74 +1694,134 @@
               <operandOccurrenceSpecificationMoniker Id="6781b6b9-3b3c-4634-9f47-11a0b84ea4bf" LastKnownName="OperandOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="082da0cb-1f7c-4d07-9e32-b301466ece06" name="CreateMockCommand : MyCommands" isActor="false" lifelineDisplayName="CreateMockCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 67&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="7dadb130-7dcb-4459-b3e0-81719b7fe0e0" name="TargetManager" isActor="false" lifelineDisplayName="TargetManager" referencedType="SAD‎.Core‎.Data‎.TargetManager">
             <referencesInternal>
-              <reference Id="647e68f4-07c6-40bd-a5b0-557c162ef9b8" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="3b684406-339e-4dd7-9e68-d98a4d615958" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="de875081-305a-492e-896b-6de142078e20" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SAD.Core.Data)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd.OutputPathUri)&amp;quot; Namespace=SAD.Core.Data Type=TargetManager)&quot;)" tag="DGQL" />
+              <reference Id="38ec77ed-46a3-4cd5-a436-feb9e4ac9f1e" handle="(Assembly=&quot;$(0433a9c9-e5a8-49f8-82aa-d9a6a54cefcd.OutputPathUri)&quot; Namespace=SAD.Core.Data Type=TargetManager)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="412c310d-af43-4ebc-acdf-46bf039dddc2" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="039b2e3e-d976-4231-b377-ff406845002d" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="550af834-46e4-436c-b487-e2dd6910b114" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="5a801c67-dfc1-451b-947a-a82291bf1d95" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="ff15d71f-d511-4fd6-a61c-a1b5ba85cdd5" name="CreateDCCommand : MyCommands" isActor="false" lifelineDisplayName="CreateDCCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 72&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="62553c13-82a1-420a-a787-a550a5aba6cf" name="TargetsCollection : ObservableCollection&lt;TargetViewModel&gt;" isActor="false" lifelineDisplayName="TargetsCollection : ObservableCollection&lt;TargetViewModel&gt;" referencedInstance="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.ObjectModel Type=(Name=ObservableCollection GenericParameterCount=1 GenericArguments=[(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=TargetViewModel)]) ObjectInstance=&quot;Object instance 58&quot;)" referencedType="System‎.Collections‎.ObjectModel‎.ObservableCollection‎&lt;TargetViewModel‎&gt;">
             <referencesInternal>
-              <reference Id="395cdb09-a48d-4951-afe7-6fb00812ac1e" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="e42bc9e8-654e-4baa-9471-8b466466ab4d" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="95a01c5f-7be4-4985-8b0a-4844e7deb316" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=System.Collections.ObjectModel)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&amp;quot; Namespace=System.Collections.ObjectModel Type=(Name=ObservableCollection GenericParameterCount=1))&quot;)" tag="DGQL" />
+              <reference Id="7603d195-f3e7-4db8-a6ff-cbde61b64d70" handle="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.ObjectModel Type=(Name=ObservableCollection GenericParameterCount=1))" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="f63e09b2-947a-46f2-b44c-e1585e6abc48" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="57306faf-2e0e-42a5-b1f2-fbddfd18894d" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="bb12e296-0260-4e45-a521-bdc98f877348" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="9b1f972c-008b-41a6-8d5a-578f311725c8" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="0caecb37-45a1-457f-b2bd-5813e5374c37" name="StopCommand : MyCommands" isActor="false" lifelineDisplayName="StopCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 77&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="3628bac6-58f2-4bc6-a69b-026669911e0d" name="ReloadMissilesCommand : MyCommands" isActor="false" lifelineDisplayName="ReloadMissilesCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 55&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="84081de0-c345-49d7-9dc5-38b860eff353" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="5efc88dd-a157-4923-95b8-33f41600b96b" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="9740fe2d-3293-47e6-a16d-99b01bd39710" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="ce9216bd-9cf4-481b-95fc-f4aab592b58e" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="d69443a0-2e20-41f5-b8ac-69c44da3ef87" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="a1d500ee-fc98-45ee-bf6d-867adb2e7915" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="b2c745ac-0611-4193-a91c-b7c17e685494" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="d2c0d57e-f9ca-4e3f-9b9b-b921a88afd27" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="ad667f70-b33d-4a1a-b733-c8f71ede7c8a" name="KillAllCommand : MyCommands" isActor="false" lifelineDisplayName="KillAllCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 82&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="fa035dff-d0e5-44e8-9f59-3af6eacfe687" name="KillTargetsCommand : MyCommands" isActor="false" lifelineDisplayName="KillTargetsCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 50&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="0b445c63-5615-4847-9446-8cc24fef9cbf" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="5e348091-7d38-4f0a-af07-0de1ccf00c4b" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="1b4aa27f-45e9-4e8c-8eac-1d3af223676d" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="8d9bb0c7-63b6-4bcd-bff2-c97d7778a019" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="8c794cd4-3bf6-4799-84a5-3cd4ed92601c" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="40b12151-a63f-4238-8cf9-507624c22ff7" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="469c76cc-5df2-41f2-8de3-f299d5605a37" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="12dd31a8-1f79-4200-bf81-d945d039e0e4" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="2d8fd9bd-d6ac-462b-8dd2-7bab949eb425" name="KillEnemiesCommand : MyCommands" isActor="false" lifelineDisplayName="KillEnemiesCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 87&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="7fb73f63-dad4-40bf-ab39-6b14b0c5d444" name="ClearTargetsCommand : MyCommands" isActor="false" lifelineDisplayName="ClearTargetsCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 45&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="feb6b7ca-9367-493c-b6b9-07362464156c" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="f3f4f3ed-a781-45e5-b06a-92f7da039367" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="3755d3f3-d7ea-429e-b3d5-39de28d1fd32" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="d235fa65-bc3c-494a-b482-c8688e594e92" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="1b83b35e-0de7-4ff0-9c45-bed941f04f5d" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="71ecf20a-7b9f-4081-ac0e-3abd975980f3" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="8dce0264-9342-4c8c-a23e-9f4cbd7868be" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="92ebb95b-f472-41e8-ac65-78f07d11c748" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="01098022-1e84-4f01-8ade-91d1c0850603" name="KillFriendsCommand : MyCommands" isActor="false" lifelineDisplayName="KillFriendsCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 92&quot;)" referencedType="SADGUI‎.MyCommands">
+          <lifeline Id="c859a8e5-2ba7-4c7e-b0bb-46ce956cf531" name="FireCommand : MyCommands" isActor="false" lifelineDisplayName="FireCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 40&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="b1e9dca7-1686-4ffb-9304-e41ee9e65dc6" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
-              <reference Id="3ec417d8-7adf-4ca3-9eed-338627b2cef0" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+              <reference Id="32e31fdb-e1bd-4cff-aa50-7d7c7fa7ca52" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="c0511c35-1417-4886-bc6d-c436e8c90dd5" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="01423001-8deb-4fc6-9fc2-7dea2adabbc7" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="e78eb7db-4e0e-4137-8fba-2ac1059592d4" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="37e053ed-70f1-4c7c-8b92-25107d28cda7" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="298137df-66f0-4670-85e0-5345e8ab40a4" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
-          <lifeline Id="3a3f2bb9-a8ec-40d1-b70b-94a840838a22" name="this.imageBlockingCollection : BlockingCollection&lt;Image&lt;Bgr, Byte&gt;&gt;" isActor="false" lifelineDisplayName="this.imageBlockingCollection : BlockingCollection&lt;Image&lt;Bgr, Byte&gt;&gt;" referencedInstance="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.Concurrent Type=(Name=BlockingCollection GenericParameterCount=1 GenericArguments=[(Assembly=$(VsSolutionUri)/packages/EmguCV.221.x86.1.0/lib/Emgu.CV.dll Namespace=Emgu.CV Type=(Name=Image GenericParameterCount=2 GenericArguments=[(Assembly=$(VsSolutionUri)/packages/EmguCV.221.x86.1.0/lib/Emgu.CV.dll Namespace=Emgu.CV.Structure Type=Bgr),(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=Byte)]))]) ObjectInstance=&quot;Object instance 103&quot;)" referencedType="System‎.Collections‎.Concurrent‎.BlockingCollection‎&lt;Image‎&lt;Bgr‎, Byte‎&gt;‎&gt;">
+          <lifeline Id="7f43ad88-6f4b-4e07-9150-bd493ef9304c" name="MoveDownCommand : MyCommands" isActor="false" lifelineDisplayName="MoveDownCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 35&quot;)" referencedType="SADGUI‎.MyCommands">
             <referencesInternal>
-              <reference Id="0b17ed19-8281-492d-a6f6-f284c5b28c7f" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=System.Collections.Concurrent)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&amp;quot; Namespace=System.Collections.Concurrent Type=(Name=BlockingCollection GenericParameterCount=1))&quot;)" tag="DGQL" />
-              <reference Id="44895419-e659-439e-ad17-14709b1352e3" handle="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.Concurrent Type=(Name=BlockingCollection GenericParameterCount=1))" tag="DGML" />
+              <reference Id="8110c071-49c3-4f21-8fb4-b26831ccab68" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="287e161a-ccbe-454d-9253-2f864a5433d9" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
             </referencesInternal>
             <topLevelOccurrences>
-              <executionOccurrenceSpecificationMoniker Id="7430f9ec-8077-492e-aab7-57fb0cbe3c47" LastKnownName="ExecutionOccurrenceSpecification" />
-              <executionOccurrenceSpecificationMoniker Id="f27b0960-b861-4fe3-be39-735fb5bc3f11" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="f33e4f58-ad26-49e7-a427-a58aa8cd99e2" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="7e9d03a7-d380-4b78-a5e4-1841ac0a35cc" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="2f264ca3-1a28-4b21-9d40-c84c828f9f75" name="MoveUpCommand : MyCommands" isActor="false" lifelineDisplayName="MoveUpCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 30&quot;)" referencedType="SADGUI‎.MyCommands">
+            <referencesInternal>
+              <reference Id="1cb205d6-5c19-4573-b4b2-80f4bd57e48f" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="5acd87af-c4a9-47ac-ab0d-c09c58715f97" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="17a66977-edf7-4530-ab50-3f3f6763d872" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="108ae330-543a-47d2-b19a-28e65c6a2490" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="4d2fc81d-37c3-4821-8e22-19a91025408e" name="MoveLeftCommand : MyCommands" isActor="false" lifelineDisplayName="MoveLeftCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 25&quot;)" referencedType="SADGUI‎.MyCommands">
+            <referencesInternal>
+              <reference Id="d75651c3-c3fb-46ed-93b4-6c0f80c1e565" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="122cc8f9-d13a-48f2-81fc-d4c1a7219d14" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="0009b443-1546-462c-8ad5-af12b1810f4b" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="2663ff01-2f1d-4ba1-95d1-fa80ce19626b" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="f6bb95e5-0514-4e54-9fdd-8e55ff377800" name="MoveRightCommand : MyCommands" isActor="false" lifelineDisplayName="MoveRightCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 20&quot;)" referencedType="SADGUI‎.MyCommands">
+            <referencesInternal>
+              <reference Id="c293a36a-0f63-4d19-8e30-3e8e6a500eca" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="c8922f5c-1f33-4fd0-bbd0-30517be58a65" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="1d294625-2593-4191-877c-c6fae57576bb" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="a58de19c-bd3a-4efd-9a0d-ac7bcab1fae6" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="d91447b6-0f7e-40cb-b9be-72b0cccae2a3" name="LoadTargetsFromServerCommand : MyCommands" isActor="false" lifelineDisplayName="LoadTargetsFromServerCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 15&quot;)" referencedType="SADGUI‎.MyCommands">
+            <referencesInternal>
+              <reference Id="4fb3fa2a-c178-47fb-aedc-0b8d0b763d4a" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="4dd5218f-642a-46a0-baad-39137be5a711" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="960baa25-543c-4e52-9c35-f84a2cd09372" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="f7b83530-69c7-4664-84be-560280f1e23e" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="523715c2-9c6c-4002-8dce-fa783b80e058" name="LoadTargetsFromFileCommand : MyCommands" isActor="false" lifelineDisplayName="LoadTargetsFromFileCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 10&quot;)" referencedType="SADGUI‎.MyCommands">
+            <referencesInternal>
+              <reference Id="8eb52c30-1efb-47a9-bd08-e25b5b6ff598" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="7f923d41-3e18-4bf7-8167-9c3c4918eb05" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="5fd806f7-dec2-4386-b093-ce511922b262" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="c18d93a8-435c-45ef-b291-d32d4db3f8c8" LastKnownName="ExecutionOccurrenceSpecification" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="1f161ef6-a4d7-4eca-b6bc-15c63e581312" name="GetImageCommand : MyCommands" isActor="false" lifelineDisplayName="GetImageCommand : MyCommands" referencedInstance="(Assembly=$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri) Namespace=SADGUI Type=MyCommands ObjectInstance=&quot;Object instance 5&quot;)" referencedType="SADGUI‎.MyCommands">
+            <referencesInternal>
+              <reference Id="d63908ff-edf9-4afc-b294-c1d05e09103d" handle="+ Id.Equals(&quot;Microsoft.Solution.ClassView&quot;) /&#xD;&#xA;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Namespace=SADGUI)&quot;)/&#xD;&#xA;&quot;Microsoft.Contains&quot;/&#xD;&#xA;+ Id.EqualsIgnoreCase(&quot;(Assembly=&amp;quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&amp;quot; Namespace=SADGUI Type=MyCommands)&quot;)" tag="DGQL" />
+              <reference Id="36b78384-4d23-497e-821f-297af28452da" handle="(Assembly=&quot;$(860b2f14-beac-4c55-b151-8e27b4bb4f5f.OutputPathUri)&quot; Namespace=SADGUI Type=MyCommands)" tag="DGML" />
+            </referencesInternal>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="16f73b56-1d9f-48a2-94a0-d66b80350c2a" LastKnownName="ExecutionOccurrenceSpecification" />
+              <executionOccurrenceSpecificationMoniker Id="f0ae281c-03fd-4209-8e99-1064e88d5e78" LastKnownName="ExecutionOccurrenceSpecification" />
             </topLevelOccurrences>
           </lifeline>
           <lifeline Id="3bbd9423-9085-428a-9a53-00f030f0ca87" name="this.processBuffer : BlockingCollection&lt;Image&lt;Bgr, Byte&gt;&gt;" isActor="false" lifelineDisplayName="this.processBuffer : BlockingCollection&lt;Image&lt;Bgr, Byte&gt;&gt;" referencedInstance="(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/System.dll&quot; Namespace=System.Collections.Concurrent Type=(Name=BlockingCollection GenericParameterCount=1 GenericArguments=[(Assembly=$(VsSolutionUri)/packages/EmguCV.221.x86.1.0/lib/Emgu.CV.dll Namespace=Emgu.CV Type=(Name=Image GenericParameterCount=2 GenericArguments=[(Assembly=$(VsSolutionUri)/packages/EmguCV.221.x86.1.0/lib/Emgu.CV.dll Namespace=Emgu.CV.Structure Type=Bgr),(Assembly=&quot;$(FxReferenceAssembliesUri)/.NETFramework/v4.5/mscorlib.dll&quot; Namespace=System Type=Byte)]))]) ObjectInstance=&quot;Object instance 105&quot;)" referencedType="System‎.Collections‎.Concurrent‎.BlockingCollection‎&lt;Image‎&lt;Bgr‎, Byte‎&gt;‎&gt;">
