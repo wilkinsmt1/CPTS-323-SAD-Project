@@ -40,23 +40,24 @@ namespace SADGUI
         private CancellationTokenSource cts;
         private bool isRunning;
 
+
         private BlockingCollection<Image<Bgr, byte>> imageBlockingCollection;
 
         private BlockingCollection<Image<Bgr, byte>> processBuffer;
 
         public MainViewModel()
         {
-            try
-            {
-                m_capture = new Capture();
-            }
-            catch (Exception)
-            {
+            //try
+            //{
+            //    m_capture = new Capture();
+            //}
+            //catch (Exception)
+            //{
 
-            }
+            //}
             GetImageCommand = new MyCommands(GetImage);
             LoadTargetsFromFileCommand = new MyCommands(LoadTargetsFromFile);
-            LoadTargetsFromServerCommand = new MyCommands(LoadTargetsFromServer);
+            //LoadTargetsFromServerCommand = new MyCommands(LoadTargetsFromServer);
             MoveRightCommand = new MyCommands(MoveRight);
             MoveLeftCommand = new MyCommands(MoveLeft);
             MoveUpCommand = new MyCommands(MoveUp);
@@ -73,6 +74,9 @@ namespace SADGUI
             KillAllCommand = new MyCommands(KillAll);
             KillEnemiesCommand = new MyCommands(KillEnemies);
             KillFriendsCommand = new MyCommands(KillFriends);
+            m_missileLauncherCommandQueue = new Queue<ICommand>();
+
+
             //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
             //GetCount();
             //GetPosition();
@@ -83,6 +87,7 @@ namespace SADGUI
             imageBlockingCollection = new BlockingCollection<Image<Bgr, byte>>();
             processBuffer = new BlockingCollection<Image<Bgr, byte>>();
             isRunning = false;
+            this.RunCommandQueue();
         }
 
         private void GetImage()
@@ -376,47 +381,47 @@ namespace SADGUI
                 AddTarget();
             }
         }
-        private void LoadTargetsFromServer()
-        {
-            string remoteUri;
-            string dir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\.."));
-            string file = dir + @"\webini.txt";
+        //private void LoadTargetsFromServer()
+        //{
+        //    string remoteUri;
+        //    string dir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\.."));
+        //    string file = dir + @"\webini.txt";
 
-            var openInputDialog = new Ookii.Dialogs.InputDialog();
-            openInputDialog.WindowTitle = "Load Targets";
-            openInputDialog.MainInstruction = "Enter Server URL";
+        //    var openInputDialog = new Ookii.Dialogs.InputDialog();
+        //    openInputDialog.WindowTitle = "Load Targets";
+        //    openInputDialog.MainInstruction = "Enter Server URL";
 
-            if (File.Exists(file))
-            {
-                File.Delete(file);
-            }
+        //    if (File.Exists(file))
+        //    {
+        //        File.Delete(file);
+        //    }
 
-            using (WebClient webClient = new WebClient())
-            {
-                try
-                {
-                    if (openInputDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        remoteUri = openInputDialog.Input;
-                        MessageBox.Show("We loaded: " + remoteUri);
-                        webClient.DownloadFile(remoteUri, file);
-                    }
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Target file not found on Server.");
-                }
-                finally
-                {
-                    if (File.Exists(file))
-                    {
-                        var iniReader = FRFactory.CreateReader(FRType.INIReader, file);
-                        TargetsList = m_targetManager.GetTargetList();
-                        AddTarget();
-                    }
-                }
-            }
-        }
+        //    using (WebClient webClient = new WebClient())
+        //    {
+        //        try
+        //        {
+        //            if (openInputDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+        //            {
+        //                remoteUri = openInputDialog.Input;
+        //                MessageBox.Show("We loaded: " + remoteUri);
+        //                webClient.DownloadFile(remoteUri, file);
+        //            }
+        //        }
+        //        catch (Exception)
+        //        {
+        //            MessageBox.Show("Target file not found on Server.");
+        //        }
+        //        finally
+        //        {
+        //            if (File.Exists(file))
+        //            {
+        //                var iniReader = FRFactory.CreateReader(FRType.INIReader, file);
+        //                TargetsList = m_targetManager.GetTargetList();
+        //                AddTarget();
+        //            }
+        //        }
+        //    }
+        //}
         private void AddTarget()
         {
             foreach (var target in TargetsList)
@@ -485,62 +490,122 @@ namespace SADGUI
         }
         private void MoveUp()
         {
-            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
-            if (m_missileLauncher is DreamCheeky)
+            m_missileLauncherCommandQueue.Enqueue(new MyCommands(() =>
             {
-                m_missileLauncher.MoveBy((move * 22.2), (0));
-                GetPosition();
-            }
-            else if (m_missileLauncher is Mock)
-            { //if m_missileLauncher is type Mock just show a message
-                MessageBox.Show("Moving Mock launcher to the up by " + move + " degrees.");
-            }
-            else
-            { //if m_missileLauncher has not be initilized, show an error
-                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
-            }
-            //m_missileLauncher.MoveTo(0,0);
-            
+                //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+                if (m_missileLauncher is DreamCheeky)
+                {
+                    m_missileLauncher.MoveBy((move * 22.2), (0));
+                    GetPosition();
+                }
+                else if (m_missileLauncher is Mock)
+                { //if m_missileLauncher is type Mock just show a message
+                    MessageBox.Show("Moving Mock launcher to the up by " + move + " degrees.");
+                }
+                else
+                { //if m_missileLauncher has not be initilized, show an error
+                    MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+                }
+                //m_missileLauncher.MoveTo(0,0);
+
+            }));
 
         }
         private void MoveDown()
         {
-            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
-            if (m_missileLauncher is DreamCheeky)
-            {
-                m_missileLauncher.MoveBy(((move * -1) * 22.2), (0));
-                GetPosition();
-            }
-            else if (m_missileLauncher is Mock)
-            { //if m_missileLauncher is type Mock just show a message
-                MessageBox.Show("Moving Mock launcher to the down by " + move + " degrees.");
-            }
-            else
-            { //if m_missileLauncher has not be initilized, show an error
-                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
-            }
-            //m_missileLauncher.MoveTo(0,0);
+            m_missileLauncherCommandQueue.Enqueue(new MyCommands(() =>
+                {
+                    //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+                    if (m_missileLauncher is DreamCheeky)
+                    {
+                        m_missileLauncher.MoveBy(((move * -1) * 22.2), (0));
+                        GetPosition();
+                    }
+                    else if (m_missileLauncher is Mock)
+                    { //if m_missileLauncher is type Mock just show a message
+                        MessageBox.Show("Moving Mock launcher to the down by " + move + " degrees.");
+                    }
+                    else
+                    { //if m_missileLauncher has not be initilized, show an error
+                        MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+                    }
+                    //m_missileLauncher.MoveTo(0,0);
+                }));
 
         }
         private void Fire()
         {
-            //m_missileLauncher is already type DreamCheeky, call the Fire method
-            // and then get the missile count.
-            if (m_missileLauncher is DreamCheeky)
+            m_missileLauncherCommandQueue.Enqueue(new MyCommands(() =>
             {
-                m_missileLauncher.Fire();
-                GetCount();
-            }
-            else if (m_missileLauncher is Mock)
-            { //if m_missileLauncher is type Mock just show a message
-                MessageBox.Show("Firing ze missiles!");
-            }
-            else
-            { //if m_missileLauncher has not be initilized, show an error
-                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
-            }
+                //m_missileLauncher is already type DreamCheeky, call the Fire method
+                // and then get the missile count.
+                if (m_missileLauncher is DreamCheeky)
+                {
+                    m_missileLauncher.Fire();
+                    GetCount();
+                }
+                else if (m_missileLauncher is Mock)
+                { //if m_missileLauncher is type Mock just show a message
+                    MessageBox.Show("Firing ze missiles!");
+                }
+                else
+                { //if m_missileLauncher has not be initilized, show an error
+                    MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+                }
+           }));
 
         }
+
+        /// <summary>
+        /// The commands for the missile launcher to run.
+        /// </summary>
+        private Queue<ICommand> m_missileLauncherCommandQueue;
+
+        /// <summary>
+        /// Is the command queue running?
+        /// Setting to false will stop the command queue.
+        /// </summary>
+        private bool m_commandQueueRunning;
+
+        /// <summary>
+        /// The command loop.
+        /// </summary>
+        private async void RunCommandQueue()
+        {
+            while (m_commandQueueRunning)
+            {
+                await Task.Delay(50);
+                if (m_missileLauncherCommandQueue.Count > 0)
+                {
+                    var command = m_missileLauncherCommandQueue.Dequeue();
+                    command.Execute(null);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Queue an up command for the missile launcher to run
+        /// The command that is called when the user clicks the up button
+        /// should execute this method
+        /// </summary>
+        //private void QueueUp()
+        //{
+        //    // Add a command that is runnable by the command loop, not by the user interface
+        //    this.m_missileLauncherCommandQueue.Enqueue(new MyCommands(() => {
+        //        KillTargets(SelectedTarget);
+        //        DoSomethingElse();
+        //        AndAnotherthing();
+        //});
+
+        /// <summary>
+        /// Start the missile launcher command loop
+        /// </summary>
+        private void StartCommandQueue()
+        {
+            m_commandQueueRunning = true;
+            var task = Task.Run(() => RunCommandQueue());
+        }
+
     }
 
     public abstract class ViewModelBase : INotifyPropertyChanged

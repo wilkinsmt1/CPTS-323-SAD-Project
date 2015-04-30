@@ -72,6 +72,7 @@ namespace BuildDefender
 
             IntPtr handle = new IntPtr();
             this.USB.RegisterHandle(handle);
+            
         }
 
         public void command_Stop()
