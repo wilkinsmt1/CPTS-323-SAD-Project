@@ -57,7 +57,7 @@ namespace SADGUI
             //}
             GetImageCommand = new MyCommands(GetImage);
             LoadTargetsFromFileCommand = new MyCommands(LoadTargetsFromFile);
-            //LoadTargetsFromServerCommand = new MyCommands(LoadTargetsFromServer);
+           // LoadTargetsFromServerCommand = new MyCommands(LoadTargetsFromServer);
             MoveRightCommand = new MyCommands(MoveRight);
             MoveLeftCommand = new MyCommands(MoveLeft);
             MoveUpCommand = new MyCommands(MoveUp);
@@ -492,22 +492,22 @@ namespace SADGUI
         {
             m_missileLauncherCommandQueue.Enqueue(new MyCommands(() =>
             {
-                //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
-                if (m_missileLauncher is DreamCheeky)
-                {
-                    m_missileLauncher.MoveBy((move * 22.2), (0));
-                    GetPosition();
-                }
-                else if (m_missileLauncher is Mock)
-                { //if m_missileLauncher is type Mock just show a message
-                    MessageBox.Show("Moving Mock launcher to the up by " + move + " degrees.");
-                }
-                else
-                { //if m_missileLauncher has not be initilized, show an error
-                    MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
-                }
-                //m_missileLauncher.MoveTo(0,0);
-
+            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.MoveBy((move * 22.2), (0));
+                GetPosition();
+            }
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Moving Mock launcher to the up by " + move + " degrees.");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
+            //m_missileLauncher.MoveTo(0,0);
+            
             }));
 
         }
@@ -515,21 +515,21 @@ namespace SADGUI
         {
             m_missileLauncherCommandQueue.Enqueue(new MyCommands(() =>
                 {
-                    //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
-                    if (m_missileLauncher is DreamCheeky)
-                    {
-                        m_missileLauncher.MoveBy(((move * -1) * 22.2), (0));
-                        GetPosition();
-                    }
-                    else if (m_missileLauncher is Mock)
-                    { //if m_missileLauncher is type Mock just show a message
-                        MessageBox.Show("Moving Mock launcher to the down by " + move + " degrees.");
-                    }
-                    else
-                    { //if m_missileLauncher has not be initilized, show an error
-                        MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
-                    }
-                    //m_missileLauncher.MoveTo(0,0);
+            //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.MoveBy(((move * -1) * 22.2), (0));
+                GetPosition();
+            }
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Moving Mock launcher to the down by " + move + " degrees.");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
+            //m_missileLauncher.MoveTo(0,0);
                 }));
 
         }
@@ -537,21 +537,21 @@ namespace SADGUI
         {
             m_missileLauncherCommandQueue.Enqueue(new MyCommands(() =>
             {
-                //m_missileLauncher is already type DreamCheeky, call the Fire method
-                // and then get the missile count.
-                if (m_missileLauncher is DreamCheeky)
-                {
-                    m_missileLauncher.Fire();
-                    GetCount();
-                }
-                else if (m_missileLauncher is Mock)
-                { //if m_missileLauncher is type Mock just show a message
-                    MessageBox.Show("Firing ze missiles!");
-                }
-                else
-                { //if m_missileLauncher has not be initilized, show an error
-                    MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
-                }
+            //m_missileLauncher is already type DreamCheeky, call the Fire method
+            // and then get the missile count.
+            if (m_missileLauncher is DreamCheeky)
+            {
+                m_missileLauncher.Fire();
+                GetCount();
+            }
+            else if (m_missileLauncher is Mock)
+            { //if m_missileLauncher is type Mock just show a message
+                MessageBox.Show("Firing ze missiles!");
+            }
+            else
+            { //if m_missileLauncher has not be initilized, show an error
+                MessageBox.Show("Error! Missile Launcher type has not be selected yet!");
+            }
            }));
 
         }
