@@ -427,7 +427,7 @@ namespace SADGUI
         //            }
         //        }
         //    }
-        }
+        //}
         private void AddTarget()
         {
             foreach (var target in TargetsList)
