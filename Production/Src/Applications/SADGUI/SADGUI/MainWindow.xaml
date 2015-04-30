@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:sadgui="clr-namespace:SADGUI"
         Title="Scorched Earth Destroyers" 
-        Height="380" 
+        Height="517" 
         Width="800.312" 
         HorizontalAlignment="Right" 
         VerticalAlignment="Bottom">
@@ -105,10 +105,12 @@
                 Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" MinHeight="34"/>
-                <RowDefinition Height="13*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition />
                 <RowDefinition Height="42"/>
                 <RowDefinition Height="42"/>
+                <RowDefinition Height="42"/>
+                <RowDefinition Height="42"/>
+                                <RowDefinition Height="42"/>
             </Grid.RowDefinitions>
             <!-- Video Toggle -->
             <Button Content="Video On"
@@ -131,7 +133,7 @@
             <Image
                 Name="PictureBox"
                 Source="{Binding CameraImage}"
-                Margin="71,5,75,5"
+                Margin="38,5"
                 Grid.Row="1" />
             <!-- Positioning Buttons -->
             <Button Content="Right" 
@@ -173,6 +175,41 @@
                     Command="{Binding KillTargetsCommand}"
                     Margin="141,0,0,10" 
                     Grid.Row="3" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="55" />
+            <!-- IP Address -->
+            <TextBlock Grid.Column="0"
+                       Text="IP Address:"
+                       FontSize="18"
+                       Margin="10,7,0,7" 
+                       Grid.Row="5" HorizontalAlignment="Left" Width="89"/>
+            <TextBox Grid.Column="0"
+                     Grid.Row="5" 
+                     Text="{Binding getipaddress}"
+                     Margin="102,7,0,10" HorizontalAlignment="Left" Width="110"
+                     />
+            <!-- Port Number -->
+            <TextBlock Grid.Column="0"
+                       Text="Port:"
+                       FontSize="18"
+                       Margin="226,7,0,7" 
+                       Grid.Row="5" HorizontalAlignment="Left" Width="37"/>
+            <TextBox Grid.Column="0"
+                     Grid.Row="5" 
+                     Text="{Binding getport}"
+                     Margin="268,7,0,10" HorizontalAlignment="Left" Width="66"
+                     />
+            <!-- Game Stuff -->
+            <ComboBox Grid.Column="0"
+                      Grid.Row="6"
+                      Text="{Binding gamelist}"
+                      Margin="10,10,0,10" HorizontalAlignment="Left" Width="178"/>
+            <Button Grid.Column="0"
+                      Grid.Row="6"
+                      Content="Start" 
+                      Command="{Binding startgame}" Margin="215,10,0,10" HorizontalAlignment="Left" Width="48"/>
+            <Button Grid.Column="0"
+                      Grid.Row="6"
+                      Content="Stop" 
+                      Command="{Binding stopgame}" Margin="286,10,0,10" HorizontalAlignment="Left" Width="48"/>
         </Grid>
     </Grid>
 </Window>
