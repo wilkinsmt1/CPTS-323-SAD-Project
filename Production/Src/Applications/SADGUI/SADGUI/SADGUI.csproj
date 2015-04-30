@@ -104,6 +104,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BitmapConverter.cs" />
+    <Compile Include="Data\GameList.cs" />
+    <Compile Include="Servers\GameServerFactory.cs" />
+    <Compile Include="Data\Target.cs" />
+    <Compile Include="Servers\GameServerInterface.cs" />
+    <Compile Include="Servers\GameServerType.cs" />
+    <Compile Include="Servers\IGameServer.cs" />
+    <Compile Include="Servers\MockGameServerInterface.cs" />
+    <Compile Include="Servers\WebClientGameServerInterface.cs" />
     <Compile Include="TargetView.xaml.cs">
       <DependentUpon>TargetView.xaml</DependentUpon>
     </Compile>

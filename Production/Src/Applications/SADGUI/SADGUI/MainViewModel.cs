@@ -381,12 +381,12 @@ namespace SADGUI
                 AddTarget();
             }
         }
-        //private void LoadTargetsFromServer()
-        //{
-        //    string remoteUri;
-        //    string dir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\.."));
-        //    string file = dir + @"\webini.txt";
-
+       //private void LoadTargetsFromServer()
+       //{
+       //      string remoteUri;
+       //      string dir = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\.."));
+       //      string file = dir + @"\webini.txt";
+       //
         //    var openInputDialog = new Ookii.Dialogs.InputDialog();
         //    openInputDialog.WindowTitle = "Load Targets";
         //    openInputDialog.MainInstruction = "Enter Server URL";
@@ -421,7 +421,7 @@ namespace SADGUI
         //            }
         //        }
         //    }
-        //}
+        }
         private void AddTarget()
         {
             foreach (var target in TargetsList)
