@@ -200,16 +200,18 @@
             <!-- Game Stuff -->
             <ComboBox Grid.Column="0"
                       Grid.Row="6"
+                      ItemsSource="{Binding GameList}"
                       Text="{Binding GameList}"
+                      SelectedItem="{Binding SelectedGame}"
                       Margin="10,10,0,10" HorizontalAlignment="Left" Width="178"/>
             <Button Grid.Column="0"
                       Grid.Row="6"
                       Content="Start" 
-                      Command="{Binding startgame}" Margin="215,10,0,10" HorizontalAlignment="Left" Width="48"/>
+                      Command="{Binding StartGameCommand}" Margin="215,10,0,10" HorizontalAlignment="Left" Width="48"/>
             <Button Grid.Column="0"
                       Grid.Row="6"
                       Content="Stop" 
-                      Command="{Binding stopgame}" Margin="286,10,0,10" HorizontalAlignment="Left" Width="48"/>
+                      Command="{Binding StopGameCommand}" Margin="286,10,0,10" HorizontalAlignment="Left" Width="48"/>
         </Grid>
     </Grid>
 </Window>

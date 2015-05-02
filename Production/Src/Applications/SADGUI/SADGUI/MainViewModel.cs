@@ -23,6 +23,7 @@ using SAD.Core.IO;
 using System.Diagnostics;
 using System.Threading;
 using Emgu.CV.Structure;
+using TargetServerCommunicator;
 using TargetServerCommunicator.Servers;
 
 namespace SADGUI
@@ -43,6 +44,8 @@ namespace SADGUI
         private string m_IP;
         private int m_Port;
         private const string m_teamname = "Scorched Earth Destroyers";
+        private string m_SelectedGame;
+        private IGameServer gameServer;
 
 
         private BlockingCollection<Image<Bgr, byte>> imageBlockingCollection;
@@ -80,7 +83,10 @@ namespace SADGUI
             KillEnemiesCommand = new MyCommands(KillEnemies);
             KillFriendsCommand = new MyCommands(KillFriends);
             LoadServerCommand = new MyCommands(LoadServer);
+            StartGameCommand = new MyCommands(StartGame);
+            StopGameCommand = new MyCommands(StopGame);
             m_missileLauncherCommandQueue = new Queue<ICommand>();
+            GameList = new ObservableCollection<string>();
 
 
             //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
@@ -95,27 +101,104 @@ namespace SADGUI
             isRunning = false;
             this.StartCommandQueue();
         }
+
+        private void StopGame()
+        {
+            if (gameServer == null)
+                return;
+
+            if (SelectedGame == null)
+                return;
+
+            gameServer.StopRunningGame();
+        }
+
+        private void StartGame()
+        {
+            //First you want to get the targets
+            GetTargets();
+            if (gameServer == null)
+                return;
+
+            if (SelectedGame == null)
+                return;
+
+            gameServer.StartGame(SelectedGame);
+        }
+
         /// <summary>
         /// Loads the server based on the team name, IP, and Port
         /// Uses code found in SADClient Program.cs
         /// </summary>
         private void LoadServer()
         {
-            MessageBox.Show("Team name is: " + TeamName);
-            MessageBox.Show("IP is: " + IP);
-            MessageBox.Show("Port is: " + Port);
+            //MessageBox.Show("Team name is: " + TeamName);
+            //MessageBox.Show("IP is: " + IP);
+            //MessageBox.Show("Port is: " + Port);
 
             //This throws an exception because I cannot connect to the server yet,
             //so I will comment it out for now
 
             ////Code from SADClient Program.cs
-            //var serverType = GameServerType.Mock;
-            //serverType = GameServerType.WebClient;
-            ////create a game server
-            //var gameServer = GameServerFactory.Create(serverType, TeamName, IP, Port);
-            ////get the game list, Game combobox on the main window is bound to GameList
-            //GameList = gameServer.RetrieveGameList();
+            //create a game server
+            gameServer = GameServerFactory.Create(GameServerType.WebClient, TeamName, IP, Port);
+            gameServer.StopRunningGame();
+            //get the game list, Game combobox on the main window is bound to GameList
+
+            var games = gameServer.RetrieveGameList();
+            foreach (var game in games)
+            {
+                GameList.Add(game);
+            }
+            
+            //var targets = gameServer.RetrieveTargetList(m_SelectedGame);
+            //ConvertTargets(targets);
+
         }
+        private void GetTargets()
+        {
+            if (gameServer == null)
+                return;
+
+            if (SelectedGame == null)
+                return;
+
+            var targets = gameServer.RetrieveTargetList(SelectedGame);
+            foreach (var target in targets)
+            {
+                // Translate the GameServerCommunicatorTarget into your own...
+                // Then add to your own collection of targets bound by the View.
+                //Targets.Add(target);
+                ConvertTargets(target);
+            }
+            TargetsList = m_targetManager.GetTargetList();
+            //Add a target viewmodel
+            AddTarget();
+        }
+        /// <summary>
+        /// Converts the GameServers targets into our TargetManager targets.
+        /// </summary>
+        /// <param name="target"></param>
+        private void ConvertTargets(TargetServerCommunicator.Data.Target target)
+        {
+            m_targetManager.TargetList.Add(new Targets() // add all the extracted data to the list
+            {
+                TargetName = target.name,
+                X = target.x, //have to do this all at the same time
+                Y = target.y, //so it is in the same Targets object
+                Z = target.z,
+                IsFriend = Convert.ToBoolean(target.status),
+                Points = (int)target.points,
+                FlashRate = 0,
+                SpawnRate = (int)target.spawnRate,
+                CanSwapSidesWhenHit = target.canChangeSides,
+                Status = "Still At Large",
+                IsAlive = true
+            });
+            
+
+        }
+
 
         private void GetImage()
         {
@@ -272,7 +355,20 @@ namespace SADGUI
             LauncherPosition = SLP;  //will display Phi: (phiPostion value) Theta: (thetaPosition value)
         }
 
-        public IEnumerable<string> GameList { get; set; }
+        public string SelectedGame
+        {
+            get { return m_SelectedGame; }
+            set
+            {
+                if (value == m_SelectedGame)
+                {
+                    return;
+                }
+                m_SelectedGame = value;
+                OnPropertyChanged();
+            }
+        }
+        public ObservableCollection<string> GameList { get; set; }
         public ICommand LoadTargetsFromFileCommand { get; set; }
         public ICommand LoadTargetsFromServerCommand { get; set; }
         public ICommand GetImageCommand{ get; set; }
@@ -293,17 +389,35 @@ namespace SADGUI
         public ICommand KillFriendsCommand { get; set; }
         public ICommand KillAllCommand { get; set; }
         public ICommand LoadServerCommand { get; set; }
+        public ICommand StartGameCommand { get; set; }
+        public ICommand StopGameCommand { get; set; }
 
         public string IP
         {
             get { return m_IP; }
-            set { m_IP = value; }
+			set
+			{
+				if(value == m_IP)
+				{
+					return;
+				}
+				m_IP = value;
+				OnPropertyChanged();
+			}
         }
 
         public int Port
         {
             get { return m_Port; }
-            set { m_Port = value; }
+			set
+			{
+				if(value == m_Port)
+				{
+					return;
+				}
+				m_Port = value;
+				OnPropertyChanged();
+			}
         }
 
         private void CreateMock()
