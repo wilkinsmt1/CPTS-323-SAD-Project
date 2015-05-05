@@ -472,7 +472,7 @@ namespace SADGUI
             }));
         }
 
-        private void KillAll()
+        internal void KillAll()
         {
             foreach (var target in TargetsCollection)
             {
@@ -483,7 +483,7 @@ namespace SADGUI
             }
         }
 
-        private void KillEnemies()
+        internal void KillEnemies()
         {
             foreach (var target in TargetsCollection)
             {
@@ -498,7 +498,7 @@ namespace SADGUI
             
         }
 
-        private void KillFriends()
+        internal void KillFriends()
         {
             foreach (var target in TargetsCollection)
             {
