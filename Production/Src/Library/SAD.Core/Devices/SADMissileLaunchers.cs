@@ -16,6 +16,7 @@ namespace SAD.Core.Devices
         void Fire();
         void Reload();
         void PrintStatus();
+        void MoveByButtons(double phi, double theta);
 
     }
 
@@ -47,6 +48,14 @@ namespace SAD.Core.Devices
             theta = (theta / 22.2);
             if (thetaPosition == 0.0)
             {
+                if (phiPosition < 0)
+                {
+                    phi = phiPosition - phi;
+                }
+                else if (phiPosition > 0)
+                {
+                    phi = phi - phiPosition;
+                }
                 phiPosition += phi;
                 thetaPosition += theta;
                 int degrees = Convert.ToInt32(theta*22.2);
@@ -87,6 +96,14 @@ namespace SAD.Core.Devices
             }
             else if (theta < thetaPosition)
             {
+                if (phiPosition < 0)
+                {
+                    phi = phiPosition - phi;
+                }
+                else if (phiPosition > 0)
+                {
+                    phi = phi - phiPosition;
+                }
                 var thing = thetaPosition - theta;
                 phiPosition += phi;
                 thetaPosition += thing;
@@ -125,11 +142,17 @@ namespace SAD.Core.Devices
                 {
                     m_launcher.command_Up(0);
                 }
-
-
             }
             else if (theta > thetaPosition)
             {
+                if (phiPosition < 0)
+                {
+                    phi = phiPosition - phi;
+                }
+                else if (phiPosition > 0)
+                {
+                    phi = phi - phiPosition;
+                }
                 var thing = theta - thetaPosition;
                 phiPosition += phi;
                 thetaPosition += thing;
@@ -172,6 +195,55 @@ namespace SAD.Core.Devices
             //phi = phi - phiPosition;
             //theta = theta - thetaPosition;
             
+        }
+        public void MoveByButtons(double phi, double theta)
+        {
+            //Launcher.MoveBy(phi, theta);
+            //doubles are passed in, but the ML methods takes ints
+            phi = (phi / 22.2);
+            theta = (theta / 22.2);
+
+                phiPosition += phi;
+                thetaPosition += theta;
+                int degrees = Convert.ToInt32(theta * 22.2);
+                int zdegrees = Convert.ToInt32(phi * 22.2);
+
+                if (degrees < 0) //negative values specify moving left
+                {                //but ML doesn't like negative values.
+                    degrees *= -1;
+                }
+                if (zdegrees < 0) //negative values specify moving down
+                {
+                    zdegrees *= -1;
+                }
+                if (theta > 0) //theta == positive move right
+                {
+                    m_launcher.command_Right(degrees);
+                }
+                else if (theta < 0) //theta == negtive move left
+                {
+                    m_launcher.command_Left(degrees);
+                }
+                else if (theta == 0) //theta == 0, don't move
+                {                    //probably shouldn't call anything
+                    m_launcher.command_Left(0);
+                }
+                if (phi > 0) //positive == up
+                {
+                    m_launcher.command_Up(zdegrees);
+                }
+                else if (phi < 0) //negative == down
+                {
+                    m_launcher.command_Down(zdegrees);
+                }
+                else if (phi == 0) //0 == dont move
+                {
+                    m_launcher.command_Up(0);
+                }
+            
+            //phi = phi - phiPosition;
+            //theta = theta - thetaPosition;
+
         }
         public void MoveTo(double phi, double theta)
         {
@@ -250,6 +322,11 @@ namespace SAD.Core.Devices
         public void PrintStatus()
         {
             Console.WriteLine("Name: Mock Launcher\nStatus: Married with children.");
+        }
+
+        public void MoveByButtons(double phi, double theta)
+        {
+            throw new NotImplementedException();
         }
     }
 

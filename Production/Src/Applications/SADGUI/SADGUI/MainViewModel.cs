@@ -555,7 +555,7 @@ namespace SADGUI
             //m_missileLauncher.MoveBy((phi * 22.2), (theta * 22.2));
             GetPosition();
             m_missileLauncher.Fire();
-            //GetCount();
+            GetCount();
             //target.IsAlive = false;
         }
         private void ClearTargets()
@@ -650,7 +650,7 @@ namespace SADGUI
                 //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
                 if (m_missileLauncher is DreamCheeky)
                 {
-                    m_missileLauncher.MoveBy((0), (move * 22.2));
+                    m_missileLauncher.MoveByButtons((0), (move * 22.2));
                     GetPosition();
                 }
                 else if (m_missileLauncher is Mock)
@@ -671,7 +671,7 @@ namespace SADGUI
                 //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
                 if (m_missileLauncher is DreamCheeky)
                 {
-                    m_missileLauncher.MoveBy((0), ((move * -1) * 22.2));
+                    m_missileLauncher.MoveByButtons((0), ((move * -1) * 22.2));
                     GetPosition();
                 }
                 else if (m_missileLauncher is Mock)
@@ -694,7 +694,7 @@ namespace SADGUI
                 //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
                 if (m_missileLauncher is DreamCheeky)
                 {
-                    m_missileLauncher.MoveBy((move * 22.2), (0));
+                    m_missileLauncher.MoveByButtons((move * 22.2), (0));
                     GetPosition();
                 }
                 else if (m_missileLauncher is Mock)
@@ -717,7 +717,7 @@ namespace SADGUI
                 //m_missileLauncher is already type DreamCheeky, call the MoveBy method.
                 if (m_missileLauncher is DreamCheeky)
                 {
-                    m_missileLauncher.MoveBy(((move * -1) * 22.2), (0));
+                    m_missileLauncher.MoveByButtons(((move * -1) * 22.2), (0));
                     GetPosition();
                 }
                 else if (m_missileLauncher is Mock)
