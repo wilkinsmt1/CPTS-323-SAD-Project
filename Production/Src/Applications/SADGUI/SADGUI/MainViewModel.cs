@@ -87,6 +87,7 @@ namespace SADGUI
             StopGameCommand = new MyCommands(StopGame);
             m_missileLauncherCommandQueue = new Queue<ICommand>();
             GameList = new ObservableCollection<string>();
+            m_targetManager.TargetList = new ObservableCollection<Targets>();
 
 
             //m_missileLauncher = MLFactory.CreateMissileLauncher(MLType.DreamCheeky);
@@ -124,6 +125,7 @@ namespace SADGUI
                 return;
 
             gameServer.StartGame(SelectedGame);
+            KillAll();
         }
 
         /// <summary>
@@ -141,6 +143,7 @@ namespace SADGUI
 
             ////Code from SADClient Program.cs
             //create a game server
+
             gameServer = GameServerFactory.Create(GameServerType.WebClient, TeamName, IP, Port);
             gameServer.StopRunningGame();
             //get the game list, Game combobox on the main window is bound to GameList
@@ -459,8 +462,8 @@ namespace SADGUI
                             x = SelectedTarget.Target.X;
                             y = SelectedTarget.Target.Y;
                             z = SelectedTarget.Target.Z;
-                            theta = TargetPositioning.CalculateTheta(x, y, z);
-                            phi = TargetPositioning.CalculatePhi(x, y);
+                            theta = TargetPositioning.CalculateTheta(x, y);
+                            phi = TargetPositioning.CalculatePhi(y, z);
                             //m_missileLauncher.MoveTo(0,0);
                             m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
                             GetPosition();
@@ -517,14 +520,18 @@ namespace SADGUI
             x = target.X;
             y = target.Y;
             z = target.Z;
-            theta = TargetPositioning.CalculateTheta(x, y, z);
-            phi = TargetPositioning.CalculatePhi(x, y);
+            theta = TargetPositioning.CalculateTheta(y, x);
+            phi = TargetPositioning.CalculatePhi(y, z);
             //m_missileLauncher.MoveTo(0,0);
-            m_missileLauncher.MoveTo((phi * 22.2), (theta * 22.2));
-            GetPosition();
+           m_missileLauncher.MoveBy((phi * 22.2), (theta * 22.2));
+            //m_missileLauncher.MoveTo(0,0);
+           // MessageBox.Show("phi: " + phi);
+           // MessageBox.Show("theta:" + theta);
+            //m_missileLauncher.MoveBy((phi * 22.2), (theta * 22.2));
+           GetPosition();
             m_missileLauncher.Fire();
-            GetCount();
-            target.IsAlive = false;
+            //GetCount();
+            //target.IsAlive = false;
         }
         private void ClearTargets()
         {
