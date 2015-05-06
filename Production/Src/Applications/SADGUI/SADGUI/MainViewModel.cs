@@ -28,8 +28,13 @@ using TargetServerCommunicator.Servers;
 
 namespace SADGUI
 {
-    class MainViewModel : ViewModelBase
+    class MainViewModel : ViewModelBase, IAutoModeBase
     {
+        private IAutoModeBase i_autobase_currentstate;
+        private IAutoModeBase a_autoModeElimAll;
+        private IAutoModeBase a_autoModeElimEnemies;
+        private IAutoModeBase a_autoModeElimFriends;
+
         private BitmapSource m_cameraImage;
         private Capture m_capture;
         private IMissileLauncher m_missileLauncher;
@@ -101,6 +106,26 @@ namespace SADGUI
             processBuffer = new BlockingCollection<Image<Bgr, byte>>();
             isRunning = false;
             this.StartCommandQueue();
+
+            /*within implClass constructor:
+            obj1 = new ClassName(this);
+                private IAutoModeBase i_autobase_currentstate;
+                private IAutoModeBase AutoModeElimAll;
+                private IAutoModeBase AutoModeElimEnemies;
+                private IAutoModeBase AutoModeElimFriends;
+		    objBase = 1stDerivedClassObj;*/
+            a_autoModeElimAll = new AutoModeElimAll(this);
+            a_autoModeElimEnemies = new AutoModeElimEnemies(this);
+            a_autoModeElimFriends = new AutoModeElimFriends(this);
+
+            i_autobase_currentstate = a_autoModeElimEnemies;
+
+        }
+
+        //function to set IAutoModeBaseState state:
+        private void setIAutoModeBaseState(IAutoModeBase _i_auto_currentstate)
+        {
+            i_autobase_currentstate = _i_auto_currentstate;
         }
 
         private void StopGame()
@@ -475,7 +500,7 @@ namespace SADGUI
             }));
         }
 
-        private void KillAll()
+        internal void KillAll()
         {
             foreach (var target in TargetsCollection)
             {
@@ -486,7 +511,7 @@ namespace SADGUI
             }
         }
 
-        private void KillEnemies()
+        internal void KillEnemies()
         {
             foreach (var target in TargetsCollection)
             {
@@ -501,7 +526,7 @@ namespace SADGUI
             
         }
 
-        private void KillFriends()
+        internal void KillFriends()
         {
             foreach (var target in TargetsCollection)
             {
@@ -528,7 +553,7 @@ namespace SADGUI
            // MessageBox.Show("phi: " + phi);
            // MessageBox.Show("theta:" + theta);
             //m_missileLauncher.MoveBy((phi * 22.2), (theta * 22.2));
-           GetPosition();
+            GetPosition();
             m_missileLauncher.Fire();
             //GetCount();
             //target.IsAlive = false;
@@ -768,7 +793,58 @@ namespace SADGUI
             var task = Task.Run(() => RunCommandQueue());
         }
 
+
+        //for interface, these functions must be implemented: 
+        public void killSelectedTargets()
+        {
+            return;
+        }
+        public void moveToFirstTarget()
+        {
+            return;
+        }
+        public void moveToNextTarget()
+        {
+            return;
+        }
+        public void friend()
+        {
+            return;
+        }
+        public void foe()
+        {
+            return;
+        }
+        public void noMissiles()
+        {
+            return;
+        }
+        public void reload()
+        {
+            return;
     }
+        public void hasMissiles()
+        {
+            return;
+        }
+        public void hit()
+        {
+            return;
+        }
+        public void miss()
+        {
+            return;
+        }
+        public void canSwapSides()
+        {
+            return;
+        }
+        public void cannotSwapSides()
+        {
+            return;
+        }
+
+    } //end mvm class
 
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
