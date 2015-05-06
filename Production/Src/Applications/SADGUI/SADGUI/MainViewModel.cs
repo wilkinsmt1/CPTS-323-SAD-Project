@@ -35,7 +35,6 @@ namespace SADGUI
         private IAutoModeBase AutoModeElimEnemies;
         private IAutoModeBase AutoModeElimFriends;
 
-
         private BitmapSource m_cameraImage;
         private Capture m_capture;
         private IMissileLauncher m_missileLauncher;
@@ -106,6 +105,12 @@ namespace SADGUI
             processBuffer = new BlockingCollection<Image<Bgr, byte>>();
             isRunning = false;
             this.StartCommandQueue();
+        }
+
+        //function to set IAutoModeBaseState state:
+        private void setIAutoModeBaseState(IAutoModeBase _i_auto_currentstate)
+        {
+            i_auto_currentstate = _i_auto_currentstate;
         }
 
         private void StopGame()
