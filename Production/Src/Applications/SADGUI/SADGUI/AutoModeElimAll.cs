@@ -47,8 +47,8 @@ namespace SADGUI
         //}
 
         //constructor:
-        private AutoModeElimAll()
-        {
+        public AutoModeElimAll(MainViewModel mvm)
+        { 
             return;
         }
 

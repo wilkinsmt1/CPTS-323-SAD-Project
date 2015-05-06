@@ -30,10 +30,10 @@ namespace SADGUI
 {
     class MainViewModel : ViewModelBase, IAutoModeBase
     {
-        private IAutoModeBase i_auto_currentstate;
-        private IAutoModeBase AutoModeElimAll;
-        private IAutoModeBase AutoModeElimEnemies;
-        private IAutoModeBase AutoModeElimFriends;
+        private IAutoModeBase i_autobase_currentstate;
+        private IAutoModeBase a_autoModeElimAll;
+        private IAutoModeBase a_autoModeElimEnemies;
+        private IAutoModeBase a_autoModeElimFriends;
 
         private BitmapSource m_cameraImage;
         private Capture m_capture;
@@ -105,12 +105,26 @@ namespace SADGUI
             processBuffer = new BlockingCollection<Image<Bgr, byte>>();
             isRunning = false;
             this.StartCommandQueue();
+
+            /*within implClass constructor:
+            obj1 = new ClassName(this);
+                private IAutoModeBase i_autobase_currentstate;
+                private IAutoModeBase AutoModeElimAll;
+                private IAutoModeBase AutoModeElimEnemies;
+                private IAutoModeBase AutoModeElimFriends;
+		    objBase = 1stDerivedClassObj;*/
+            a_autoModeElimAll = new AutoModeElimAll(this);
+            a_autoModeElimEnemies = new AutoModeElimEnemies(this);
+            a_autoModeElimFriends = new AutoModeElimFriends(this);
+
+            i_autobase_currentstate = a_autoModeElimEnemies;
+
         }
 
         //function to set IAutoModeBaseState state:
         private void setIAutoModeBaseState(IAutoModeBase _i_auto_currentstate)
         {
-            i_auto_currentstate = _i_auto_currentstate;
+            i_autobase_currentstate = _i_auto_currentstate;
         }
 
         private void StopGame()
