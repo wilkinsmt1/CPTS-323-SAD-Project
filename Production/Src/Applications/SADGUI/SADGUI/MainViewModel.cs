@@ -30,6 +30,12 @@ namespace SADGUI
 {
     class MainViewModel : ViewModelBase, IAutoModeBase
     {
+        private IAutoModeBase i_auto_currentstate;
+        private IAutoModeBase AutoModeElimAll;
+        private IAutoModeBase AutoModeElimEnemies;
+        private IAutoModeBase AutoModeElimFriends;
+
+
         private BitmapSource m_cameraImage;
         private Capture m_capture;
         private IMissileLauncher m_missileLauncher;
