@@ -113,13 +113,12 @@ namespace SADGUI
                 private IAutoModeBase AutoModeElimAll;
                 private IAutoModeBase AutoModeElimEnemies;
                 private IAutoModeBase AutoModeElimFriends;
-		    objBase = 1stDerivedClassObj;*/
+		    objBase = derivedClassObj;*/
             a_autoModeElimAll = new AutoModeElimAll(this);
             a_autoModeElimEnemies = new AutoModeElimEnemies(this);
             a_autoModeElimFriends = new AutoModeElimFriends(this);
 
             i_autobase_currentstate = a_autoModeElimEnemies;
-
         }
 
         //function to set IAutoModeBaseState state:
@@ -150,7 +149,8 @@ namespace SADGUI
                 return;
 
             gameServer.StartGame(SelectedGame);
-            KillAll();
+            //KillAll();
+            a_autoModeElimEnemies.moveToFirstTarget();
         }
 
         /// <summary>
