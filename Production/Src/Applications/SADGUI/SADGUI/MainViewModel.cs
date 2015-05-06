@@ -124,6 +124,9 @@ namespace SADGUI
                 return;
 
             gameServer.StartGame(SelectedGame);
+
+            //add code here:
+
         }
 
         /// <summary>
