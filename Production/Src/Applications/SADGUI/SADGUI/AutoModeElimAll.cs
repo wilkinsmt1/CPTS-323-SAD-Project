@@ -28,7 +28,7 @@ using TargetServerCommunicator.Servers;
 
 namespace SADGUI
 {
-    class AutoModeElimAll : AutoModeBase, INotifyPropertyChanged
+    class AutoModeElimAll : IAutoModeBase //, INotifyPropertyChanged
     {
         Targets target;
 
@@ -45,7 +45,7 @@ namespace SADGUI
         //public override void targetHasMissilesOrNot(){
         //    return;
         //}
-        public override void killSelectedTargets()
+        public void killSelectedTargets()
         {
             return;
         }
@@ -57,7 +57,7 @@ namespace SADGUI
         //}
 
         //begin here in this class:
-        public override void moveToFirstTarget()
+        public void moveToFirstTarget()
         {
             //use first target
             if (target.IsFriend)  //target.Target.IsFriend)
@@ -70,7 +70,7 @@ namespace SADGUI
             }
         }
 
-        public override void moveToNextTarget()
+        public void moveToNextTarget()
         {
             if (numConsecutiveFreinds > 4) //|| (timer > 1)) //or > 4 in a row?
             {
@@ -90,7 +90,7 @@ namespace SADGUI
                 }
             }
         }
-        public override void friend()
+        public void friend()
         {
             if (numConsecutiveFreinds > 4)
             {
@@ -104,7 +104,7 @@ namespace SADGUI
             }
         }
 
-        public override void foe()
+        public void foe()
         {
             if (mvmc.MissileCount.Equals(0)) //numberOfMissilesLeft < 1)  //=============================================
             {
@@ -115,7 +115,7 @@ namespace SADGUI
                 hasMissiles();
             }
         }
-        public override void noMissiles()
+        public void noMissiles()
         {
             reload();
         }
@@ -126,7 +126,7 @@ namespace SADGUI
         //        KillTheTargets(target.Target);
         //    }));
         //}
-        public override void reload()
+        public void reload()
         {
             string name;
             //user input: press enter
@@ -135,7 +135,7 @@ namespace SADGUI
             //name = Console.ReadLine();
             moveToNextTarget();
         }
-        public override void hasMissiles()
+        public void hasMissiles()
         {
 
             mvmc.KillAll(); //fire one turret ... or all..
@@ -149,7 +149,7 @@ namespace SADGUI
             //    miss();
             //}
         }
-        public override void hit()
+        public void hit()
         {
             if (target.CanSwapSidesWhenHit == true)
             {
@@ -161,7 +161,7 @@ namespace SADGUI
             }
         }
 
-        public override void miss()
+        public void miss()
         {
             if (mvmc.MissileCount.Equals(0))  //how to write this? 
             {
@@ -173,12 +173,12 @@ namespace SADGUI
             }
         }
 
-        public override void canSwapSides()
+        public void canSwapSides()
         {
             target.IsFriend = true;
             friend();
         }
-        public override void cannotSwapSides()
+        public void cannotSwapSides()
         {
             foe();
         }

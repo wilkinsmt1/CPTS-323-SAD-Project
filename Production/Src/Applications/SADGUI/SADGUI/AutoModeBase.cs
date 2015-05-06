@@ -27,23 +27,23 @@ using TargetServerCommunicator.Servers;
 namespace SADGUI
 {
     //public class AutoModeBase
-   abstract class AutoModeBase : MainViewModel 
+   interface IAutoModeBase //: MainViewModel 
     {
         //public abstract void manualMode();
         //public abstract void targetHitorNot();
         //public abstract void targetHasMissilesOrNot();
-        public abstract void killSelectedTargets();
-        public abstract void moveToFirstTarget();
-        public abstract void moveToNextTarget();
-        public abstract void friend();
-        public abstract void foe();
-        public abstract void noMissiles();
-        public abstract void reload();
-        public abstract void hasMissiles();
-        public abstract void hit();
-        public abstract void miss();
-        public abstract void canSwapSides();
-        public abstract void cannotSwapSides();
+        void killSelectedTargets();
+        void moveToFirstTarget();
+        void moveToNextTarget();
+        void friend();
+        void foe();
+        void noMissiles();
+        void reload();
+        void hasMissiles();
+        void hit();
+        void miss();
+        void canSwapSides();
+        void cannotSwapSides();
 
     };
 }
