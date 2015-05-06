@@ -28,7 +28,7 @@ using TargetServerCommunicator.Servers;
 
 namespace SADGUI
 {
-    class MainViewModel : ViewModelBase
+    class MainViewModel : ViewModelBase, IAutoModeBase
     {
         private BitmapSource m_cameraImage;
         private Capture m_capture;
@@ -126,6 +126,7 @@ namespace SADGUI
             gameServer.StartGame(SelectedGame);
 
             //add code here:
+
 
         }
 
@@ -764,7 +765,58 @@ namespace SADGUI
             var task = Task.Run(() => RunCommandQueue());
         }
 
-    }
+
+        //for interface, these functions must be implemented: 
+        public void killSelectedTargets()
+        {
+            return;
+        }
+        public void moveToFirstTarget()
+        {
+            return;
+        }
+        public void moveToNextTarget()
+        {
+            return;
+        }
+        public void friend()
+        {
+            return;
+        }
+        public void foe()
+        {
+            return;
+        }
+        public void noMissiles()
+        {
+            return;
+        }
+        public void reload()
+        {
+            return;
+        }
+        public void hasMissiles()
+        {
+            return;
+        }
+        public void hit()
+        {
+            return;
+        }
+        public void miss()
+        {
+            return;
+        }
+        public void canSwapSides()
+        {
+            return;
+        }
+        public void cannotSwapSides()
+        {
+            return;
+        }
+
+    } //end mvm class
 
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
