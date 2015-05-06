@@ -43,6 +43,11 @@ namespace SADGUI
         //public override void targetHasMissilesOrNot(){
         //    return;
         //}
+                //constructor:
+        private AutoModeElimEnemies()
+        {
+            return;
+        }
         public void killSelectedTargets()
         {
             return;

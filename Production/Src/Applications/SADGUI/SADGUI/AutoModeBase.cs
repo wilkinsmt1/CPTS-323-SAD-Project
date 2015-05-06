@@ -32,7 +32,7 @@ namespace SADGUI
         //public abstract void manualMode();
         //public abstract void targetHitorNot();
         //public abstract void targetHasMissilesOrNot();
-        void killSelectedTargets();
+       void killSelectedTargets();
         void moveToFirstTarget();
         void moveToNextTarget();
         void friend();
