@@ -113,13 +113,12 @@ namespace SADGUI
                 private IAutoModeBase AutoModeElimAll;
                 private IAutoModeBase AutoModeElimEnemies;
                 private IAutoModeBase AutoModeElimFriends;
-		    objBase = 1stDerivedClassObj;*/
+		    objBase = derivedClassObj;*/
             a_autoModeElimAll = new AutoModeElimAll(this);
             a_autoModeElimEnemies = new AutoModeElimEnemies(this);
             a_autoModeElimFriends = new AutoModeElimFriends(this);
 
             i_autobase_currentstate = a_autoModeElimEnemies;
-
         }
 
         //function to set IAutoModeBaseState state:
@@ -154,7 +153,7 @@ namespace SADGUI
                 MessageBox.Show("Error! select missile launcher first");
                 return;
             }
-                
+
 
             gameServer.StartGame(SelectedGame);
            // m_missileLauncherCommandQueue.Enqueue(new MyCommands(Strategy));
@@ -216,15 +215,15 @@ namespace SADGUI
             }
             else
             {
-                gameServer = GameServerFactory.Create(GameServerType.WebClient, TeamName, IP, Port);
-                gameServer.StopRunningGame();
-                //get the game list, Game combobox on the main window is bound to GameList
+            gameServer = GameServerFactory.Create(GameServerType.WebClient, TeamName, IP, Port);
+            gameServer.StopRunningGame();
+            //get the game list, Game combobox on the main window is bound to GameList
 
-                var games = gameServer.RetrieveGameList();
-                foreach (var game in games)
-                {
-                    GameList.Add(game);
-                }
+            var games = gameServer.RetrieveGameList();
+            foreach (var game in games)
+            {
+                GameList.Add(game);
+            }
             }
             
             

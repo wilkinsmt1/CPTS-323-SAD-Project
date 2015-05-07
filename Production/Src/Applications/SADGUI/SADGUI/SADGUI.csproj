@@ -117,6 +117,7 @@
     <Compile Include="Servers\IGameServer.cs" />
     <Compile Include="Servers\MockGameServerInterface.cs" />
     <Compile Include="Servers\WebClientGameServerInterface.cs" />
+    <Compile Include="targetimaging.cs" />
     <Compile Include="TargetView.xaml.cs">
       <DependentUpon>TargetView.xaml</DependentUpon>
     </Compile>
