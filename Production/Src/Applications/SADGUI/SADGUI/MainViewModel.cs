@@ -142,17 +142,47 @@ namespace SADGUI
         private void StartGame()
         {
             //First you want to get the targets
+
             GetTargets();
             if (gameServer == null)
                 return;
 
             if (SelectedGame == null)
                 return;
+            if (m_missileLauncher == null)
+            {
+                MessageBox.Show("Error! select missile launcher first");
+                return;
+            }
+                
 
             gameServer.StartGame(SelectedGame);
-            KillAll();
+           // m_missileLauncherCommandQueue.Enqueue(new MyCommands(Strategy));
+            var task = Task.Run(() => this.Strategy());
+            //Strategy();
+
         }
 
+        private void Strategy()
+        {   //check to see if any enemies are still alive
+            while (TargetsCollection.Any(item => item.Target.IsFriend != true && item.Target.IsAlive))
+            {   //get the first target
+                var value = TargetsCollection.First(item => item.Target.IsFriend != true && item.Target.IsAlive);
+                //kill the target
+                m_missileLauncherCommandQueue.Enqueue(new MyCommands(() =>
+                {
+                    KillTheTargets(value.Target);
+                }));
+                //wait for server latency
+                System.Threading.Thread.Sleep(1000);
+                //get target new targets
+
+                App.Current.Dispatcher.Invoke((Action)delegate // <--- HERE
+                {
+                    GetTargets();
+                });
+            } 
+        }
         /// <summary>
         /// Loads the server based on the team name, IP, and Port
         /// Uses code found in SADClient Program.cs
@@ -168,16 +198,35 @@ namespace SADGUI
 
             ////Code from SADClient Program.cs
             //create a game server
-
-            gameServer = GameServerFactory.Create(GameServerType.WebClient, TeamName, IP, Port);
-            gameServer.StopRunningGame();
-            //get the game list, Game combobox on the main window is bound to GameList
-
-            var games = gameServer.RetrieveGameList();
-            foreach (var game in games)
+            if (IP == "Mock")
             {
-                GameList.Add(game);
+                gameServer = GameServerFactory.Create(GameServerType.Mock, TeamName, IP, Port);
+                gameServer.StopRunningGame();
+                //get the game list, Game combobox on the main window is bound to GameList
+
+                var games = gameServer.RetrieveGameList();
+                foreach (var game in games)
+                {
+                    GameList.Add(game);
+                }
             }
+            else if (IP == null)
+            {
+                MessageBox.Show("Error you did not enter IP");
+            }
+            else
+            {
+                gameServer = GameServerFactory.Create(GameServerType.WebClient, TeamName, IP, Port);
+                gameServer.StopRunningGame();
+                //get the game list, Game combobox on the main window is bound to GameList
+
+                var games = gameServer.RetrieveGameList();
+                foreach (var game in games)
+                {
+                    GameList.Add(game);
+                }
+            }
+            
             
             //var targets = gameServer.RetrieveTargetList(m_SelectedGame);
             //ConvertTargets(targets);
@@ -185,6 +234,7 @@ namespace SADGUI
         }
         private void GetTargets()
         {
+            ClearTargets();
             if (gameServer == null)
                 return;
 
@@ -209,6 +259,7 @@ namespace SADGUI
         /// <param name="target"></param>
         private void ConvertTargets(TargetServerCommunicator.Data.Target target)
         {
+            bool stillalive = !(target.hit > 0);
             m_targetManager.TargetList.Add(new Targets() // add all the extracted data to the list
             {
                 TargetName = target.name,
@@ -221,7 +272,7 @@ namespace SADGUI
                 SpawnRate = (int)target.spawnRate,
                 CanSwapSidesWhenHit = target.canChangeSides,
                 Status = "Still At Large",
-                IsAlive = true
+                IsAlive = stillalive
             });
             
 
@@ -543,7 +594,7 @@ namespace SADGUI
         {
             double x, y, z, theta, phi;
             x = target.X;
-            y = target.Y;
+            y = Math.Abs(target.Y);
             z = target.Z;
             theta = TargetPositioning.CalculateTheta(y, x);
             phi = TargetPositioning.CalculatePhi(y, z);
@@ -561,6 +612,7 @@ namespace SADGUI
         private void ClearTargets()
         {
             TargetsCollection.Clear();
+            m_targetManager.TargetList.Clear();
         }
         private void LoadTargetsFromFile()
         {
